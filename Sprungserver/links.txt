@@ -1,6 +1,0 @@
-https://rmphlpve0.azubi.erni:8006/
-https://rmphlpve1.azubi.erni:8006/)
-RMN1IRMC0.azubi.erni
-RMN1IRMC1.azubi.erni
-R1N2IRMC0.azubi.erni
-R1N1IRMC1.azubi.erni
