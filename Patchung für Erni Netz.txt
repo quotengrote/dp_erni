@@ -1,0 +1,9 @@
+[?03.?03.?2020 11:15] Grote, Michael: 
+R-0122 Dose 7-0122-8
+das sind die büros wo es runter geht
+[?03.?03.?2020 11:15] Seidel, Peter (TZ): 
+dann gehst du mal zum fieldservice
+sagst das du eine Patchung brauchst. für das AZubi LAN.
+[?03.?03.?2020 11:16] Seidel, Peter (TZ): 
+mit der Switch Nummer gehst du dann zu Christian Cyrus oder Dario Schütte
+Azubi LAN ( Vlan 45 ). 
