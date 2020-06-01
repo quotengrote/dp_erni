@@ -1,0 +1,14 @@
+{{ file_header | default () }}
+# Servers
+{% for item in ntp_client_servers %}
+server {{ item.address }} {{ item.options |default() }}
+{% endfor %}
+
+# Drift file
+driftfile {{ ntp_client_driftfile_directory }}/drift
+
+# restrictions
+restrict -4 default nomodify nopeer noquery notrap
+restrict -6 default nomodify nopeer noquery notrap
+restrict 127.0.0.1
+restrict ::1

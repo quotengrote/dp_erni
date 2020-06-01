@@ -1,0 +1,36 @@
+---
+  - name: stop systemd-resolved service on port 53
+    become: true
+    ansible.builtin.systemd:
+      name: systemd-resolved
+      enabled: no
+      state: stopped
+      masked: yes
+
+  - name: Install dnsmasq
+    become: true
+    ansible.builtin.package:
+      name: dnsmasq
+      state: present
+
+  - name: journalconf bearbeiten
+    become: true
+    ansible.builtin.lineinfile:
+      state: present
+      path: /etc/systemd/journald.conf
+      line: "Storage=persistent"
+      create: yes
+    notify: journalctl neustarten
+
+  - name: set dnsmasq make dhcp
+    become: true
+    ansible.builtin.template:
+      src: "dnsmasq.conf"
+      dest: "/etc/dnsmasq.conf"
+    notify: dnsmasq Konfigurationsaenderungen aktivieren
+
+  - name: save examples to /etc/dnsmasqconf.examples
+    become: true
+    ansible.builtin.template:
+      src: "dnsmasqconf.examples"
+      dest: "/etc/dnsmasqconf.examples"
