@@ -1,0 +1,14 @@
+---
+- hosts: virt
+  roles:
+    - { role: mgrote.paket_installation_update, tags: "update" }
+    - { role: mgrote.apcupsd, tags: "apcupsd" }
+    - { role: mgrote.smart, tags: "smart" }
+    - { role: mgrote.restic, tags: "restic" }
+    - { role: mgrote.telegraf, tags: "telegraf" }
+    - { role: mgrote.zfs_tools, tags: "zfs_tools" }
+    - { role: mgrote.pve_metrics, tags: "pve_metrics" }
+    - { role: mgrote.pve_nag-buster, tags: "pve_nag-buster" }
+    - { role: mgrote.postfix-gmail, tags: "postfix-gmail" }
+    - { role: mgrote.create_users, tags: "users" }
+    - { role: mgrote.set_timezone, tags: "timezone" }
