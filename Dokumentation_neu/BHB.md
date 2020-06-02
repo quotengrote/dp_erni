@@ -1,4 +1,3 @@
-<<<<<<< current
 # Gesamtdokumentation "Schulungsumgebung Magdeburg" aka "ERNI0.1"
 
 <!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
@@ -45,24 +44,18 @@ Dazu gehören:
 	- Apt-Cacher-NG(acng) als Paket Mirror für Debian-basierte OS.
 
 
+## "Best Practises"
+- VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden
 
-
-
-## Virtuelle Maschinen
-* Linux VM sollten grundsätzlich aus dem BaseImage erstellt werden.
-  * Dort sind schon alle passenden Grundeinstellungen wie Paketquellen hinterlegt.
-
-### BaseImage
-| :exclamation:  Muss angepasst werden, die .70 ist die MGMT-IP der DataDomain.   |
-|-----------------------------------------|
-* haben nach dem Klonen immer die 10.10.31.__70__
-
-#### Erstellen
 | :point_up:    | Folgt später! |
 |---------------|:--------------|
-#### Aktualisieren
-| :point_up: | Folgt später! |
-| ---------- |:------------- |
+|  | Das Base-Image wird mit eine ansible-playbook generiert(base.yml) |
+
+
+
+
+
+
 
 
 #### Clients
