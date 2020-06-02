@@ -45,6 +45,7 @@
 *.dmg
 *.toast
 *.vcd
+*.iso
 
 ### Executable ###
 *.app
