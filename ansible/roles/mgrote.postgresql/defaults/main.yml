@@ -1,0 +1,13 @@
+---
+postgres_programme:
+  - postgresql
+  - libpq5
+  - postgresql-10
+  - postgresql-client-10
+  - postgresql-client-common
+  - postgresql-contrib
+  - curl
+  - gnupg
+  - libpq-dev
+  - python-psycopg2
+  - python3-psycopg2

@@ -1,0 +1,38 @@
+# Defaults for hddtemp initscript (/etc/init.d/hddtemp)
+# This is a POSIX shell fragment
+
+# Master system-wide hddtemp switch. The initscript will not run if it is not
+# set to true. STOP THE SERVICE BEFORE DISABLING IT!
+
+# [automatically edited by postinst, do not change line format or set it to
+# anything but false or true ]
+RUN_DAEMON="true"
+
+# List of devices you want to use with hddtemp. If none specified,
+# hddtemp will probe standard devices.
+#DISKS="/dev/sda /dev/sdb"  # your hard drive here hda or hdb etc.
+
+# List of devices you want to use with hddtemp, but that would not be
+# probed for a working sensor.
+DISKS_NOPROBE=""
+
+# IP address of the interface on which you want hddtemp to be bound
+# on. If none specified, goes to 127.0.0.1. Use 0.0.0.0 to bind hddtemp
+# on all interfaces.
+INTERFACE="127.0.0.1"
+
+# Port number on which you want hddtemp to listen on. If none specified,
+# the port 7634 is used.
+PORT="7634"
+
+# Database file to use. If none specified, /etc/hddtemp.db is used.
+#DATABASE="/etc/hddtemp.db"
+
+# Separator to use between fields. The default separator is '|'.
+#SEPARATOR="|"
+
+# Logging period (in seconds) for the temperatures.
+SYSLOG="300"  # 300 = every 5 minutes
+
+# Other options to pass to hddtemp
+OPTIONS=""

@@ -1,0 +1,86 @@
+###############################################################################
+# Vor dem Ausfuehren des Playbooks die Festplatten fuer
+# mergerFS mit "/dev/disk/by-id" rausfinden.
+# Die Festplatten werden unter sources hinterlegt.
+# Auf diesen Festplatten muss sich ein EXT4_Dateisystem befinden.
+# "mkfs.ext4 /dev/..."
+###############################################################################
+# Wenn es hier hakt, zuerst SMB auskommentieren, Ausfuehren dann wieder mit smb.
+###############################################################################
+# Wenn Freigaben geloescht werden muss der dazugehoerige Ordner per CLI geloescht
+# werden.
+###############################################################################
+
+---
+- hosts: storage
+  roles:
+    - { role: mgrote.set_apt_sources, tags: "apt_sources" }
+    - { role: mgrote.create_users, tags: "users" }
+    - { role: mgrote.set_timezone, tags: "timezone" }
+    - { role: mgrote.motd, tags: "motd" }
+    - { role: mgrote.paket_installation_update, tags: "updates" }
+    - { role: mgrote.telegraf, tags: "telegraf" }
+    - { role: mgrote.restic, tags: "restic" }
+    - { role: igor_mukhin.bash_aliases, tags: "aliases" }
+    - { role: mgrote.fileserver_mergerfs, tags: "fileserver_mergerfs" }
+    - { role: mgrote.postfix-gmail, tags: "postfix-gmail" }
+    - { role: mgrote.fileserver_smb, tags: "fileserver_smb" }
+    - { role: mgrote.youtube-dl, tags: "youtube-dl", when: ansible_hostname  == "fileserver" }
+    - { role: mgrote.nextcloud_sicherung, tags: "nextcloud_sicherung", when: ansible_hostname  == "fileserver" }
+    - { role: mgrote.rclone_sicherung, tags: "rclone", when: ansible_hostname  == "fileserver" }
+
+  vars:
+    ### mergerFS
+    mergerfs_mountpoint: "/shares"
+    mount_optionen: defaults,allow_other,direct_io,use_ino,moveonenospc=true,category.create=mfs,minfreespace=100G,nonempty
+    ###laufwerke: sind im inventory pro host deklariert
+    mergerfs_tree_cron_minutes: "30"
+    mergerfs_tree_cron_hours: "5"
+    ### smb_fileserver
+    smb_nutzer:
+      - { name: 'andreasgrote', groups: 'users', password: 'hallowelt' }
+      - { name: 'annemariedroessler', groups: 'users', password: 'hallowelt2' }
+      - { name: 'aptcacherng', groups: 'users', password: 'hallowelt' }
+      - { name: 'horstmartin', groups: 'users', password: 'hallowelt' }
+      - { name: 'pve', groups: 'users', password: 'hallowelt' }
+      - { name: 'restic', groups: 'users', password: 'restic' }
+      - { name: 'toolserver', groups: 'users', password: 'hallowelt' }
+      - { name: 'win10', groups: 'users', password: 'hallowelt' }
+      - { name: 'toolserver', groups: 'users', password: '1TWoLbNzNG2W2c1rhyGh' }
+      - { name: 'kodi', groups: 'users', password: 'hallowelt' }
+      - { name: 'michaelgrote2', groups: 'users', password: 'hallowelt2' }
+
+    smb_freigaben: #werden unter /shares angelegt
+      - { freigabename: 'Backup', ordnername: 'Backup', lese_nutzer: '', schreibe_nutzer: 'andreasgrote annemariedroessler aptcacherng horstmartin pve restic toolserver win10 michaelgrote2' }
+      - { freigabename: 'Musik', ordnername: 'Musik', lese_nutzer: 'toolserver kodi annemariedroessler win10', schreibe_nutzer: 'michaelgrote2 michaelgrote2' }
+      - { freigabename: 'Videos', ordnername: 'Videos', lese_nutzer: 'kodi annemariedroessler', schreibe_nutzer: 'michaelgrote2 toolserver win10 toolserver michaelgrote2' }
+      - { freigabename: 'ag', ordnername: 'ag', lese_nutzer: 'toolserver', schreibe_nutzer: 'michaelgrote2 andreasgrote michaelgrote2' }
+      - { freigabename: 'amd', ordnername: 'amd', lese_nutzer: 'toolserver michaelgrote2', schreibe_nutzer: 'annemariedroessler' }
+      - { freigabename: 'hm', ordnername: 'hm', lese_nutzer: 'toolserver', schreibe_nutzer: 'horstmartin michaelgrote2' }
+      - { freigabename: 'mg', ordnername: 'mg', lese_nutzer: 'toolserver', schreibe_nutzer: 'michaelgrote win10 michaelgrote2' }
+      - { freigabename: 'pve', ordnername: 'pve', lese_nutzer: 'toolserver', schreibe_nutzer: 'michaelgrote pve michaelgrote2' }
+      - { freigabename: 'tmp', ordnername: 'tmp', lese_nutzer: 'toolserver', schreibe_nutzer: 'andreasgrote annemariedroessler aptcacherng horstmartin pve restic toolserver win10 michaelgrote2' }
+    smb_workgroup: WORKGROUP
+
+    smb_nutzer_loeschen:
+      - { name: 'platzhalter' }
+
+    ### nfs_fileserver
+    nfs_freigaben:
+      - { freigabename: 'nfsfreigabe', nutzer: pve }
+
+    ### youtube mg
+    youtubedl_cron_minutes: "40"
+    youtubedl_cron_hours: "21"
+    playlisten:
+      - { url: 'https://www.youtube.com/playlist?list=PLPM-eyPokAWNhhDNO4YzC5cGRwuI2ykwE', titel: 'music'}
+      - { url: 'https://www.youtube.com/playlist?list=PLPM-eyPokAWNnDxuyX131R5wkl8fzvu7D', titel: 'lost and found'}
+      - { url: 'https://www.youtube.com/playlist?list=PLPM-eyPokAWPmStfh37roJge-JuLfgma0', titel: 'lost and found 2'}
+    ### nextcloud_sicherung
+    nextcloud_sicherung_cron_minutes: "20"
+    nextcloud_sicherung_cron_hours: "21"
+    ### rclone
+    rclone_cron_minutes: "30"
+    rclone_cron_hours: "22"
+    ### postfix
+    mail_nach_cronjob: false

@@ -1,0 +1,10 @@
+---
+telegraf_influxdb_srv_protocol: "http://"
+telegraf_smart_pfad_zu_smartctl: "/usr/sbin/smartctl"
+
+telegraf_base_metrics: true
+telegraf_apcupsd_metrics: false
+telegraf_hddtemp_metrics: false
+telegraf_smart_metrics: false
+telegraf_x509_metrics: false
+telegraf_zfs_metrics: false

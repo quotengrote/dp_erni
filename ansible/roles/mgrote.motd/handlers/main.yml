@@ -1,0 +1,9 @@
+  - name: Erzwinge_Aktualisierung
+    become: yes
+    shell: update-motd
+
+  - name: restart_sshd
+    become: yes
+    systemd:
+      name: sshd
+      state: restarted

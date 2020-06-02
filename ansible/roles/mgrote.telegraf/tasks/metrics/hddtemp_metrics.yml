@@ -1,0 +1,19 @@
+  - name: hddtemp installieren
+    become: yes
+    apt:
+      name: hddtemp
+      state: present
+
+  - name: hddtemp kopieren
+    become: yes
+    template:
+      src: "hddtemp"
+      dest: "/etc/default/hddtemp"
+    notify: hddtemp_starten_aktivieren
+
+  - name: hddtemp.conf kopieren
+    become: yes
+    template:
+      src: "hddtemp.conf"
+      dest: "/etc/telegraf/telegraf.d/hddtemp.conf"
+    notify: telegraf_starten_aktivieren

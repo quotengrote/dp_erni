@@ -1,0 +1,16 @@
+  - name: Ordner "/root/pve-nag-buster" erstellen
+    become: yes
+    file:
+      path: /root/pve-nag-buster
+      state: directory
+
+  - name: pve-nag-buster herunterladen
+    become: yes
+    get_url:
+      url: https://raw.githubusercontent.com/foundObjects/pve-nag-buster/master/install.sh
+      dest: /root/pve-nag-buster/install.sh
+      mode: 777
+
+  - name: pve-nag-buster ausfuehren
+    become: yes
+    shell: /root/pve-nag-buster/install.sh
