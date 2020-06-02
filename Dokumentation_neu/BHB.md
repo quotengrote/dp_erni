@@ -1,26 +1,5 @@
 # Gesamtdokumentation "Schulungsumgebung Magdeburg" aka "ERNI0.1"
 
-<!-- TOC depthFrom:1 depthTo:3 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Gesamtdokumentation "Schulungsumgebung Magdeburg" aka "ERNI0.1"](#gesamtdokumentation-schulungsumgebung-magdeburg-aka-erni01)
-	- [Allgemeines](#allgemeines)
-		- [Beteiligte Personen](#beteiligte-personen)
-		- [Zugangsdaten](#zugangsdaten)
-	- [Aufbau Rechenraum](#aufbau-rechenraum)
-		- [Racks](#racks)
-	- [Netzwerk](#netzwerk)
-		- [Namenskonvention](#namenskonvention)
-		- [IP-Addressplan](#ip-addressplan)
-	- [Physische Maschinen](#physische-maschinen)
-		- [Proxmox - VM Hosts](#proxmox-vm-hosts)
-	- [Virtuelle Maschinen](#virtuelle-maschinen)
-		- [BaseImage](#baseimage)
-		- [Apt-Cacher-NG](#apt-cacher-ng)
-		- [NTP Server](#ntp-server)
-		- [Ubuntu Server](#ubuntu-server)
-
-<!-- /TOC -->
-
 ## Allgemeines
 ### Zugangsdaten
 * sind in einer KeePass-Datenbank hinterlegt
@@ -51,24 +30,11 @@ Dazu gehören:
 
 
 ## "Best Practises"
-- VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden
+- VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden.
 
-| :point_up:    | Folgt später! |
-|---------------|:--------------|
-|  | Das Base-Image wird mit eine ansible-playbook generiert(base.yml) |
-
-
-
-
-
-
-
-
-
-
-### NTP Server
-#### NTP Server IPs
-* DCF77 Signal
-#### IPs
+## Infos
+Der NTP-Server wird nicht in der Schulungsumgebung betrieben.
+Quelle ist ein DCF77-Signal.
+### IPs
   * 11.8.43.1
   * 11.8.43.2
