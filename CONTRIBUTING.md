@@ -1,7 +1,8 @@
 # Contributing Guidelines
 
 Just a few rules...
-- Don't push onto Master
-- Squash large branches into smaller parts before merging
-- Before merging a pull-request, ask for a review
-- Documentation has to be written in markdown
+- nicht auf den Master-branch pushen
+- zusammenhängende Edits squashen
+- für alles Pull-Requests erstellen
+- Documentation zusammen mit dem Code einpflegen
+- auf dem Master nur stabiler Code
