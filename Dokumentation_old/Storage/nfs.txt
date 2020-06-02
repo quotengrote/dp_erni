@@ -1,4 +1,0 @@
-
-
-
-pfad bei NFS ist komplett anzugeben(wie auf dem host ... /data/col1/test_nfs)
