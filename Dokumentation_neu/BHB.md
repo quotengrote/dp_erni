@@ -43,6 +43,12 @@ Dazu gehören:
 	- DNS aus hostfile mit dnsmasq
 	- Apt-Cacher-NG(acng) als Paket Mirror für Debian-basierte OS.
 
+### Rack 1
+- Derzeit ohne Funktion
+
+### Rack 2
+- Derzeit ohne Funktion
+
 
 ## "Best Practises"
 - VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden
