@@ -1,0 +1,10 @@
+  - import_role:
+      name: mgrote.apcupsd
+
+  - name: apcupsd.conf kopieren
+    become: yes
+    template:
+      src: "apcupsd.conf"
+      dest: "/etc/telegraf/telegraf.d/apcupsd.conf"
+    notify: telegraf_starten_aktivieren
+#https://grafana.com/grafana/dashboards/10977

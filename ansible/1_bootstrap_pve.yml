@@ -1,0 +1,26 @@
+---
+- hosts: all
+  gather_facts: false
+  serial: 3
+  max_fail_percentage: 20%
+
+  pre_tasks:
+    - name: erstelle "/etc/sudoers"
+      file:
+        path: /etc/sudoers
+        state: touch
+
+  roles:
+    - { role: nickjj.ansible-user, tags: "ansible-user" }
+
+  vars:
+    ### fuer rolle nickjj.ansible-user
+    user_name: "ansible-user"
+    user_generate_ssh_key: true
+    user_local_ssh_key_path: "~/.ssh/id_rsa.pub"
+    user_enable_passwordless_sudo: True
+
+    ansible_user: "root" # Hier ändern wenn ein anderer Nutzer für die Erstanemldung verwendet werden soll.
+    ansible_password: "hallowelt"
+    ansible_become_password: "hallowelt"
+    ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
