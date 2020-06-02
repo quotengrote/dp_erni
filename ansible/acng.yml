@@ -1,0 +1,15 @@
+---
+- hosts: acng
+  roles:
+    - { role: mgrote.set_apt_sources, tags: "apt_sources" }
+    - { role: mgrote.create_users, tags: "users" }
+    - { role: mgrote.set_timezone, tags: "timezone" }
+    - { role: mgrote.motd, tags: "motd" }
+    - { role: mgrote.paket_installation_update, tags: "updates" }
+    - { role: mgrote.telegraf, tags: "telegraf" }
+    - { role: mgrote.restic, tags: "restic" }
+    - { role: igor_mukhin.bash_aliases, tags: "aliases" }
+    - { role: mgrote.acng, tags: "acng" }
+  vars:
+    apt_cacher_ng_exthreshold: "60" #hebt Pakete 60 Tage auf
+    acng_server_port: 9999

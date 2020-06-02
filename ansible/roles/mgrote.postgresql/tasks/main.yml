@@ -1,0 +1,29 @@
+  - name: install "postgres"
+    become: yes
+    apt:
+      name: "{{ postgres_programme }}"
+      state: present
+      update_cache: yes
+      cache_valid_time: 1800 #https://stackoverflow.com/questions/41535838/how-to-run-apt-update-and-upgrade-via-ansible-shell
+
+  - name: install "setfacl support"
+    become: yes
+    apt:
+      name: acl
+
+  - name: Create database "{{ postgres_datenbank_name }}"
+    become: true
+    become_user: postgres
+    postgresql_db:
+      name: "{{ postgres_datenbank_name }}"
+
+  - name: Connect to "{{ postgres_datenbank_name }}" database, create "{{ postgres_datenbank_nutzer_name }}" user, and grant access to database
+    become: true
+    become_user: postgres
+    postgresql_user:
+      db: "{{ postgres_datenbank_name }}"
+      name: "{{ postgres_datenbank_nutzer_name }}"
+      password: "{{ postgres_datenbank_nutzer_password }}"
+      priv: "ALL"
+      role_attr_flags: SUPERUSER
+    no_log: true

@@ -1,0 +1,25 @@
+---
+- hosts: all
+  serial: 3
+  max_fail_percentage: 20%
+  roles:
+    - { role: mgrote.set_apt_sources, tags: "apt_sources" }
+    - { role: mgrote.create_users, tags: "users" }
+    - { role: mgrote.set_timezone, tags: "timezone" }
+    - { role: mgrote.paket_installation_update, tags: "updates" }
+    - { role: mgrote.motd, tags: "motd" }
+    - { role: mgrote.telegraf, tags: "telegraf" }
+    - { role: mgrote.restic, tags: "restic" }
+    - { role: igor_mukhin.bash_aliases, tags: "aliases", become: true }
+
+  tasks:
+    - name: Loesche Nutzer "neu"
+      become: true
+      user:
+        name: neu
+        state: absent
+        force: yes
+
+  vars:
+      base_users:
+        - { name: 'mg', password: 'hallowelt', groups: 'sudo, ssh'}

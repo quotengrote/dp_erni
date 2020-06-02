@@ -1,0 +1,6 @@
+---
+dependencies:
+- role: hedii.youtube-dl
+  vars:
+    youtubedl_executable_path: "/usr/local/bin/youtube-dl"
+    youtubedl_update: true

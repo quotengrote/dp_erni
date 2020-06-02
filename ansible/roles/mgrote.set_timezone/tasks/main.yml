@@ -1,0 +1,4 @@
+  - name: Setze Zeitzone auf {{ base_timezone }}
+    become: yes
+    timezone:
+      name: "{{ base_timezone }}"
