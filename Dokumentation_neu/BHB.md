@@ -23,15 +23,6 @@
 <!-- /TOC -->
 
 ## Allgemeines
-### Beteiligte Personen
-#### Betreuer/Ausbilder
-- Ingo Trelewska
-- Peter Seidel
-#### Auszubildende
-- Daniel Müller
-- Maximilian Steinberg
-- Sebastian Kaiser
-- Michael Grote
 ### Zugangsdaten
 * sind in einer KeePass-Datenbank hinterlegt
     * [Kennwörter.kdbx](./Zugangsdaten/Kennwörter.kdbx)
