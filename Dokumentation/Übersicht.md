@@ -50,12 +50,6 @@ Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
 * 50-100 - RM
 * 180-240 - R2
 
-* Aus dem [BaseImage](#baseimage) geklonte Server haben immer die 11.10.31.__70__
-
-#### Einzelne Adressen
-* siehe [Excel](./Netzwerk/IP-Hosts.xlsx)
-
-
 ## "Best Practises"
 - VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden.
 
