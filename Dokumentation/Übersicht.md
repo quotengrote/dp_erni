@@ -21,7 +21,21 @@ Dazu gehören:
 	- DHCP dnsmasq
 	- DNS aus hostfile mit dnsmasq
 	- Apt-Cacher-NG(acng) als Paket Mirror für Debian-basierte OS.
+#### Nutzermatrix
+Gruppe	|Nutzer					| Rollen
+----  	|---					|---
+User	|					| PVEVMAdmin, PVEDatastoreUser
+Admin	|root					| Administrator
 
+#### Namenskonvention Nutzer
+Position 1: u_ oder a_ (__U__ ser oder __A__ dmin)
+Position 2: Nachname (klein)
+Position 3: Vorname (klein)
+Bei Dopplungen wird an 4. Position aufsteigend durch nummerriert.
+##### Beipiel:
+__Name:__ Steffi Mustermann
+__Nutzernamen:__ u_mustermann_steffi,
+		 a_mustermann_steffi
 ### Rack 1
 - Derzeit ohne Funktion
 
@@ -49,12 +63,6 @@ Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
 * 101-160 - R1
 * 50-100 - RM
 * 180-240 - R2
-
-* Aus dem [BaseImage](#baseimage) geklonte Server haben immer die 11.10.31.__70__
-
-#### Einzelne Adressen
-* siehe [Excel](./Netzwerk/IP-Hosts.xlsx)
-
 
 ## "Best Practises"
 - VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden.
