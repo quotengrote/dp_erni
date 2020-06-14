@@ -26,25 +26,25 @@
     notify: telegraf_starten_aktivieren
 
   - name: add base_metrics tasks
-    import_tasks: 'roles/mgrote.telegraf/tasks/metrics/base_metrics.yml'
+    import_tasks: '{{ role_path }}/tasks/metrics/base_metrics.yml'
     when: telegraf_base_metrics == true
 
   - name: add apcupsd_metrics tasks
-    import_tasks: 'roles/mgrote.telegraf/tasks/metrics/apcupsd_metrics.yml'
+    import_tasks: '{{ role_path }}/tasks/metrics/apcupsd_metrics.yml'
     when: telegraf_apcupsd_metrics == true
 
   - name: add hddtemp_metrics tasks
-    import_tasks: 'roles/mgrote.telegraf/tasks/metrics/hddtemp_metrics.yml'
+    import_tasks: '{{ role_path }}/tasks/metrics/hddtemp_metrics.yml'
     when: telegraf_hddtemp_metrics == true
 
   - name: add smart_metrics tasks
-    import_tasks: 'roles/mgrote.telegraf/tasks/metrics/smart_metrics.yml'
+    import_tasks: '{{ role_path }}/tasks/metrics/smart_metrics.yml'
     when: telegraf_smart_metrics == true
 
   - name: add x509_metrics tasks
-    import_tasks: 'roles/mgrote.telegraf/tasks/metrics/x509_metrics.yml'
+    import_tasks: '{{ role_path }}/tasks/metrics/x509_metrics.yml'
     when: telegraf_x509_metrics == true
 
   - name: add zfs_metrics tasks
-    import_tasks: 'roles/mgrote.telegraf/tasks/metrics/zfs_metrics.yml'
+    import_tasks: '{{ role_path }}/tasks/metrics/zfs_metrics.yml'
     when: telegraf_zfs_metrics == true
