@@ -8,7 +8,7 @@
     - { role: mgrote.paket_installation_update, tags: "updates" }
     - { role: mgrote.telegraf, tags: "telegraf" }
     - { role: mgrote.restic, tags: "restic" }
-    - { role: mgrote.bash_aliases, tags: "aliases" }
+    - { role: igor_mukhin.bash_aliases, tags: "aliases" }
     - { role: mgrote.acng, tags: "acng" }
   vars:
     apt_cacher_ng_exthreshold: "60" #hebt Pakete 60 Tage auf
