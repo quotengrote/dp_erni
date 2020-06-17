@@ -10,7 +10,7 @@
     - { role: mgrote.motd, tags: "motd" }
     - { role: mgrote.telegraf, tags: "telegraf" }
     - { role: mgrote.restic, tags: "restic" }
-    - { role: mgrote.bash_aliases, tags: "aliases", become: true }
+    - { role: igor_mukhin.bash_aliases, tags: "aliases", become: true }
 
   tasks:
     - name: Loesche Nutzer "neu"

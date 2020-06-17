@@ -8,5 +8,5 @@
     - { role: mgrote.paket_installation_update, tags: "updates" }
     - { role: mgrote.telegraf, tags: "telegraf" }
     - { role: mgrote.restic, tags: "restic" }
-    - { role: mgrote.bash_aliases, tags: "aliases" }
+    - { role: igor_mukhin.bash_aliases, tags: "aliases" }
     - { role: mgrote.ansible_host, tags: "ansible_host" }
