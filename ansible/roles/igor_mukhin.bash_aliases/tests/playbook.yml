@@ -8,4 +8,4 @@
       - { alias: 'sf', command: 'php app/console2' }
 
   roles:
-    - "../../igor_mukhin.bash_aliases"
+    - "../../mgrote.bash_aliases"
