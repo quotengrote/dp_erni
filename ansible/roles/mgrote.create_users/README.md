@@ -2,7 +2,7 @@
 
 ### Beschreibung
 erstellt Nutzer.
-### getestet auf
+### Funktioniert auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian
 

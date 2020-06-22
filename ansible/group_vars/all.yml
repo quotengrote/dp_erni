@@ -1,5 +1,5 @@
 ---
-  ### mgrote.paket_installation_update
+  ### mgrote.install_packages
   programme:
      - locales
      - build-essential
@@ -25,7 +25,10 @@
      - cowsay
      - neofetch
      - fortune
+     - ipmitool
      - ntpdate
+     - powertop
+
   ### igor_mukhin.bash_aliases
   bash_aliases:
     - { alias: 'll', command: 'ls -la' }
@@ -33,12 +36,20 @@
     - { alias: 'tmuxa', command: 'tmux a' }
     - { alias: 'tmuxn', command: 'tmux new -s mg ' }
     - { alias: 'cls', command: 'clear' }
+    - { alias: 'df', command: 'df -h' }
   bash_aliases_path: "/home/mg/.bash_aliases"
-  ### mgrote.telegraf
-  telegraf_influxdb_srv_fqdn: "grafana.grote.lan"
-  telegraf_influxdb_srv_port: 8086 #portangabe muss ohne punkt erfolgen - Pflicht
-  telegraf_influxdb_srv_protocol: "http://"
-  telegraf_base_metrics: true
+  ### mgrote.restic
+  restic_cron_hours: "19"
+  restic_repository: "//fileserver.grote.lan/Backup/restic"
+  restic_repository_password: Vl00coPLYbcQPEQK9rOl
+  restic_mount: "/mnt/restic"
+  restic_mount_user: restic
+  restic_mount_password: restic
+  ### mgrote.postfix-gmail
+  empfaenger_mail: michael.grote@posteo.de
+  nutzer_gmail: michael.grote@gmail.com
+  passwort_gmail: FKXaOMOPv9bF5kHC
+  postfix_gmail_erlaubte_netzwerke: "127.0.0.0/8 192.168.2.0/24"
   ### mgrote.fileserver_smb
   domain: grote.lan
   nas: fileserver.grote.lan

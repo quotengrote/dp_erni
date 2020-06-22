@@ -6,5 +6,5 @@
     template:
       src: "apcupsd.conf"
       dest: "/etc/telegraf/telegraf.d/apcupsd.conf"
-    notify: telegraf_starten_aktivieren
+    notify: restart_telegraf
 #https://grafana.com/grafana/dashboards/10977

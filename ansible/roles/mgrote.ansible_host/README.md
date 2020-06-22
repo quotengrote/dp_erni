@@ -3,6 +3,6 @@
 ### Beschreibung
 Installiert ansible und konfiguriert es damit "cowsay" nicht benutzt wird.
 
-### getestet auf
+### Funktioniert auf
 - [x] Ubuntu (>=18.04)
 - [ ] Debian

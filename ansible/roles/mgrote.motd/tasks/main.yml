@@ -55,14 +55,14 @@
       group: root
       mode: '755'
     notify: Erzwinge_Aktualisierung
-    when: motd_fortune_aktiv == true
+    when: motd_fortune_aktiv
 
   - name: delete fortune
     become: yes
     file:
       path: /etc/update-motd.d/05-fortune-mgrote
       state: absent
-    when: motd_fortune_aktiv == false
+    when: not motd_fortune_aktiv
 
   - name: setup new motd - wetter
     become: yes
@@ -73,11 +73,11 @@
       group: root
       mode: '755'
     notify: Erzwinge_Aktualisierung
-    when: motd_wetter_aktiv == true
+    when: motd_wetter_aktiv
 
   - name: delete Wetter
     become: yes
     file:
       path: /etc/update-motd.d/10-wetter-mgrote
       state: absent
-    when: motd_wetter_aktiv == false
+    when: not motd_wetter_aktiv

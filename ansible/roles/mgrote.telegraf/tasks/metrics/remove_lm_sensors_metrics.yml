@@ -1,0 +1,12 @@
+  - name: remove lm-sensors
+    become: yes
+    apt:
+      name: lm-sensors
+      state: absent
+
+  - name: remove lm_sensors.conf
+    become: yes
+    file:
+      state: absent
+      path: "/etc/telegraf/telegraf.d/lm_sensors.conf"
+    notify: restart_telegraf

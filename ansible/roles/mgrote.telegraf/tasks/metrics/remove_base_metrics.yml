@@ -1,0 +1,6 @@
+  - name: remove base_metrics.conf
+    become: yes
+    file:
+      state: absent
+      path: "/etc/telegraf/telegraf.d/base_metrics.conf"
+    notify: restart_telegraf
