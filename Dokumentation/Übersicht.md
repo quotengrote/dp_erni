@@ -28,10 +28,10 @@ User	|					| PVEVMAdmin, PVEDatastoreUser
 Admin	|root					| Administrator
 
 #### Namenskonvention Nutzer
-Position 1: u_ oder a_ (__U__ ser oder __A__ dmin)
-Position 2: Nachname (klein)
-Position 3: Vorname (klein)
-Bei Dopplungen wird an 4. Position aufsteigend durch nummerriert.
+- Position 1: u_ oder a_ (__U__ ser oder __A__ dmin)
+- Position 2: Nachname (klein)
+- Position 3: Vorname (klein)
+- Position 4: aufsteigend durch nummerrieren.
 ##### Beipiel:
 __Name:__ Steffi Mustermann
 __Nutzernamen:__ u_mustermann_steffi,
