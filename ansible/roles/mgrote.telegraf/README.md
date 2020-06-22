@@ -4,7 +4,7 @@
 Installiert und konfiguriert "telegraf".
 Telegraf ist fuer das [[Grafana Dashboard 928|https://grafana.com/grafana/dashboards/928]] konfiguriert.
 
-### getestet auf
+### Funktioniert auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian
 
@@ -41,8 +41,18 @@ Telegraf ist fuer das [[Grafana Dashboard 928|https://grafana.com/grafana/dashbo
     ```
 - [[Grafana-Dashboard|https://grafana.com/grafana/dashboards/11707]]
 - Der Port ist Pflicht.
-
 ##### ZFS-Metriken aktivieren
-`telegraf_zfs_metrics: true`
+  `telegraf_zfs_metrics: true`
 - Installiert und konfiguriert telegraf fuer das Sammeln von Metriken von "zfs".
 - [[Grafana Dashboard|https://gist.github.com/bartmeuris/41caf0998f38a2fae7cf1ff92cd4a5fa]]
+##### Postgres-Metriken aktivieren
+- Installiert und konfiguriert telegraf fuer das Sammeln von Metriken von "postgres".
+- [[Grafana Dashboard|https://grafana.com/grafana/dashboards/355]]
+- Die Zugangsdaten mit denen sich telegraf bei Postgres anmeldet um die Metriken zu sammeln.
+  `telegraf_postgres_metrics: true`
+  `telegraf_postgres_name_db_user: "telegraf_db_user"`
+  `telegraf_postgres_password_db_user: "geheim"`
+  `telegraf_postgres_name_db: "telegraf_db"`
+##### lm_sensors-Metriken aktivieren (Temperaturen o.Ä.)
+  `telegraf_lm_sensors_metrics: true`
+- Installiert und konfiguriert telegraf fuer das Sammeln von Metriken von "lm_sensors".

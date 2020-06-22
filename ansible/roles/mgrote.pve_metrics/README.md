@@ -4,7 +4,7 @@
 Aktiviert den Export von proxmox-internen Metriken an InfluxDB.
 
 
-### getestet auf
+### Funktioniert auf
 - [ ] Ubuntu (>=18.04)
 - [ ] Debian
 

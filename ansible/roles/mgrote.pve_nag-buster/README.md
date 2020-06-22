@@ -3,8 +3,9 @@
 ### Beschreibung
 Laedt das Script "pve_nag-buster" gerunter und fuehrt es aus.
 
-### getestet auf
-- [ ] Ubuntu (>=18.04)
-- [ ] Debian
-
+### Funktioniert auf
 - [x] ProxMox 6.1
+
+### Variablen
+##### Bei jedem Lauf Update durchführen?
+pve_nag_buster_update: false

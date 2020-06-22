@@ -1,12 +1,12 @@
 ---
-- hosts: all
+- hosts: fileserver.grote.lan
   become: yes
   gather_facts: false
   serial: 3
   max_fail_percentage: 20%
   pre_tasks:
     - name: install python
-      raw: test -e /usr/bin/python || ( apt update && apt install python -y )
+      raw: test -e /usr/bin/python || ( apt update && apt install python -y ) # noqa 301 301
     - name: gather facts
       setup:
 
@@ -20,7 +20,7 @@
     user_local_ssh_key_path: "~/.ssh/id_rsa.pub"
     user_enable_passwordless_sudo: True
 
-    ansible_user: "neu" # Hier ändern wenn ein anderer Nutzer für die Erstanemldung verwendet werden soll.
+    ansible_user: "mg" # Hier ändern wenn ein anderer Nutzer für die Erstanemldung verwendet werden soll.
     ansible_password: "hallowelt"
     ansible_become_password: "hallowelt"
     ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"

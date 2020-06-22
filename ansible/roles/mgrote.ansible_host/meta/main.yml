@@ -1,3 +1,14 @@
 ---
 dependencies:
-  - role: mgrote.ansible-pip
+  - role: azavea.ansible-pip
+galaxy_info:
+  author: mgrote
+  description: configures an ansible-host
+  min_ansible_version: 2.0
+  license: GPLv3
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  galaxy_tags:
+    - system

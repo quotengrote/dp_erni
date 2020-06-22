@@ -1,10 +1,10 @@
-  - name: smartmontools installieren
+  - name: remove smartmontools
     become: yes
     apt:
       pkg: smartmontools
-      state: present
+      state: absent
 
-  - name: telegraf passwordless sudo
+  - name: remove telegraf passwordless sudo
     become: yes
     blockinfile:
       path: /etc/sudoers
@@ -12,10 +12,11 @@
         Cmnd_Alias SMARTCTL = {{ telegraf_smart_pfad_zu_smartctl }}
         telegraf  ALL=(ALL) NOPASSWD: SMARTCTL
         Defaults!SMARTCTL !logfile, !syslog, !pam_session
+      state: absent
 
-  - name: smart.conf kopieren
+  - name: remove smart.conf
     become: yes
-    template:
-      src: "smart.conf"
-      dest: "/etc/telegraf/telegraf.d/smart.conf"
-    notify: telegraf_starten_aktivieren
+    file:
+      state: absent
+      path: "/etc/telegraf/telegraf.d/smart.conf"
+    notify: restart_telegraf

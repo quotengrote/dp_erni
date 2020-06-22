@@ -2,7 +2,7 @@
 
 ### Beschreibung
 
-### getestet auf
+### Funktioniert auf
 - [ ] Ubuntu (>=18.04)
 - [ ] Debian
 
@@ -19,3 +19,4 @@ befehl...
 - [ ] Cron immer als Var
 - [ ] dependencies als Meta
 - [ ] defaults wenn moeglich fuer alle Vars
+- [ ] Beispiel-Playbook

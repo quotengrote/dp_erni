@@ -1,0 +1,6 @@
+  - name: remove zfs.conf
+    become: yes
+    file:
+      state: absent
+      path: "/etc/telegraf/telegraf.d/zfs.conf"
+    notify: restart_telegraf

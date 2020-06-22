@@ -1,6 +1,6 @@
   - name: Erzwinge_Aktualisierung
     become: yes
-    shell: update-motd
+    command: update-motd
 
   - name: restart_sshd
     become: yes

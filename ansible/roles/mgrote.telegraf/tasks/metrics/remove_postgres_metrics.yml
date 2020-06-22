@@ -1,0 +1,6 @@
+  - name: remove postgres.conf
+    become: yes
+    file:
+      state: absent
+      path: "/etc/telegraf/telegraf.d/postgres.conf"
+    notify: restart_telegraf
