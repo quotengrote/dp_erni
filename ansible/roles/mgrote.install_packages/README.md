@@ -1,4 +1,4 @@
-## mgrote.paket_installation_update
+## mgrote.install_packages
 
 ### Beschreibung
 Fuehrt:
@@ -7,7 +7,7 @@ Fuehrt:
 2. `apt upgrade`
 aus.
 
-### getestet auf
+### Funktioniert auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian
 - [ ] <del>CentOS</del>

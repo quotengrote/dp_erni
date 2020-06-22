@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: pve2.grote.lan
   gather_facts: false
   serial: 3
   max_fail_percentage: 20%
@@ -9,6 +9,8 @@
       file:
         path: /etc/sudoers
         state: touch
+    - name: install sudo
+      raw: test -e /usr/bin/sudo || ( apt update && apt install sudo -y )  # noqa 301 301
 
   roles:
     - { role: nickjj.ansible-user, tags: "ansible-user" }

@@ -1,0 +1,12 @@
+  - name: lm-sensors installieren
+    become: yes
+    apt:
+      name: lm-sensors
+      state: present
+
+  - name: lm_sensors.conf kopieren
+    become: yes
+    template:
+      src: "lm_sensors.conf"
+      dest: "/etc/telegraf/telegraf.d/lm_sensors.conf"
+    notify: restart_telegraf

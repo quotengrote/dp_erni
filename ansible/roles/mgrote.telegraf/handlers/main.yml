@@ -1,12 +1,12 @@
 
-  - name: telegraf_starten_aktivieren
+  - name: restart_telegraf
     become: yes
     systemd:
       name: telegraf
       enabled: yes
       state: restarted
 
-  - name: hddtemp_starten_aktivieren
+  - name: restart_hddtemp
     become: yes
     systemd:
       name: hddtemp

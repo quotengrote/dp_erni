@@ -3,4 +3,4 @@
     template:
       src: "base_metrics.conf"
       dest: "/etc/telegraf/telegraf.d/base_metrics.conf"
-    notify: telegraf_starten_aktivieren
+    notify: restart_telegraf
