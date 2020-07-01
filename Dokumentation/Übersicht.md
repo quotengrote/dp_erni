@@ -27,6 +27,7 @@ Gruppe	|Nutzer					| Rollen
 User	|					| PVEVMAdmin, PVEDatastoreUser
 Admin	|root					| Administrator
 
+Die Nutzer sind in der KeePass Datenbank hinterlegt.
 #### Namenskonvention Nutzer
 - Position 1: u_ oder a_ (__U__ ser oder __A__ dmin)
 - Position 2: Nachname (klein)
