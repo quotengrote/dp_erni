@@ -6,3 +6,4 @@ Just a few rules...
 - für alles Pull-Requests erstellen
 - Documentation zusammen mit dem Code einpflegen
 - auf dem Master nur stabiler Code
+- Merge nur nach Review(Reviewer "taggen")
