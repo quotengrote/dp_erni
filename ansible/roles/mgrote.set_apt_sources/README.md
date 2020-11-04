@@ -9,6 +9,6 @@
 
 ### Variablen + Defaults
 ##### Apt-Cacher-NG Adresse
-acng_server: acng.grote.lan
+acng_server: acng.ausbildung.md
 ##### Apt-Cacher-NG Port
 acng_server_port: 9999
