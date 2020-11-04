@@ -5,10 +5,60 @@
   ### mgrote.deploy_ssh_keys
   ssh_user: mg
   ssh_pubkey: "{{ lookup('keepass', 'ssh_pubkey', 'password') }}"
-  ### mgrote.create_users
-  create_user_name: 'mg'
-  create_user_password: 'hallowelt'
-  create_user_groups: 'sudo, ssh'
+  ### ryandaniels.create_users
+  users:
+    - username: mg
+      password: "{{ lookup('keepass', 'linux_mg_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_mg_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+    - username: dm
+      password: "{{ lookup('keepass', 'linux_dm_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_dm_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+    - username: ks
+      password: "{{ lookup('keepass', 'linux_ks_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_ks_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+    - username: mg2 #mg ist für mich reserviert - gez. mg :-D
+      password: "{{ lookup('keepass', 'linux_m2g_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_mg2_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+
+
+
+
+
+
+
+
+
+
+
+
 
   # Ansible Variablen
   ### User
@@ -18,6 +68,7 @@
   ### python3
   # https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html
   ansible_python_interpreter: "/usr/bin/python3"
+
 
 
   # Ansible Plugin Variablen
