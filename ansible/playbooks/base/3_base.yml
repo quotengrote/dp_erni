@@ -1,0 +1,5 @@
+---
+  - hosts: all
+    roles:
+      - { role: mgrote.set_timezone, tags: "timezone" }
+      - { role: mgrote.restic, tags: "restic" }

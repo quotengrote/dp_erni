@@ -1,0 +1,18 @@
+---
+- hosts: docker
+  roles:
+    - { role: geerlingguy.pip, tags: "pip", become: true }
+    - { role: geerlingguy.docker, tags: "docker", become: true }
+    - { role: gantsign.ctop, tags: "ctop", become: true }
+
+#  tasks:
+#    - git: # noqa 401 401 502 502
+#        repo: 'https://github.com/quotengrote/docker' # noqa 401 401 502 502
+#        dest: /home/mg/docker
+#      become: yes
+
+  vars:
+    docker_users:
+      - mg
+      - root
+      - ansible-user
