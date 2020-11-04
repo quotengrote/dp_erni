@@ -1,3 +1,0 @@
-enable_smart="/dev/sda /dev/sdb /dev/sdc /dev/sdd /dev/sde /dev/sdf /dev/sdg /dev/sdh /dev/sdi /dev/sdj /dev/sdk /dev/sdl /dev/sdm /dev/sdn /dev/sdo /dev/sdp"
-start_smartd=yes
-smartd_opts="--interval=14400"
