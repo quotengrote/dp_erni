@@ -23,19 +23,3 @@
       name: "{{ programs_only_physical }}"
       state: present
     when: ansible_virtualization_role != 'guest'
-
-  - name: copy hddtemps.sh
-    become: yes
-    template:
-      src: "hddtemps.sh"
-      dest: "/usr/local/bin/hddtemps.sh"
-      mode: a+x
-    when: ansible_virtualization_role != 'guest'
-
-  - name: copy systemtemps.sh
-    become: yes
-    template:
-      src: "systemtemps.sh"
-      dest: "/usr/local/bin/systemtemps.sh"
-      mode: a+x
-    when: ansible_virtualization_role != 'guest'
