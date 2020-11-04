@@ -25,3 +25,6 @@ all:
     jumphost:
       hosts:
         jump.ausb.md:
+    ansible:
+      hosts:
+        ansible.ausb.md:
