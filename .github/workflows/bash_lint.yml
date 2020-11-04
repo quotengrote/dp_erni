@@ -10,6 +10,6 @@ jobs:
       - name: Run Shellcheck
         uses: azohra/shell-linter@latest
         with:
-          path: "/*.sh"
+          path: "/github/workspace/*.sh"
 
 # https://github.com/azohra/shell-linter
