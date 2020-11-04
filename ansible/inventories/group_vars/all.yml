@@ -1,6 +1,6 @@
 ---
   ### mgrote.set_apt_sources
-  acng_server: acng.grote.lan
+  acng_server: acng.ausbildung.md
   acng_server_port: 9999
   ### mgrote.deploy_ssh_keys
   ssh_user: mg

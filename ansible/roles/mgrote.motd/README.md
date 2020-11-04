@@ -12,7 +12,7 @@ Q:      Why haven't you graduated yet?
 A:      Well, Dad, I could have finished years ago, but I wanted
         my dissertation to rhyme.
 --------------------------------------------------------------------------------
-FQDN:                 test.grote.lan
+FQDN:                 test.ausbildung.md
 Distro:               Ubuntu 18.04 bionic
 Virtual:              YES
 Virtualization Type:  lxc
