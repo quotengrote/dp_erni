@@ -1,5 +1,0 @@
----
-  # Werte in Sekunden
-  f2b_bantime: 60
-  f2b_findtime: 600
-  f2b_maxretry: 5

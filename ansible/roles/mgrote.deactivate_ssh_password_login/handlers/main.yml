@@ -1,7 +1,0 @@
----
-  - name: restart_sshd
-    become: yes
-    systemd:
-      name: sshd
-      enabled: yes
-      state: restarted
