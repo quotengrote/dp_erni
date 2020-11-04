@@ -25,9 +25,3 @@
 3. base
 * dann der Rest wenn DNS &Co funktionieren
   * vorher KeePass mit SSH_keys und Passwörtern bestücken
-
-
-
-lookups prüfen
-vault pw anpassen
-Bash Runner funktioniert?
