@@ -1,0 +1,19 @@
+---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+    - rule: allow
+      to_port: 80
+      comment: 'pihole-webgui'
+    - rule: allow
+      to_port: 53
+      comment: 'pihole-dns'
+    - rule: allow
+      to_port: 67
+      comment: 'pihole-dhcp'
+    - rule: allow
+      to_port: 68
+      comment: 'pihole-dhcp'
