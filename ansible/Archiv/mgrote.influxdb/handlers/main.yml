@@ -1,0 +1,13 @@
+---
+- name: enabled_influxdb_service
+  become: yes
+  systemd:
+    name: influxdb
+    state: restarted
+    enabled: yes
+
+- name: restart_influxd
+  service:
+    name: influxd
+    state: restarted
+    enabled: yes
