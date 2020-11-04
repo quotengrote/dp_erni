@@ -9,7 +9,7 @@
 ### Racks
 | Rack 1                                   	| Rack Management                                	| Rack 2                                      	|
 |------------------------------------------	|------------------------------------------------	|---------------------------------------------	|
-| vSrv1Srv2<br>Sto1<br>Sto2<br>BladeCenter 	| Srv1<br>Srv2<br>Konsole<br>TTY<br>Sto1<br>Sto2 	| Srv1<br>Srv2<br>Sto1<br>Sto2<br>BladeCenter 	|
+| vSrv1Srv2<br>Sto1<br>Sto2 	| Srv1<br>Srv2<br>Konsole<br>TTY<br>Sto1<br>Sto2 	| Srv1<br>Srv2<br>Sto1<br>Sto2 	|
 
 
 ## Aufbau Software
@@ -21,6 +21,15 @@ Dazu gehören:
 	- DHCP dnsmasq
 	- DNS aus hostfile mit dnsmasq
 	- Apt-Cacher-NG(acng) als Paket Mirror für Debian-basierte OS.
+#### IPs
+
+##### MGMT:
+RMPHLPVE1 : 11.10.31.11 (derzeit noch linker Port)
+RMPHLPVE2 : 11.10.31.12 (derzeit noch linker Port)
+##### DatenLan:
+
+RMPHLPVE1 : n.A.
+RMPHLPVE2 : n.A.
 #### Nutzermatrix
 Gruppe	|Nutzer					| Rollen
 ----  	|---					|---
@@ -49,7 +58,7 @@ __Nutzernamen:__ u_mustermann_steffi,
 4. Position: Funktion (ProxMox = pve)
 5. Position: Laufende Nummer pro Rack(bei 0 beginnend)
 #### Beispiel
-R1PHLPVE0.ausbildung.md
+R1PHLPVE1.ausbildung.md
 Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
 
 ### IP-Addressplan
@@ -57,12 +66,12 @@ Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
 * VLAN 45
 * Gateway: 11.10.31.254
 * Proxy: 11.8.108.254:8080
+
 #### Vergaberegeln
 * 0-5 bleiben Frei
-* 6-50 - Clients(werden per DHCP verteilt)
-* 101-160 - R1
-* 50-100 - RM
-* 180-240 - R2
+* 6-50 - Server(Händisch/Ansible)
+* 51-200 DHCP
+* 201-254 Spielwiese (Händisch)
 
 ## "Best Practises"
 - VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden.
