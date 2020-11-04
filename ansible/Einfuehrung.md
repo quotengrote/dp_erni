@@ -17,12 +17,17 @@
 1. Nutzer für Erstanmeldung setzen
 1. lokalen ssh-key für ansible-user generieren(ohne Passwort)
 2. nach RollOut IPs entfernen und Host per Hostnamen ansprechen
-1. Nur ansible Playbook ausrollen(nicht 0_base, die restlichen Dienste stehen noch nicht bereit)
+
+## Reihenfolge Playbooks
+1. ansible
+2. acng
+  * Danach set_apt_sources einkommentieren
+3. base
+* dann der Rest wenn DNS &Co funktionieren
+  * vorher KeePass mit SSH_keys und Passwörtern bestücken
 
 
-set_apt_sources einkommentieren nach acng
+
 lookups prüfen
-vars files prüfen
 vault pw anpassen
-ssh keys generieren und in keepass packen
-nutzer pw in keepass packen
+Bash Runner funktioniert?
