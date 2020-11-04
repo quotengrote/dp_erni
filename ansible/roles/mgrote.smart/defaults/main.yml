@@ -1,5 +1,0 @@
----
-smart_smartctlmail_cron_minutes: 15
-smart_smartctlmail_cron_hours: 6
-smart_smartctlmail_cron_weekday: 3
-telegraf_smart_pfad_zu_smartctl: "/usr/sbin/smartctl"
