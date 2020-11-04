@@ -1,4 +1,0 @@
----
-- hosts: ansible
-  roles:
-    - { role: mgrote.ansible_host, tags: "ansible_host" }
