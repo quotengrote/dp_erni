@@ -13,6 +13,7 @@
     - tree
     - curl
     - logrotate
+    - tmux
     - ncdu
     - net-tools
     - sysstat
