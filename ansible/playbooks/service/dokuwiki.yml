@@ -1,6 +1,0 @@
----
-- hosts: dokuwiki
-  roles:
-    - { role: mgrote.dokuwiki, tags: "dokuwiki" }
-  vars:
-    dokuwiki_update: false # Muss für den ersten Lauf aktiviert sein!
