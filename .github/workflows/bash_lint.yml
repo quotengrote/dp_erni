@@ -1,3 +1,6 @@
+name: bash-lint
+on: [pull_request]
+
 jobs:
   lint:
     runs-on: ubuntu-latest
