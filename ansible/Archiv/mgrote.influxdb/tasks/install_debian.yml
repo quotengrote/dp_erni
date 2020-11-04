@@ -1,0 +1,10 @@
+---
+  - name: install InfluxDB packages - Debian
+    become: yes
+    apt:
+      name:
+        - influxdb
+        - influxdb-client
+    notify:
+      - enabled_influxdb_service
+      - restart_influxd

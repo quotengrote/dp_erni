@@ -1,0 +1,5 @@
+---
+  - name: install influxdb python package
+    become: yes
+    pip:
+      name: influxdb
