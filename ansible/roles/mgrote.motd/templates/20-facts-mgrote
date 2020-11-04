@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "FQDN:                 {{ ansible_fqdn }}"
+echo "Distro:               {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+echo "Virtual:              {{ 'YES' if ansible_virtualization_role == 'guest' else 'NO' }}"
+echo "Virtualization Type:  {{ ansible_virtualization_type }}"
+#echo "Timezone:             {{ ansible_date_time.tz }}({{ ansible_date_time.tz_offset }})"
+up=$(uptime -p)
+echo "Uptime:               $up"

@@ -1,0 +1,42 @@
+  - name: Erstelle Nutzer
+    become: yes
+    user:
+      name: "{{ create_user_name }}"
+      groups: "{{ create_user_groups }}"
+      state: present
+      shell: /bin/bash
+      password: "{{ create_user_password | password_hash('sha512') }}"
+      update_password: on_create
+#    no_log: true
+
+
+
+  - name: touch ".sudo_as_admin_successful"
+    become: yes
+#    when: sudo_as_admin_successful_existiert.stat.exists == False
+    file:
+      path: /home/{{ create_user_name }}/.sudo_as_admin_successful
+      state: touch
+      access_time: preserve
+      modification_time: preserve
+#    no_log: true
+    # entfernt:
+    # To run a command as administrator (user "root"), use "sudo <command>".
+    # See "man sudo_root" for details.
+    # unter der motd, bevor man sich das erstmal mit sudo angemeldet hat
+
+  - name: create .selected_editor
+    become: yes
+    template:
+      src: ".selected_editor"
+      dest: "/home/{{ create_user_name }}/.selected_editor"
+#    no_log: true
+
+  # Validate the sudoers file before saving
+  - name: set sudo without  password
+    become: yes
+    template:
+      src: sudoers
+      dest: /etc/sudoers.d/{{ create_user_name }}
+      validate: /usr/sbin/visudo -cf %s
+#    no_log: true

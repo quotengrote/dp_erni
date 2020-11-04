@@ -1,0 +1,41 @@
+  - name: apt update
+    become: yes
+    apt:
+      update_cache: yes
+      cache_valid_time: 300
+
+  - name: install common-packages
+    become: yes
+    apt:
+      name: "{{ programs_common }}"
+      state: present
+
+  - name: install vm-packages
+    become: yes
+    apt:
+      name: "{{ programs_only_vms }}"
+      state: present
+    when: ansible_virtualization_role == 'guest'
+
+  - name: install physical-packages
+    become: yes
+    apt:
+      name: "{{ programs_only_physical }}"
+      state: present
+    when: ansible_virtualization_role != 'guest'
+
+  - name: copy hddtemps.sh
+    become: yes
+    template:
+      src: "hddtemps.sh"
+      dest: "/usr/local/bin/hddtemps.sh"
+      mode: a+x
+    when: ansible_virtualization_role != 'guest'
+
+  - name: copy systemtemps.sh
+    become: yes
+    template:
+      src: "systemtemps.sh"
+      dest: "/usr/local/bin/systemtemps.sh"
+      mode: a+x
+    when: ansible_virtualization_role != 'guest'

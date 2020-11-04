@@ -1,0 +1,26 @@
+# meta file for ufw
+---
+galaxy_info:
+  role_name: ufw
+  author: Mischa ter Smitten
+  company: Oefenweb.nl B.V.
+  description: Set up ufw in Debian-like systems
+  license: MIT
+  min_ansible_version: 2.6.0
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+        - xenial
+        - bionic
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+        - stretch
+  galaxy_tags:
+    - system
+    - networking
+    - firewall
+dependencies: []

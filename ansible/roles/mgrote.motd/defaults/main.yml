@@ -1,0 +1,12 @@
+---
+motd_wetter_ort: "Magdeburg"
+motd_wetter_aktiv: false
+motd_fortune_aktiv: false
+
+managed_files:
+  - 00-ansible
+  - 05-fortune
+  - 10-wetter
+  - 20-facts
+  - 90-updates
+  - 91-reboot
