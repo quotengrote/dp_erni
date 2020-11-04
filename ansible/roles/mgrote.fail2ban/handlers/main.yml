@@ -1,7 +1,0 @@
----
-  - name: restart_f2b
-    become: yes
-    systemd:
-      name: fail2ban
-      enabled: yes
-      state: restarted

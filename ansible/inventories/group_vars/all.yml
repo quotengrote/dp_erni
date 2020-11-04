@@ -9,29 +9,6 @@
   create_user_name: 'mg'
   create_user_password: 'hallowelt'
   create_user_groups: 'sudo, ssh'
-  ### mgrote.tmux
-  tmux_conf_destination: "/home/mg/.tmux.conf"
-  tmux_bashrc_destination: "/home/mg/.bashrc"
-  tmux_standardsession_name: "default"
-  ### mgrote.dotfiles
-  dotfiles_local_repo_directory: "/home/mg/dotfiles-repo"
-  dotfiles_user: mg
-  dotfiles_link_target: "/home/mg"
-  dotfiles_remote_repo: "https://github.com/quotengrote/dotfiles"
-  dotfiles_files_to_copy:
-    - .tmux.conf
-    - .bash_aliases
-    - .gitconfig
-  ### mgrote.fail2ban
-  f2b_bantime: 300
-  f2b_findtime: 300
-  f2b_maxretry: 5
-  ### oefenweb.ufw
-  ufw_rules:
-    - rule: allow
-      to_port: 22
-      protocol: tcp
-      comment: 'ssh'
 
   # Ansible Variablen
   ### User

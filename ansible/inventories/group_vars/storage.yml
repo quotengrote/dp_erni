@@ -8,15 +8,3 @@
   smb_workgroup: WORKGROUP
   smb_nutzer_loeschen:
     - { name: 'platzhalter' }
-  ### oefenweb.ufw
-  ufw_rules:
-    - rule: allow
-      to_port: 22
-      protocol: tcp
-      comment: 'ssh'
-    - rule: allow
-      to_port: 445
-      comment: 'smb'
-    - rule: allow
-      to_port: 139
-      comment: 'smb'

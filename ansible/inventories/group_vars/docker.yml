@@ -1,14 +1,3 @@
 ---
-  ### oefenweb.ufw
-  ufw_rules:
-#    - rule: allow
-#      to_port: 22
-#      protocol: tcp
-#      comment: 'ssh'
-#    - rule: allow
-#      to_port: 3000
-#      comment: 'rssbridge'
-    - rule: allow
-      comment: 'alles erlauben'
   ### mgrote.create_users
   create_user_groups: 'sudo, ssh, docker'
