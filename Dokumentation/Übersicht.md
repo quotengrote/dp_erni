@@ -49,7 +49,7 @@ __Nutzernamen:__ u_mustermann_steffi,
 4. Position: Funktion (ProxMox = pve)
 5. Position: Laufende Nummer pro Rack(bei 0 beginnend)
 #### Beispiel
-R1PHLPVE0.azubi.erni
+R1PHLPVE0.ausbildung.md
 Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
 
 ### IP-Addressplan

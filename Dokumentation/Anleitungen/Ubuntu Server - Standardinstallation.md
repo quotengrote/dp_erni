@@ -48,7 +48,7 @@
                                   - 11.10.31.53/24
                           gateway4: 11.10.31.254
                           nameservers:
-                                  search: [azubi.erni]
+                                  search: [ausbildung.md]
                                   addresses: [11.10.31.53]
 
 Konfiguration übernehmen
@@ -66,14 +66,14 @@ Neustart
 2. ping VON ip im internen Netzwerk
 5. Namensauflösung intern testen
 
-  ```dig <interner_hostname.azubi.erni>```
+  ```dig <interner_hostname.ausbildung.md>```
 
 
 ##### Repository - Apt-Cacher-NG setzen
 `sudo nano /etc/apt/sources.list`
 proxy pro Repo ergänzen
 
-deb http://de.archive.ubuntu.com/ubuntu/ eoan main restricted --> deb http://rmvmlacng0.azubi.erni:9999/de.archive.ubuntu.com/ubuntu/ eoan main restricted
+deb http://de.archive.ubuntu.com/ubuntu/ eoan main restricted --> deb http://rmvmlacng0.ausbildung.md:9999/de.archive.ubuntu.com/ubuntu/ eoan main restricted
 
 
 ##### Testen
