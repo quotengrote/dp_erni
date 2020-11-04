@@ -1,0 +1,13 @@
+---
+- hosts: virt
+  roles:
+    - { role: ironicbadger.proxmox-nag-removal, tags: "nag", become: yes }
+    - { role: mgrote.apcupsd, tags: "apcupsd" }
+    - { role: mgrote.smart, tags: "smart" }
+    - { role: mgrote.zfs_tools, tags: "zfs_tools" }
+    - { role: mgrote.postfix-gmail, tags: "postfix-gmail" }
+    - { role: mgrote.sanoid, tags: "sanoid" }
+    - { role: mgrote.ecc-rasdaemon,
+        tags: "ecc",
+        when: "'virtproduction' in group_names" }
+    - { role: mgrote.cv4pve-autosnap, tags: "cv4pve" }

@@ -1,0 +1,8 @@
+---
+  - hosts: all
+    roles:
+      - { role: mgrote.motd, tags: "motd" }
+      - { role: mgrote.tmux,
+          tags: "tmux",
+          when: "not 'virt' in group_names" }
+      - { role: mgrote.dotfiles, tags: "dotfiles" }
