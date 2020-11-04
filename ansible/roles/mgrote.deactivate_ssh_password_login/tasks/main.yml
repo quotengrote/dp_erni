@@ -1,0 +1,10 @@
+---
+  - name: prohibit ssh login with password
+    become: yes
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: '#PasswordAuthentication yes'
+      line: 'PasswordAuthentication no'
+      state: present
+      backrefs: yes
+    notify: restart_sshd

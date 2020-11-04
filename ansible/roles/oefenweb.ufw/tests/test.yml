@@ -1,0 +1,7 @@
+# test file for ufw
+---
+- hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - ../../
