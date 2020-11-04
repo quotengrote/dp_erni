@@ -1,8 +1,0 @@
----
-  dotfiles_local_repo_directory: "/home/mg/dotfiles-repo"
-  dotfiles_user: "mg"
-  dotfiles_link_target: "/home/mg"
-  dotfiles_remote_repo: "https://github.com/quotengrote/dotfiles"
-  dotfiles_files_to_copy:
-    - .tmux.conf
-    - .bash_aliases
