@@ -7,6 +7,8 @@ Die "Secrets" liegen in der KeepassDB die mit dem Kennwort aus "vault-pass.yml" 
 "vault-pass.yml" steht mit in der .gitignore
 Die Variable "vault_password_file" ist mit " ~/ansible/vault-pass.yml" in der ansible.cfg gesetzt.
 
+Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
+
 # Abfrage der Secrets in tasks/playbooks
 `restic_repository_password: "{{ lookup('keepass', 'restic_repository_password', 'password') }}"`
 
