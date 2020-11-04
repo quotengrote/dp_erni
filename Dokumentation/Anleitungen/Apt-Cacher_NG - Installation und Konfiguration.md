@@ -1,5 +1,5 @@
 ### Apt-Cacher-NG
-* Url für WebGui: http://rmvmlacng0.azubi.erni:9999/acng-report.html
+* Url für WebGui: http://rmvmlacng0.ausbildung.md:9999/acng-report.html
 #### Installation
 1. `sudo apt install apt-cacher-ng`
 6. `sudo nano /etc/apt-cacher-ng/acng.conf`
