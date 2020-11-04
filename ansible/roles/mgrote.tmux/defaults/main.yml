@@ -1,4 +1,0 @@
----
-  tmux_conf_destination: "/home/mg/.tmux.conf"
-  tmux_bashrc_destination: "/home/mg/.bashrc"
-  tmux_standardsession_name: "default"
