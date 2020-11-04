@@ -12,4 +12,17 @@
     ```
     git clone https://github.com/quotengrote/dp_ausb_md
     ```
-1. los gehts...
+2. `ansible-galaxy collection install community.general`
+1. IPs in Inventory setzen
+1. Nutzer für Erstanmeldung setzen
+1. lokalen ssh-key für ansible-user generieren(ohne Passwort)
+2. nach RollOut IPs entfernen und Host per Hostnamen ansprechen
+1. Nur ansible Playbook ausrollen(nicht 0_base, die restlichen Dienste stehen noch nicht bereit)
+
+
+set_apt_sources einkommentieren nach acng
+lookups prüfen
+vars files prüfen
+vault pw anpassen
+ssh keys generieren und in keepass packen
+nutzer pw in keepass packen
