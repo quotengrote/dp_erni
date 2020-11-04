@@ -1,0 +1,25 @@
+all:
+  children:
+    production:
+      children:
+        wireguard:
+          hosts:
+            wireguard.grote.lan
+        dokuwiki:
+          hosts:
+            dokuwiki2.grote.lan:
+        storage:
+          hosts:
+            fileserver2.grote.lan:
+        dns:
+          hosts:
+            pi.hole:
+        acng:
+          hosts:
+            acng.grote.lan:
+        ansible:
+          hosts:
+            ansible.grote.lan:
+        docker:
+          hosts:
+            docker.grote.lan:

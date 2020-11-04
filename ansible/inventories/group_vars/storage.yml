@@ -1,0 +1,22 @@
+---
+  ### mgrote.smb_fileserver
+  smb_nutzer:
+    - { name: 'win10', groups: 'users', password: 'hallowelt' }
+  smb_freigaben:
+    - { freigabename: 'tmp', ordnerpfad: '/shares/tmp', lese_nutzer: 'XXX', schreibe_nutzer: 'XXX XXX' }
+
+  smb_workgroup: WORKGROUP
+  smb_nutzer_loeschen:
+    - { name: 'platzhalter' }
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+    - rule: allow
+      to_port: 445
+      comment: 'smb'
+    - rule: allow
+      to_port: 139
+      comment: 'smb'

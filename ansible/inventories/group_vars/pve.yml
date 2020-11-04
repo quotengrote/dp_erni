@@ -1,0 +1,25 @@
+---
+
+  ### mgrote.dotfiles
+  dotfiles_local_repo_directory: "/root/dotfiles-repo"
+  dotfiles_user: "root"
+  dotfiles_link_target: "/root"
+  dotfiles_remote_repo: "https://github.com/quotengrote/dotfiles"
+  dotfiles_files_to_copy:
+    - .tmux.conf
+    - .bash_aliases
+    - .gitconfig
+  ### mgrote.pve_nag-buster
+  pve_nag_buster_update: false
+  ### mgrote.tmux
+  tmux_conf_destination: "/root/.tmux.conf"
+  tmux_bashrc_destination: "/root/.bashrc"
+  tmux_standardsession_name: "default"
+  ### mgrote.apcupsd
+  ONBATTERYDELAY: 10
+  BATTERYLEVEL: 50
+  MINUTES: 10
+
+  # Ansible Variablen
+  ### sudo
+  sudo: false

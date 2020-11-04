@@ -1,0 +1,57 @@
+---
+  ### mgrote.set_apt_sources
+  acng_server: acng.grote.lan
+  acng_server_port: 9999
+  ### mgrote.deploy_ssh_keys
+  ssh_user: mg
+  ssh_pubkey: "{{ lookup('keepass', 'ssh_pubkey', 'password') }}"
+  ### mgrote.create_users
+  create_user_name: 'mg'
+  create_user_password: 'hallowelt'
+  create_user_groups: 'sudo, ssh'
+  ### mgrote.tmux
+  tmux_conf_destination: "/home/mg/.tmux.conf"
+  tmux_bashrc_destination: "/home/mg/.bashrc"
+  tmux_standardsession_name: "default"
+  ### mgrote.dotfiles
+  dotfiles_local_repo_directory: "/home/mg/dotfiles-repo"
+  dotfiles_user: mg
+  dotfiles_link_target: "/home/mg"
+  dotfiles_remote_repo: "https://github.com/quotengrote/dotfiles"
+  dotfiles_files_to_copy:
+    - .tmux.conf
+    - .bash_aliases
+    - .gitconfig
+  ### mgrote.fail2ban
+  f2b_bantime: 300
+  f2b_findtime: 300
+  f2b_maxretry: 5
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+
+  # Ansible Variablen
+  ### User
+  ansible_user: "ansible-user"
+  ### SSH
+  ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
+  ### python3
+  # https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html
+  ansible_python_interpreter: "/usr/bin/python3"
+
+
+  # Ansible Plugin Variablen
+  ### Keepass
+  # https://github.com/viczem/ansible-keepass
+  # liegt unter /home/mg/ansible/.ansible/plugins/keepass.py
+  keepass_dbx: "/home/mg/ansible/keepass_db.kdbx"
+  keepass_psw: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          62383737623066396239383336646164616537646630653964313532383130343533346561633039
+          34373061XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX0376537633164
+          61613132326536666466636632363866393066656236303766333338356337396338376266346631
+          6364336331623539300a313562303161373631613734313938346666376239613333333363376236
+          38363035376662353135333332363431343833656666643036326234656166643531
