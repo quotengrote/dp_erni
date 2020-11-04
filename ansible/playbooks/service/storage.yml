@@ -14,5 +14,4 @@
 ---
 - hosts: storage
   roles:
-    - { role: mgrote.postfix-gmail, tags: "postfix-gmail" }
     - { role: mgrote.fileserver_smb, tags: "fileserver_smb" }
