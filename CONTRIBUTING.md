@@ -7,3 +7,4 @@ Just a few rules...
 - Documentation zusammen mit dem Code einpflegen
 - auf dem Master nur stabiler Code
 - Merge nur nach Review(Reviewer "taggen")
+- Password/Secretänderungen in Keepass als einzelner Commit mit Information welcher Eintrag geändert wurde
