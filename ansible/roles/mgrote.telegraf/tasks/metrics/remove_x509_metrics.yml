@@ -1,6 +1,0 @@
-  - name: remove ssl.conf
-    become: yes
-    file:
-      state: absent
-      path: "/etc/telegraf/telegraf.d/ssl.conf"
-    notify: restart_telegraf

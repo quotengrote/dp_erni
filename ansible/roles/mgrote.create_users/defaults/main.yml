@@ -1,3 +1,0 @@
----
-  base_users:
-    - { name: 'mg', password: 'hallowelt', groups: 'sudo, ssh'}
