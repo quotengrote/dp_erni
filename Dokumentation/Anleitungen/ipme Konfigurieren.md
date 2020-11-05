@@ -1,14 +1,14 @@
-# Anleitung ipme konfigurieren
+# Anleitung IPMI konfigurieren
 #### Bios anpassen
 - mit F2 ins BIOS Booten
 - server mgnt
-  - irmc lan parameter configuration ->IP Konfiguration anpassen
+  - iRMC lan parameter configuration ->IP Konfiguration anpassen
 
 
-#### IPME video redirection konfigurieren
-1. ipme in WebGui öffnen [ip in Doku](/Dokumentation/Übersicht.md)
-1. Console Redirection -> Video Redirection ->start Video Redirection
-1. Java Datei speichern (runterladen) und öffnen und ausführen (Warnung ignorieren)
+#### IPMI video redirection konfigurieren
+1. IPMI in WebGui öffnen [ip in Doku](/Dokumentation/Übersicht.md)
+1. Console Redirection -> Video Redirection -> start Video Redirection
+1. Java Datei speichern (runterladen), öffnen und ausführen (Warnung ignorieren)
 
 1. Bei folgenden Fehlermeldungen:
    ![Anwendungsfehler](/Bilder/ipme/Anwendungsfehler.png)
@@ -22,8 +22,8 @@
     ![Java-Anwendung blockiert](/Bilder/ipme/Java-Anwendung-blockiert.png)
 (https://www.java.com/de/download/help/exception_sitelist.html)
   Ausnahme hinzufügen:
-    Java ->Sicherheit -Siteliste bearbeiten ->hinzufügen:
+    Java -> Sicherheit -Siteliste bearbeiten -> hinzufügen:
     Anleitung:
-    URL hinzufügen _Warnmeldung ignorieren_ ->Fortfahren ->
+    URL hinzufügen _Warnmeldung ignorieren_ -> Fortfahren ->
 
     Sicherheitswarnung akzeptieren und ausführen
