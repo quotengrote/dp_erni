@@ -1,11 +1,12 @@
 # Anleitung IPMI konfigurieren
-#### Bios anpassen
+
+# Bios anpassen
 - mit F2 ins BIOS Booten
 - server mgnt
   - iRMC lan parameter configuration ->IP Konfiguration anpassen
 
 
-#### IPMI video redirection konfigurieren
+# IPMI video redirection konfigurieren
 1. IPMI in WebGui öffnen [ip in Doku](/Dokumentation/Übersicht.md)
 1. Console Redirection -> Video Redirection -> start Video Redirection
 1. Java Datei speichern (runterladen), öffnen und ausführen (Warnung ignorieren)
