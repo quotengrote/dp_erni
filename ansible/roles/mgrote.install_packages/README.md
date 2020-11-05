@@ -7,15 +7,12 @@ Fuehrt:
 2. `apt upgrade`
 aus.
 
+Es wird unterschieden ob das Ziel eine VM ist oder nicht.
+
 ### Funktioniert auf
 - [x] Ubuntu (>=18.04)
 - [x] Debian
-- [ ] <del>CentOS</del>
 - [x] ProxMox 6.1
 
 ### Variablen + Defaults
-##### Programme
-   - htop
-   - nano
-   - mc
-   - curl
+- siehe default/main.yml

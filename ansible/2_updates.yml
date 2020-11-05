@@ -1,7 +1,0 @@
----
-- hosts: fileserver2.grote.lan
-  serial: 3
-  max_fail_percentage: 20%
-  roles:
-    - { role: mgrote.set_apt_sources, tags: "apt_sources" }
-    - { role: mgrote.install_packages, tags: "updates" }

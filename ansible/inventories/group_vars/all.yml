@@ -1,0 +1,82 @@
+---
+  ### mgrote.set_apt_sources
+  acng_server: acng.ausbildung.md
+  acng_server_port: 9999
+  ### ryandaniels.create_users
+  users:
+    - username: mg
+      password: "{{ lookup('keepass', 'linux_mg_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_mg_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+    - username: dm
+      password: "{{ lookup('keepass', 'linux_dm_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_dm_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+    - username: ks
+      password: "{{ lookup('keepass', 'linux_ks_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_ks_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+    - username: mg2 #mg ist für mich reserviert - gez. mg :-D
+      password: "{{ lookup('keepass', 'linux_m2g_password', 'password') }}" #muss in KeePass existieren; mkpasswd --method=SHA-512
+      update_password: on_create
+      ssh_key: "{{ lookup('keepass', 'linux_mg2_ssh_key', 'password') }}" #muss in KeePass existieren; ssh-keygen; cat .ssh/id_rsa.pub
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh
+      servers:
+        - all
+
+
+
+
+
+
+
+
+
+
+
+
+
+  # Ansible Variablen
+  ### User
+  ansible_user: "ansible-user"
+  ### SSH
+  ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
+  ### python3
+  # https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html
+  ansible_python_interpreter: "/usr/bin/python3"
+
+
+
+  # Ansible Plugin Variablen
+  ### Keepass
+  # https://github.com/viczem/ansible-keepass
+  # liegt unter /home/mg/ansible/.ansible/plugins/keepass.py
+  keepass_dbx: "/home/ansible-user/ansible/keepass_db.kdbx"
+  keepass_psw: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          61656464313536326238643561373766373765663932373331333264343463326635616535653430
+          6530623166323239366434333531343733386433373330320a633364616239313163383861626436
+          34646336313831336536373464643361316133346134343031666663393565306231343637303237
+          3562333034313434360a346333336634366435346162353964663538313366346432643061373438
+          6665

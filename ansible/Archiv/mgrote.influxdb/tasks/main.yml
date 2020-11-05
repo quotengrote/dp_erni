@@ -1,0 +1,14 @@
+---
+  - name: include tasks - install redhat
+    include_tasks: install_redhat.yml
+    when: ansible_facts['os_family'] == 'RedHat'
+
+  - name: include tasks - install debian
+    include_tasks: install_debian.yml
+    when: ansible_facts['os_family'] == 'Debian'
+
+  - name: include tasks - python
+    include_tasks: install_python.yml
+
+  - name: include tasks - config
+    include_tasks: config.yml

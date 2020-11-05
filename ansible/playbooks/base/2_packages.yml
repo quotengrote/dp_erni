@@ -1,0 +1,10 @@
+---
+  - hosts: all
+    serial: 3
+    max_fail_percentage: 20%
+    roles:
+#      - { role: mgrote.set_apt_sources, tags: "apt_sources",
+#          when: "not 'hypervisor' in group_names" }
+      - { role: mgrote.update_packages, tags: "updates" }
+      - { role: mgrote.install_packages,
+          tags: "install" }

@@ -1,6 +1,0 @@
-  - name: base_metrics.conf kopieren
-    become: yes
-    template:
-      src: "base_metrics.conf"
-      dest: "/etc/telegraf/telegraf.d/base_metrics.conf"
-    notify: restart_telegraf

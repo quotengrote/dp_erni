@@ -1,0 +1,22 @@
+---
+  - name: copy influxdb.conf
+    become: yes
+    template:
+      src: influxdb.conf
+      dest: /etc/influxdb/influxdb.conf
+
+  - name: restart_influxd
+    service:
+      name: influxd
+      state: started
+      enabled: yes
+
+  - name: create influxdb users
+    become: yes
+    influxdb_user:
+      user_name: "{{ item.name }}"
+      user_password: "{{ item.password }}"
+      state: present
+      hostname: localhost
+    loop: "{{ influxdb_users }}"
+    no_log: true

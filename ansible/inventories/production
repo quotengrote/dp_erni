@@ -1,0 +1,40 @@
+all:
+  children:
+    hypervisor:
+      hosts:
+        pve1.ausbildung.md
+          ansible_host: nnn.nnn.nnn.nnn
+        pve2.ausbildung.md
+          ansible_host: nnn.nnn.nnn.nnn
+    dns:
+      hosts:
+        dns1.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn
+    storage:
+      hosts:
+        fileserver1.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn
+    acng:
+      hosts:
+        acng.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn
+    ansible:
+      hosts:
+        ansible.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn
+    docker:
+      hosts:
+        docker.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn
+    git:
+      hosts:
+        git.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn
+    jumphost:
+      hosts:
+        jump.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn
+    ansible:
+      hosts:
+        ansible.ausbildung.md:
+          ansible_host: nnn.nnn.nnn.nnn

@@ -1,7 +1,0 @@
-  - name: zfs.conf kopieren
-    become: yes
-    template:
-      src: "zfs.conf"
-      dest: "/etc/telegraf/telegraf.d/zfs.conf"
-    notify: restart_telegraf
-#https://gist.github.com/bartmeuris/41caf0998f38a2fae7cf1ff92cd4a5fa

@@ -1,0 +1,8 @@
+---
+  grafana_http_port: 3000
+  grafana_url: "http://tig.ausbildung.md:3000"
+  grafana_server: "tig.ausbildung.md"
+  grafana_influx_url: "http://tig.ausbildung.md:8086"
+  grafana_user: admin
+  grafana_password: hallowelt
+  grafana_telegraf_database_name: telegraf

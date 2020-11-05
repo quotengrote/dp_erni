@@ -1,9 +1,18 @@
-  - name: install package update-motd
+  - name: install fortune
+    become: yes
+    apt:
+      name:
+        - fortune
+      state: present
+    when: motd_fortune_aktiv
+
+  - name: install packages
     become: yes
     apt:
       name:
         - update-motd
       state: present
+    when: ansible_facts['os_family'] == "Ubuntu"
 ##################
   - name: 'Ubuntu : remove motd'
     become: yes
@@ -12,6 +21,7 @@
       state: absent
     with_items:
       - 10-help-text
+      - 10-uname
       - 50-motd-news
       - 80-livepatch
       - 50-landscape-sysinfo
@@ -67,7 +77,7 @@
   - name: setup new motd - wetter
     become: yes
     template:
-      src: '10-wetter'
+      src: '10-wetter-mgrote'
       dest: '/etc/update-motd.d/10-wetter-mgrote'
       owner: root
       group: root
@@ -78,6 +88,6 @@
   - name: delete Wetter
     become: yes
     file:
-      path: /etc/update-motd.d/10-wetter-mgrote
+      path: '/etc/update-motd.d/10-wetter-mgrote'
       state: absent
     when: not motd_wetter_aktiv

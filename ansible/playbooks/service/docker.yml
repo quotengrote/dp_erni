@@ -1,0 +1,6 @@
+---
+- hosts: docker
+  roles:
+    - { role: geerlingguy.pip, tags: "pip", become: true }
+    - { role: geerlingguy.docker, tags: "docker", become: true }
+    - { role: gantsign.ctop, tags: "ctop", become: true }
