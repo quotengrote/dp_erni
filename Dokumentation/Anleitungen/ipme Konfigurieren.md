@@ -1,4 +1,4 @@
-### Anleitung ipme konfigurieren
+# Anleitung ipme konfigurieren
 #### Bios anpassen
 - mit F2 ins BIOS Booten
 - server mgnt
