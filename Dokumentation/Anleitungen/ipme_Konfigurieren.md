@@ -26,6 +26,6 @@
     Ausnahme hinzufügen:
     Java -> Sicherheit -> Siteliste bearbeiten -> hinzufügen:
     Anleitung:
-    URL hinzufügen -> _Warnmeldung_ _ignorieren_ -> Fortfahren ->
+    URL hinzufügen -> _Warnmeldung__ignorieren_ -> Fortfahren ->
 
     Sicherheitswarnung akzeptieren und ausführen
