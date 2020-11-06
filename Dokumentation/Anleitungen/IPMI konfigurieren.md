@@ -13,7 +13,7 @@
 1. Java Datei speichern (runterladen), öffnen und ausführen (Warnung ignorieren)
 
 1. Bei folgenden Fehlermeldungen:
-   ![Anwendungsfehler](/Bilder/ipme/Anwendungsfehler.png)[^1]
+   ![Anwendungsfehler](/Bilder/IPMI/Anwendungsfehler.png)[^1]
 
     in Pfad: _C:\Program Files (x86)\Java\jre<aktuellste_Versionsnummer>\lib\security_
     __oder__
@@ -22,7 +22,7 @@
     `jdk.jar.disabledAlgorithms=MD2, MD5, RSA keySize < 1024`
     ändern zu `jdk.jar.disabledAlgorithms=MD2 keySize < 1024`
 
-    ![Java-Anwendung blockiert](/Bilder/ipme/Java-Anwendung-blockiert.png)[^2]
+    ![Java-Anwendung blockiert](/Bilder/IPMI/Java-Anwendung-blockiert.png)[^2]
 
     Ausnahme hinzufügen:
     Java -> Sicherheit -> Siteliste bearbeiten -> hinzufügen:
