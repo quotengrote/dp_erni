@@ -19,11 +19,11 @@
     Die Datei: ___java.security___ mit Admin Rechten bearbeiten.
     `jdk.jar.disabledAlgorithms=MD2, MD5, RSA keySize < 1024`
     ändern zu `jdk.jar.disabledAlgorithms=MD2 keySize < 1024`
-(<https://blog.wydler.eu/2017/11/04/fujitsu-irmc-s3-unter-java-jre-weiter-nutzen/>)
+    (<https://blog.wydler.eu/2017/11/04/fujitsu-irmc-s3-unter-java-jre-weiter-nutzen/>)
 
     ![Java-Anwendung blockiert](/Bilder/ipme/Java-Anwendung-blockiert.png)
-(<https://www.java.com/de/download/help/exception_sitelist.html>)
-  Ausnahme hinzufügen:
+    (<https://www.java.com/de/download/help/exception_sitelist.html>)
+    Ausnahme hinzufügen:
     Java -> Sicherheit -> Siteliste bearbeiten -> hinzufügen:
     Anleitung:
     URL hinzufügen -> _Warnmeldung_ _ignorieren_ -> Fortfahren ->
