@@ -23,6 +23,7 @@ Dazu gehören:
 	- Apt-Cacher-NG(acng) als Paket Mirror für Debian-basierte OS.
 #### IPs
 
+
 ##### Daten:
 RMPHLPVE1 : 11.10.31.11 (derzeit noch linker Port)
 RMPHLPVE2 : 11.10.31.12 (derzeit noch linker Port)
@@ -31,7 +32,6 @@ RMPHLPVE2 : 11.10.31.12 (derzeit noch linker Port)
 __iRMC(IPMI)__
 RMPHLPVE1 : 11.10.31.6 (MGMT-Port)
 RMPHLPVE2 : 11.10.31.7 (MGMT-Port)
-
 
 RMPHLPVE1 : n.A.
 RMPHLPVE2 : n.A.

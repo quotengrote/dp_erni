@@ -1,0 +1,10 @@
+  - name: update apt cache
+    become: yes
+    apt:
+      update_cache: yes
+      cache_valid_time: 30
+
+  - name: updated installed packages
+    become: yes
+    apt:
+      upgrade: dist

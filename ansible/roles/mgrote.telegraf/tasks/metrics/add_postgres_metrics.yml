@@ -1,6 +1,0 @@
-  - name: postgres.conf kopieren
-    become: yes
-    template:
-      src: "postgres.conf"
-      dest: "/etc/telegraf/telegraf.d/postgres.conf"
-    notify: telegraf_starten_aktivieren

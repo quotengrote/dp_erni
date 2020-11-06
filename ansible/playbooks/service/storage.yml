@@ -1,0 +1,17 @@
+###############################################################################
+# Vorher ZFS-Datasets als BindMount durchreichen
+###############################################################################
+# Wenn es hier hakt, zuerst SMB auskommentieren, Ausfuehren dann wieder mit smb.
+###############################################################################
+# Wenn Freigaben geloescht werden muss der dazugehoerige Ordner per CLI geloescht
+# werden.
+###############################################################################
+# in PVE
+# pct set 109 -mp1 /hdd_data_raidz/data,mp=/shares/
+# pct set 109 -mp0 /hdd_data_raidz/data_videos,mp=/shares_videos
+###############################################################################
+
+---
+- hosts: storage
+  roles:
+    - { role: mgrote.fileserver_smb, tags: "fileserver_smb" }

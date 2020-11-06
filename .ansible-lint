@@ -1,0 +1,16 @@
+
+exclude_paths:
+  - roles/nickjj.ansible-user/
+  - roles/azavea.ansible-pip/
+
+parseable: true
+quiet: true
+skip_list:
+  - '204'
+  - '701'
+  - '208'
+  - '106'
+  - '601'
+use_default_rules: true
+verbosity: 0
+# https://github.com/ansible/ansible-lint#false-positives-skipping-rules

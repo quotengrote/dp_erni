@@ -2,7 +2,7 @@
 * Zuerst das Stromkabel ziehen.
 * Den Switch per Konsolenkabel an einen Laptop mit Serieller Schnittstelle anschließen und per Putty eine Verbindung über die serielle Schnittstelle herstellen.
 
-![https://rmvmlnc0.azubi.erni/core/preview?fileId=2949&x=1400&y=1050&a=true](https://rmvmlnc0.azubi.erni/core/preview?fileId=2949&x=1400&y=1050&a=true)
+![https://rmvmlnc0.ausbildung.md/core/preview?fileId=2949&x=1400&y=1050&a=true](https://rmvmlnc0.ausbildung.md/core/preview?fileId=2949&x=1400&y=1050&a=true)
 * Das Stromkabel in den Switch stecken und den Mode knopf gedrückt halten. (Unten links am Switch, Vorderseite; Siehe Bild)
   * Der Mode-Knopf kann wieder los gelassen werden, wenn die Lampe mit der Bezeichnung "Sys" durchgehend leuchtet.
   * Dies unterbricht den Boot-Prozess bevor das Betriebssystem gestartet wird.

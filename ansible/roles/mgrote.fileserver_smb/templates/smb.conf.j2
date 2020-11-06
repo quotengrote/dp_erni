@@ -3,8 +3,8 @@
 workgroup = {{ smb_workgroup }}
 server string = %h server
 dns proxy = no
-log level = 0
-log file = /var/log/samba/log.%m
+log level = 1
+log file = /var/log/samba/log
 max log size = 1000
 logging = syslog
 panic action = /usr/share/samba/panic-action %d
@@ -38,11 +38,21 @@ allocation roundup size = 4096
 force user = root
 force group = users
 
+
+#======================= ZFS Snapshots =======================
+vfs objects = shadow_copy2
+shadow: snapdir = .zfs/snapshot
+shadow: sort = desc
+shadow: format = _%Y-%m-%d_%H:%M:%S
+shadow: snapprefix = ^autosnap
+shadow: delimiter = _
+shadow: localtime = no
+
 #======================= Share Definitions =======================
 {% for item in smb_freigaben %}
 
 [{{ item.freigabename }}]
-      path = /shares/{{ item.ordnername }}
+      path = {{ item.ordnerpfad }}
       guest ok = no
       read only = no
       browseable = yes
@@ -50,16 +60,6 @@ force group = users
       inherit permissions = no
       ea support = no
       store dos attributes = no
-      vfs objects =  recycle
-      recycle:repository = .recycle/%U
-      recycle:keeptree = yes
-      recycle:versions = yes
-      recycle:touch = yes
-      recycle:directory_mode = 0777
-      recycle:subdir_mode = 0700
-      recycle:exclude =
-      recycle:exclude_dir =
-      recycle:maxsize = 0
       printable = no
       create mask = 0664
       force create mode = 0664

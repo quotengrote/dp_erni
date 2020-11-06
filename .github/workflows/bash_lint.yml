@@ -1,0 +1,15 @@
+name: bash-lint
+on: [pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run Shellcheck
+        uses: azohra/shell-linter@latest
+        with:
+          path: "/github/workspace/*.sh"
+
+# https://github.com/azohra/shell-linter

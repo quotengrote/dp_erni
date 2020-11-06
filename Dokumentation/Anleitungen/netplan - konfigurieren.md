@@ -37,7 +37,7 @@ network:
                                 - 11.10.31.53/24
                         gateway4: 11.10.31.254
                         nameservers:
-                                  search: [azubi.erni]
+                                  search: [ausbildung.md]
                                   addresses: [10.10.10.1, 1.1.1.1]
 ```
 

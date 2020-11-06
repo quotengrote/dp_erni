@@ -1,0 +1,26 @@
+---
+  - hosts: all
+    become: yes
+    gather_facts: false
+    max_fail_percentage: 20%
+
+    roles:
+      - { role: robertdebock.bootstrap, tags: "bootstrap" }
+      - { role: nickjj.ansible-user, tags: "ansible-user" }
+
+    vars:
+      ### reobertdebock.bootstrap
+      bootstrap_user: mg
+      bootstrap_wait_for_host: no
+      bootstrap_timeout: 1
+      bootstrap_retries: 1
+      ### fuer rolle nickjj.ansible-user
+      user_name: "ansible-user"
+      user_generate_ssh_key: true
+      user_local_ssh_key_path: "~/.ssh/id_rsa.pub"
+      user_enable_passwordless_sudo: True
+      ### ansible
+      ansible_user: "mg"
+      ansible_password: "hallowelt"
+      ansible_become_password: "hallowelt"
+      ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"

@@ -1,21 +1,25 @@
-# "apt update"
   - name: apt update
     become: yes
     apt:
       update_cache: yes
-      cache_valid_time: 1800 #30min #https://stackoverflow.com/questions/41535838/how-to-run-apt-update-and-upgrade-via-ansible-shell
+      cache_valid_time: 300
 
-# Standardpakete installieren
-  - name: Standardpakete installieren
+  - name: install common-packages
     become: yes
     apt:
-      pkg: "{{ programme }}" #kommt aus group_vars/all.yml
+      name: "{{ programs_common }}"
       state: present
-      cache_valid_time: 360 #in sekunden #https://stackoverflow.com/questions/41535838/how-to-run-apt-update-and-upgrade-via-ansible-shell
 
-
-# "apt upgrade"
-  - name: "apt upgrade"
+  - name: install vm-packages
     become: yes
     apt:
-      upgrade: dist
+      name: "{{ programs_only_vms }}"
+      state: present
+    when: ansible_virtualization_role == 'guest'
+
+  - name: install physical-packages
+    become: yes
+    apt:
+      name: "{{ programs_only_physical }}"
+      state: present
+    when: ansible_virtualization_role != 'guest'

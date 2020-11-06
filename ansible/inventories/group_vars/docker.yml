@@ -1,0 +1,8 @@
+---
+    docker_users:
+      - mg
+      - dm
+      - mg2
+      - ks
+      - root
+      - ansible-user

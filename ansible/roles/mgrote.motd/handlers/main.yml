@@ -1,6 +1,7 @@
   - name: Erzwinge_Aktualisierung
     become: yes
     command: update-motd
+    when: ansible_facts['os_family'] == "Ubuntu"
 
   - name: restart_sshd
     become: yes

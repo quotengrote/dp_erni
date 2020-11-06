@@ -12,7 +12,7 @@
 2. ping VON ip im internen Netzwerk
 5. Namensauflösung intern testen
 
-`dig <interner_hostname.azubi.erni>`
+`dig <interner_hostname.ausbildung.md>`
 
 ##### proxy systemweit setzen(außer apt)
 `nano /etc/environment`
@@ -21,7 +21,7 @@
 ```
 http_proxy="http://11.8.108.254:8080/"
 https_proxy="http://11.8.108.254:8080/"
-no_proxy="localhost,127.0.0.1,11.10.31.*, *.azubi.erni"
+no_proxy="localhost,127.0.0.1,11.10.31.*, *.ausbildung.md"
 ```
 ##### Neustart
 `init 6`
