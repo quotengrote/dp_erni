@@ -24,8 +24,8 @@
     ![Java-Anwendung blockiert](/Bilder/ipme/Java-Anwendung-blockiert.png)
 (<https://www.java.com/de/download/help/exception_sitelist.html>)
   Ausnahme hinzufügen:
-    Java -> Sicherheit -Siteliste bearbeiten -> hinzufügen:
+    Java -> Sicherheit -> Siteliste bearbeiten -> hinzufügen:
     Anleitung:
-    URL hinzufügen _Warnmeldung ignorieren_ -> Fortfahren ->
+    URL hinzufügen -> _Warnmeldung ignorieren_ -> Fortfahren ->
 
     Sicherheitswarnung akzeptieren und ausführen
