@@ -63,10 +63,7 @@ There are other files which you may want to edit, they are not important for the
 If your node is in a cluster, where it is not recommended to change its name, adapt /etc/pve/corosync.conf so that the nodes name is changed also there. See <https://pve.proxmox.com/pve-docs/chapter-pvecm.html#edit-corosync-conf>
 
 #### noVNC default zu scaling
-sed "s/let scaling = 'off';/let scaling = 'scale';/g"
-
-sed "s/scaling = sp.get('novnc-scaling', 'off');/scaling = sp.get('novnc-scaling', 'scale');/g"
-
+Folgenden befehl in die cmd eingeben und die skalierung wird auf lokal skallieren eingestellt.
 `sed -i "s/let scaling = 'off';/let scaling = 'scale';/g" /usr/share/pve-manager/js/pvemanagerlib.js && sed -i "s/scaling = sp.get('novnc-scaling', 'off');/scaling = sp.get('novnc-scaling', 'scale');/g" /usr/share/pve-manager/js/pvemanagerlib.js`
 
 
