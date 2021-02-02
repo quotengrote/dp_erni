@@ -25,13 +25,13 @@ Dazu gehören:
 
 
 ##### Daten:
-RMPHLPVE1 : 11.10.31.11 (derzeit noch linker Port)
-RMPHLPVE2 : 11.10.31.12 (derzeit noch linker Port)
+RMPHLPVE1 : [11.10.31.11](http://11.10.31.11:8006) (derzeit noch linker Port)
+RMPHLPVE2 : [11.10.31.12]((http://11.10.31.12:8006)) (derzeit noch linker Port)
 ##### Management:
 
 __iRMC(IPMI)__
-RMPHLPVE1 : 11.10.31.6 (MGMT-Port)
-RMPHLPVE2 : 11.10.31.7 (MGMT-Port)
+RMPHLPVE1 : [11.10.31.6](http://11.10.31.6) (MGMT-Port)
+RMPHLPVE2 : [11.10.31.7](http://11.10.31.6) (MGMT-Port)
 
 RMPHLPVE1 : n.A.
 RMPHLPVE2 : n.A.
