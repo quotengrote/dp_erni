@@ -1,8 +1,0 @@
----
-  - name: install InfluxDB - RedHat
-    become: yes
-    yum:
-      name: influxdb
-    notify:
-      - enabled_influxdb_service
-      - restart_influxd

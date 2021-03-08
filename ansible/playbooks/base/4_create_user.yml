@@ -1,4 +1,0 @@
----
-  - hosts: all
-    roles:
-      - { role: ryandaniels.create_users, tags: "user", become: yes }
