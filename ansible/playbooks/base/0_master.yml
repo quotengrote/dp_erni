@@ -1,5 +1,0 @@
----
-  - import_playbook: 1_bootstrap.yml
-  - import_playbook: 2_packages.yml
-  - import_playbook: 3_base.yml
-  - import_playbook: 4_create_user.yml

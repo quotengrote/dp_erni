@@ -1,7 +1,0 @@
----
-  ### mgrote.pve_nag-buster
-  pve_nag_buster_update: false
-
-  # Ansible Variablen
-  ### sudo
-  sudo: false

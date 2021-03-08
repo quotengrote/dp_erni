@@ -1,4 +1,0 @@
----
-- hosts: virt
-  roles:
-    - { role: ironicbadger.proxmox-nag-removal, tags: "nag", become: yes }

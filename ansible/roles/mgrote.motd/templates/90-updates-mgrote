@@ -1,5 +1,0 @@
-#!/bin/sh
-
-stamp="/var/lib/update-notifier/updates-available"
-
-([ ! -r "$stamp" ] || [ -n "$(awk '/^0/{print $1;}' "$stamp")" ]) || cat "$stamp"

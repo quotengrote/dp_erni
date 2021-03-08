@@ -1,5 +1,0 @@
----
-  influxdb_users:
-    - { name: 'influx', password: 'hallowelt' }
-    - { name: 'grafana', password: 'hallowelt' }
-    - { name: 'michaelgrote', password: 'hallowelt' }

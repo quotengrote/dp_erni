@@ -1,5 +1,0 @@
----
-  - hosts: all
-    roles:
-      - { role: mgrote.set_timezone, tags: "timezone" }
-      - { role: mgrote.motd, tags: "motd" }
