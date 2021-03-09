@@ -1,0 +1,59 @@
+---
+  - name: check if old debian-repositories exists
+    stat:
+      path: /etc/apt/sources.list
+    register: old_debian_repositories
+
+  - name: backup old debian-repositories
+    become: yes
+    ansible.builtin.copy:
+      src: /etc/apt/sources.list
+      dest: /etc/apt/sources.list.disabled
+      remote_src: yes
+    when: old_debian_repositories.stat.exists == true
+
+  - name: remove old debian-repositories
+    become: yes
+    ansible.builtin.file:
+      path: /etc/apt/sources.list
+      state: absent
+    when: old_debian_repositories.stat.exists == true
+
+  - name: add new debian-repositories
+    become: yes
+    ansible.builtin.apt_repository:
+      repo: "{{ item.repo_url }}"
+      state: present
+      filename: "{{ manage_sources_debian_repo_path }}"
+      update_cache: no
+    register: copy_src
+    loop: "{{ manage_sources_proxmox_base_repos }}"
+
+  - name: remove enterprise-Repository
+    become: yes
+    ansible.builtin.file:
+      path: "{{ manage_sources_enterprise_repo_path }}"
+      state: absent
+
+  - name: check if pve-no-subscription repo keys exists
+    stat:
+      path: "{{ manage_sources_apt_repo_key_path }}"
+    register: pve_no_subscription_repo_keys
+
+  - name: add pve-no-subscription repo keys
+    become: yes
+    ansible.builtin.apt_key:
+      url: "{{ manage_sources_apt_repo_key_url }}"
+      state: present
+      file: "{{ manage_sources_apt_repo_key_path }}"
+    register: copy_src
+    when: pve_no_subscription_repo_keys.stat.exists == true
+
+  - name: add pve-no-subscription repo
+    become: yes
+    ansible.builtin.apt_repository:
+      repo: "{{ manage_sources_apt_repo_no_subscription }}"
+      state: present
+      filename: pve-no-subscription
+      update_cache: no
+    register: copy_src

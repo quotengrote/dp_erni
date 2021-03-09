@@ -1,0 +1,8 @@
+---
+  - name: Ubuntu - copy sources.list
+    become: yes
+    ansible.builtin.template:
+      src: "ubuntu_sources.list"
+      dest: "/etc/apt/sources.list"
+      backup: yes
+    register: copy_src

@@ -1,0 +1,11 @@
+{{ file_header | default () }}
+deb http://{{ manage_sources_apt_proxy_url }}/de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}} main restricted
+deb http://{{ manage_sources_apt_proxy_url }}/de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}}-updates main restricted
+deb http://{{ manage_sources_apt_proxy_url }}/de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}} universe
+deb http://{{ manage_sources_apt_proxy_url }}/de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}}-updates universe
+deb http://{{ manage_sources_apt_proxy_url }}/de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}} multiverse
+deb http://{{ manage_sources_apt_proxy_url }}/de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}}-updates multiverse
+deb http://{{ manage_sources_apt_proxy_url }}/de.archive.ubuntu.com/ubuntu/ {{ansible_distribution_release}}-backports main restricted universe multiverse
+deb http://{{ manage_sources_apt_proxy_url }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security main restricted
+deb http://{{ manage_sources_apt_proxy_url }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security universe
+deb http://{{ manage_sources_apt_proxy_url }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security multiverse
