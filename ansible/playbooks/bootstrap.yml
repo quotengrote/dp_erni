@@ -1,0 +1,28 @@
+---
+  - hosts: all
+    gather_facts: false
+    max_fail_percentage: 20%
+    roles:
+      - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
+      - { role: ryandaniels.create_users, tags: "user", become: yes}
+
+    vars:
+      ### reobertdebock.bootstrap
+      bootstrap_user: mg
+      bootstrap_wait_for_host: no
+      bootstrap_timeout: 1
+      ### ansible
+      ansible_user: "mg"
+      ansible_password: hallowelt
+      ansible_become_password: hallowelt
+      ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
+
+#    tasks:
+#      - name: Change user password
+#        become: true
+#        user:
+#          name: mg
+#          update_password: always
+#          password: "{{ lookup('keepass', 'mg_linux_password_hash', 'password') }}"
+
+# Nach dem ersten durchlaufen ist keine Anmeldung mehr per Passwort & ssh möglich. Damit scheitert auch der Versuch das Playbook ein zweites mal durchlaufen zu lassen.
