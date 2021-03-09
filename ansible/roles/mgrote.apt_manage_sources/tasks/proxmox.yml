@@ -45,9 +45,8 @@
     ansible.builtin.apt_key:
       url: "{{ manage_sources_apt_repo_key_url }}"
       state: present
-      file: "{{ manage_sources_apt_repo_key_path }}"
     register: copy_src
-    when: pve_no_subscription_repo_keys.stat.exists == true
+    when: pve_no_subscription_repo_keys.stat.exists == false
 
   - name: add pve-no-subscription repo
     become: yes
