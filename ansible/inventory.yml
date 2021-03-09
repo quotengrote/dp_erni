@@ -14,3 +14,5 @@
           ws-ubuntu5.grote.lan:
       ansible:
           ws-ubuntu5.grote.lan:
+      acng:
+          ws-ubuntu4.grote.lan:
