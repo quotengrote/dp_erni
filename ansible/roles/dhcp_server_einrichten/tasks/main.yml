@@ -11,3 +11,4 @@
       path: /etc/dnsmasq.conf
       line: "dhcp-range=set:server,{{ dnsmasq_netid }}{{ dnsmasq_firstclient }},{{ dnsmasq_netid }}{{ dnsmasq_lastclient }},{{ dnsmasq_leasetime }}"
       create: yes
+    notify: dnsmasq Konfigurationsänderungen aktivieren
