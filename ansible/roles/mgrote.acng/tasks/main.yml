@@ -1,0 +1,13 @@
+  - name: install apt-cacher-ng packages
+    become: yes
+    ansible.builtin.package:
+      name: apt-cacher-ng
+      state: present
+
+  - name: templating acng.conf
+    become: yes
+    ansible.builtin.template:
+      src: "acng.conf"
+      dest: "/etc/apt-cacher-ng/acng.conf"
+      mode: 0664
+    notify: acng_starten_aktivieren
