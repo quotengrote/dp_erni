@@ -1,0 +1,11 @@
+---
+  - name: Install dnsmasq
+    ansible.builtin.package:
+      name: dnsmasq
+      state: present
+
+  - name: set dnsmasq make dhcp
+    ansible.builtin.lineinfile:
+      path: /etc/dnsmasq.conf
+      line: "dhcp-range=set:server,{{ netid }}{{ firstclient }},{{ netid }}{{ lastclient }},12h"
+      create: yes
