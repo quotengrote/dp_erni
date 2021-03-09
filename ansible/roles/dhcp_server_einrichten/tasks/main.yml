@@ -7,5 +7,5 @@
   - name: set dnsmasq make dhcp
     ansible.builtin.lineinfile:
       path: /etc/dnsmasq.conf
-      line: "dhcp-range=set:server,{{ netid }}{{ firstclient }},{{ netid }}{{ lastclient }},12h"
+      line: "dhcp-range=set:server,{{ dnsmasq_netid }}{{ dnsmasq_firstclient }},{{ dnsmasq_netid }}{{ dnsmasq_lastclient }},{{ dnsmasq_leasetime }}"
       create: yes

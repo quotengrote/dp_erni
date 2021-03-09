@@ -1,3 +1,4 @@
-netid: "192.168.2."
-firstclient: "222"
-lastclient: "240"
+dnsmasq_netid: "192.168.2."
+dnsmasq_firstclient: "222"
+dnsmasq_lastclient: "240"
+dnsmasq_leasetime: "12h"
