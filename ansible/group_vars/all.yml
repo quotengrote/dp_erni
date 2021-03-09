@@ -9,3 +9,30 @@
       groups: ssh, sudo
       servers:
         - all
+    - username: daniel
+      password: hallowelt
+      update_password: on_create
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh, sudo
+      servers:
+        - all
+    - username: max
+      password: hallowelt
+      update_password: on_create
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh, sudo
+      servers:
+        - all
+    - username: kati
+      password: hallowelt
+      update_password: on_create
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh, sudo
+      servers:
+        - all
