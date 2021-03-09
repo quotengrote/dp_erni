@@ -1,0 +1,5 @@
+---
+  - hosts: all
+    # serial: 3
+    roles:
+      - { role: mgrote.apt_manage_sources, tags: "apt_sources" }
