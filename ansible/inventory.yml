@@ -12,3 +12,6 @@
           ws-ubuntu3.grote.lan:
           ws-ubuntu4.grote.lan:
           ws-ubuntu5.grote.lan:
+        children:
+            netzwerkverwalter:
+              ws-ubuntu1.grote.lan:
