@@ -1,12 +1,35 @@
 # Distribution_Release wird mit {{ansible_distribution_release}} gesetzt
 # deb http://{{ acng_server }}:{{ acng_server_port }}/security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security multiverse
-  - name: sources.list kopieren
+  - name: Ubuntu: sources.list kopieren
     become: yes
     template:
       src: "sources.list"
       dest: "/etc/apt/sources.list"
       backup: yes
     register: copy_src
+    when: "'Ubuntu' in group_names"
+
+  - name: Proxmox: debian.list kopieren
+    become: yes
+    template:
+      src: "proxmox_sources.list"
+      dest: "/etc/apt/sources.list.d/debian.list"
+      backup: yes
+    register: copy_src
+        when: "'proxmox' in group_names"
+
+  - name: Proxmox: pve-no-subscription.list kopieren
+    become: yes
+    template:
+      src: "proxmox_no_subscription.list"
+      dest: "/etc/apt/sources.list.d/pve-no-subscription.list"
+      backup: yes
+    register: copy_src
+    when: "'proxmox' in group_names"
+
+
+
+
 
 
   - name: apt_update # noqa 503 503
