@@ -1,5 +1,5 @@
 - name: dnsmasq Konfigurationsänderungen aktivieren
-    become: yes
+    become: true
     systemd:
       name: dnsmasq
       enabled: yes
