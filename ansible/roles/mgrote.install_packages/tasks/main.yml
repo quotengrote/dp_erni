@@ -4,22 +4,8 @@
       update_cache: yes
       cache_valid_time: 300
 
-  - name: install common-packages
+  - name: install packages
     become: yes
     apt:
-      name: "{{ programs_common }}"
+      name: "{{ install_packages }}"
       state: present
-
-  - name: install vm-packages
-    become: yes
-    apt:
-      name: "{{ programs_only_vms }}"
-      state: present
-    when: ansible_virtualization_role == 'guest'
-
-  - name: install physical-packages
-    become: yes
-    apt:
-      name: "{{ programs_only_physical }}"
-      state: present
-    when: ansible_virtualization_role != 'guest'
