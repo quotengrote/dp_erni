@@ -1,38 +1,42 @@
 ---
   users:
     - username: mg
-      password: hallowelt
-      update_password: on_create
+      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
       servers:
-        - all
+        - proxmox
+        - ubuntu
     - username: daniel
-      password: hallowelt
-      update_password: on_create
+      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
       servers:
-        - all
+        - proxmox
+        - ubuntu
     - username: max
-      password: hallowelt
-      update_password: on_create
+      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
       servers:
-        - all
+        - proxmox
+        - ubuntu
     - username: kati
-      password: hallowelt
-      update_password: on_create
+      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
       servers:
-        - all
+        - proxmox
+        - ubuntu
