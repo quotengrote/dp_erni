@@ -14,6 +14,7 @@
           ws-ubuntu5.grote.lan:
         children:
             netzwerkverwalter:
-              ws-ubuntu1.grote.lan:
+              hosts:
+                ws-ubuntu1.grote.lan:
       ansible:
           ws-ubuntu5.grote.lan:
