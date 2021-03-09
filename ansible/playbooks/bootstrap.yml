@@ -8,6 +8,7 @@
         file:
           path: /etc/apt/sources.list.d/pve-enterprise.list
           state: absent
+        when: "'proxmox' in group_names" }
     roles:
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
