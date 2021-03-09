@@ -2,6 +2,12 @@
   - hosts: all
     gather_facts: false
     max_fail_percentage: 20%
+    pre_tasks:
+      - name: entferne pve enterprise-repo
+        become: true
+        file:
+          path: /etc/apt/sources.list.d/pve-enterprise.list
+          state: absent
     roles:
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
