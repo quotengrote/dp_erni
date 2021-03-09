@@ -1,0 +1,6 @@
+---
+  - hosts: all
+    roles:
+      - { role: mgrote.set_apt_sources, tags: "sources", become: yes}
+      - { role: mgrote.update_packages, tags: "update", become: yes}
+      - { role: mgrote.install_packages, tags: "install", become: yes}

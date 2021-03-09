@@ -1,4 +1,7 @@
 ---
+  ### mgrote.set_apt_sources
+  acng_server: acng.grote.lan
+  acng_server_port: 9999
   ### robertdebock.bootstrap
   users:
     - username: mg
@@ -51,18 +54,28 @@
       servers:
         - proxmox
         - ubuntu
-
-  ### mgrote.apt_manage_sources
-  manage_sources_apt_proxy_url: "" # leer = kein proxy, sonst "acng.grote.lan:9999"
-  manage_sources_enterprise_repo_path: /etc/apt/sources.list.d/pve-enterprise.list # wo ist das enterprise-repo
-  manage_sources_apt_repo_key_url: http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg # url zum key für no-subscription-repo
-  manage_sources_apt_repo_key_path: /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg # pfad lokal zum key für no-subscription-repo
-  manage_sources_apt_repo_no_subscription: deb http://{{ manage_sources_apt_proxy_url }}/download.proxmox.com/debian/pve buster pve-no-subscription # url zum für no-subscription-repo, manage_sources_apt_proxy_url wird aus der variable entnommen
-  manage_sources_proxmox_base_repos: # welche debian standard repos sollen gesetzt werden, werden vorher gelöscht damit ein proxy dann gesetzt werden kann
-    - repo_url: deb http://ftp.de.debian.org/debian buster main contrib
-    - repo_url: deb http://ftp.de.debian.org/debian buster-updates main contrib
-    - repo_url: deb http://security.debian.org buster/updates main contrib
-  manage_sources_debian_repo_path: /etc/apt/sources.list.d/debian # wo sollen die standard-repos gespeichert werden; nicht auf /etc/apt/sources setzen, diese datei wird gelöscht
+  ### mgrote.install_packages
+  install_packages:
+    - locales
+    - python3
+    - build-essential
+    - ntp
+    - htop
+    - git
+    - dnsutils
+    - nano
+    - mc
+    - cifs-utils
+    - netdiscover
+    - tree
+    - curl
+    - logrotate
+    - ncdu
+    - net-tools
+    - apt-transport-https
+    - ntpdate
+    - acl
+    - vim
 
 
 
