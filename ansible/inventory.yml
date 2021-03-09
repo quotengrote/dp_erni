@@ -1,0 +1,14 @@
+---
+  all:
+    children:
+      proxmox:
+        hosts:
+          ws-proxmox1.grote.lan:
+          ws-proxmox2.grote.lan:
+      ubuntu:
+        hosts:
+          ws-ubuntu1.grote.lan:
+          ws-ubuntu2.grote.lan:
+          ws-ubuntu3.grote.lan:
+          ws-ubuntu4.grote.lan:
+          ws-ubuntu5.grote.lan:
