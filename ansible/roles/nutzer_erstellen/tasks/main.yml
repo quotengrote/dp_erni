@@ -1,0 +1,19 @@
+---
+  - name: erstelle Gruppe
+    become: yes
+    ansible.builtin.group:
+      name: "{{ item.name }}"
+      state: "{{ item.status | default ('present'] }}"
+    loop: "{{ en_gruppe }}"
+
+  - name: erstelle nutzer
+    become: yes
+    ansible.builtin.user:
+      name: "{{ en_name }}"
+      state: "{{ en_nutzer_status | default ('present') }}"
+      groups:
+        - "{{ item.name }}"
+      password: "{{ en_passwort }}"
+      update_password: on create
+      append: yes
+    loop: "{{ en_group }}"

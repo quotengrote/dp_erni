@@ -1,0 +1,12 @@
+---
+  - en_name: 
+      - name: root
+      - name: User
+    en_group: 
+      - name: User
+        status: present
+      - name: Admin
+        status: present
+  - en_passwort:
+    en_nutzer_status: present
+    en_group_status: present

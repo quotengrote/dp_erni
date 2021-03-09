@@ -1,0 +1,14 @@
+---
+####nutzer_task_main
+  - en_name:
+    - name: root
+    en_group:
+      - name: User
+      - name: Admin
+    en_passwort: hallowelt
+
+
+####ssh_key
+    ssh_user: 
+    ssh_status: present
+    ssh_key: hallowelt

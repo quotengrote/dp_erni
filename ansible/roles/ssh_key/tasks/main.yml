@@ -1,0 +1,10 @@
+---
+  - name: füge key hinzu
+    become: yes
+    ansible.posix.authorized_key:
+      user: "{{ ssh_user }}"
+      state: "{{ ssh_status | default ('present') }}"
+      key: "{{ ssh_key }}"
+    when:
+      - ssh_user is defined
+      - ssh_key is defined
