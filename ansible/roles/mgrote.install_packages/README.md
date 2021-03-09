@@ -1,13 +1,10 @@
 ## mgrote.install_packages
 
 ### Beschreibung
-Fuehrt:
-1. `apt update`
-3. ` apt install {{ programme }}`
-2. `apt upgrade`
-aus.
+Fuehrt ` apt install {{ programme }}` aus.
 
-Es wird unterschieden ob das Ziel eine VM ist oder nicht.
+
+Es wird unterschieden ob das Ziel Ubuntu oder Proxmox ist(über die Gruppe).
 
 ### Funktioniert auf
 - [x] Ubuntu (>=18.04)
