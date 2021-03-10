@@ -18,3 +18,6 @@
       acng:
         hosts:
           ws-ubuntu4.grote.lan:
+      ntpserver:
+        hosts:
+          ws-ubuntu3.grote.lan:
