@@ -1,4 +1,20 @@
 ---
+  ### mgrote.netp
+  ntp_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
+  ntp_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
+  ntp_servers: # welche Server sollen befragt werden
+    - address: ptbtime1.ptb.de
+      options: iburst #optionaler parameter
+    - address: ptbtime2.ptb.de
+      options: iburst
+    - address: ptbtime3.ptb.de
+      options: iburst
+    - address: time3.google.com
+      options: iburst
+    - address: ntp0.fau.de
+      options: iburst
+  ntp_daemon_user: ntp # Nutzer + Gruppe für den Dienst
+  ntp_daemon_group: ntp # Nutzer + Gruppe für den Dienst
   ### mgrote.set_apt_sources
   acng_server: ws-ubuntu4.grote.lan
   acng_server_port: 9999
@@ -12,7 +28,6 @@
       user_state: present
       groups: ssh, sudo
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhCkPnS741TxJLZxYZYoUGlZgcrBDuubyF4VDNufzqajCFrP1y54+IZ4VjRUcvldJwAjUT72FOF/HcCYxckQuBT4PtN+Ys784uwddMFCk3vzPFUrPfP/87vVhRUO1EZHTwv2zQ8BKAZ1tGulOJ1uZRfmiKrb0aqdPuKB9iNixuHzysOvppvAnN7CoNqrvUqc/zMqw2RJRwFMVhsQRKtzwx2haP5xUh7i9JBb2kEG9YhQXTxMKwK9M5iPkWV5Q5RTKzT0stiWKSEOc+km4Rz7HxGaaBbz0V6bMUCc9n+owgWdnyxIqi8k3oii0/rfsnmLP75r+ZjhaP5AeCNSBP5kWoi85Dwq51iSKiuRoKL6lEC8zEYUNtPJkrSG8U8MPpia59O4EF8r+HHuu7mxThJn09QdYWeHco9rCzCD8D3UUS+RLLg4m8c+JPNXZ+6MfpJJhODiJcoZ9glpL2gHRcVi8LjPD0TS41SfFVixOj/Yo5W/gVd8qzzW1lnMsD/FmejAEIhZfFv40rwMmdB3M58Ow9Et/tV2/m6CaYUhcmYZgTWvaKVSS1OTz4DT53b1qqqu8NA+XXFeo4WNC3lvbplolUOpKMUUHHYNjtRIa9LA7RCxHMFt2yJXSbeAsDhx2hbMKUzh+aGo7Oh/NsFcIHajrvBdotkG6imNhocg/AaIAZJw== mg@vm-test
-
       servers:
         - proxmox
         - ubuntu
