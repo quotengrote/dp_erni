@@ -88,7 +88,7 @@
   # Ansible Variablen
   ### User
   ansible_user: "ansible-user"
-  ansible_ssh_pass: "hallowelt"
+  #ansible_ssh_pass: "hallowelt"
   ansible_become_pass: "hallowelt"
   ### SSH
   ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
