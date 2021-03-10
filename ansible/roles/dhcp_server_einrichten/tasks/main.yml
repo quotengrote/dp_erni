@@ -13,6 +13,14 @@
       name: dnsmasq
       state: present
 
+  - name: journalconf bearbeiten
+    become: true
+    ansible.builtin.lineinfile:
+      path: /etc/systemd/journald.conf
+      line: "Storage=persistent"
+      create: yes
+    notify: journalctl neustarten
+
   - name: set dnsmasq make dhcp
     become: true
     ansible.builtin.lineinfile:
