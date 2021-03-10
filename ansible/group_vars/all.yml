@@ -23,7 +23,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
-      ssh_key:
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAuMew12jn9S1sWc1bCNcPbi1lmEbKSdEoxzKHRlO3IOMivDUUIqmqjaml7ZPun7hL+sBCEVSyKiCr5wNR+VWY6e0p/7E3iDlSlD2fpymff1yWqvsnEmzBnRPGUQdpbGmfNciDt+XnF+nvQgxPBf30BR2//cSBeVpXA1289q0mbc8Z7hDctLjvM43NwjHg0g5KSLx8yXL4VVRg0S/e05azyA7IvQFTf2gVu5NC/rKpI8bs63KMJOR5LTDEYq8V7IlrsBjqTihl+gkXK08x9bqYPWucV3Zg3VGtKcun0WvSmNZPLZ2q5uq+VQFrfv7ioqZVur0XLX78fC9Se+1aC/+Mr0YAdle1P3yenUYFXntTIpI9ID9/EiV0x1cW6dreUy98fVjYmriaXeOK3AxkupQq34aEqXgN8/EH7bJfevvlPYf2JlBIr14MovlIN7zU2sJ2xxQ5jg3H8U2datWwgHoOKt9PAJ7eMsiITUe3310RRQcvkZ/vGHI07ZGfNfleC4fBXcLt+mwaup6rq7pgR+7FMICPiEOn21ektScatVRXGTx47JsMS7YjmAY1qOlUoQC8FXQ8Vp7wunitar6WY45iGTZTDnujkhQfZkllXmpzi8OK0cRwPYfyNPMxaadTY9B9U6CMxjpFV3iq5XgrhhOgtIZfCkW9cX5A7XXy0xXdvQ== user@Acer5
       servers:
         - proxmox
         - ubuntu
