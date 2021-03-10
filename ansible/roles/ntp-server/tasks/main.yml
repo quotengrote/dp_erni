@@ -18,7 +18,7 @@
     become: yes
     file:
       state: directory
-      path: "{{ ntp_driftfile_directory }}"
+      path: "{{ ntp_server_driftfile_directory }}"
       mode: 0644
       owner: "{{ ntp_server_daemon_user }}"
       group: "{{ ntp_server_daemon_group }}"

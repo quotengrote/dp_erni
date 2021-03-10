@@ -1,7 +1,7 @@
 ---
   ntp_server_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
   ntp_server_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
-  ntp_server_client_servers: # welche Server sollen befragt werden
+  ntp_server_servers: # welche Server sollen befragt werden
     - address: ptbtime1.ptb.de
       options: iburst #optionaler parameter
     - address: ptbtime2.ptb.de
