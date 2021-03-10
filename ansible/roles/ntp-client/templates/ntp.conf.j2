@@ -5,7 +5,7 @@ server {{ item.address }} {{ item.options |default() }}
 {% endfor %}
 
 # Drift file
-driftfile {{ ntp_driftfile_directory }}/drift
+driftfile {{ ntp_client_driftfile_directory }}/drift
 
 # restrictions
 restrict -4 default nomodify nopeer noquery notrap
