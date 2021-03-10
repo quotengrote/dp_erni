@@ -1,4 +1,4 @@
 ---
-  - hosts: all
+  - hosts: all,!ntpserver
     roles:
       - ntp-client
