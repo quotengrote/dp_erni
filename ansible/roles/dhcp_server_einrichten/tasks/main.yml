@@ -24,7 +24,9 @@
   - name: set dnsmasq make dhcp
     become: true
     ansible.builtin.lineinfile:
+      name: dhcp range for server
       path: /etc/dnsmasq.conf
       line: "dhcp-range=set:server,{{ dnsmasq_netid }}{{ dnsmasq_firstclient }},{{ dnsmasq_netid }}{{ dnsmasq_lastclient }},{{ dnsmasq_leasetime }}"
       create: yes
+      state: present
     notify: dnsmasq Konfigurationsänderungen aktivieren
