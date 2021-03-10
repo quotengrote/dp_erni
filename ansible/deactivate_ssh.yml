@@ -1,4 +1,4 @@
 ---
-  - hosts: all
+  - hosts: ubuntu 
     roles: 
       - { role: deactivate_ssh_password_login }
