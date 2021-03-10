@@ -1,0 +1,4 @@
+---
+  - hosts: all
+    roles: 
+  - { role: deactivate_ssh_password_login }
