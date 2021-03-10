@@ -1,6 +1,13 @@
 - name: dnsmasq Konfigurationsänderungen aktivieren
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: dnsmasq
+    enabled: yes
+    state: restarted
+
+- name: journalctl neustarten
+  become: true
+  ansible.builtin.systemd:
+    name: systemd-journald
     enabled: yes
     state: restarted
