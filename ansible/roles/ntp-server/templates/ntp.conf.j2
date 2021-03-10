@@ -1,8 +1,8 @@
 {{ file_header | default () }}
 # Servers
-{% for item in ntp_client_servers %}
+{% for item in ntp_server_servers %}
 server {{ item.address }} {{ item.options |default() }}
 {% endfor %}
 
 # Drift file
-driftfile {{ ntp_driftfile_directory }}/drift
+driftfile {{ ntp_server_driftfile_directory }}/drift
