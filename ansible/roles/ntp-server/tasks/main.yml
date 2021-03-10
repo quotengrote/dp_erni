@@ -18,10 +18,10 @@
     become: yes
     file:
       state: directory
-      path: "{{ ntp_client_driftfile_directory }}"
+      path: "{{ ntp_server_driftfile_directory }}"
       mode: 0644
-      owner: "{{ ntp_client_daemon_user }}"
-      group: "{{ ntp_client_daemon_group }}"
+      owner: "{{ ntp_server_daemon_user }}"
+      group: "{{ ntp_server_daemon_group }}"
 
   - name: create ntp.conf
     become: yes
@@ -32,7 +32,7 @@
     notify:
       - restart ntpd
 
-  - name: set Zeitzone to {{ ntp_client_timezone }}
+  - name: set Zeitzone to {{ ntp_server_timezone }}
     become: yes
     ansible.builtin.timezone:
-      name: "{{ ntp_client_timezone }}"
+      name: "{{ ntp_server_timezone }}"
