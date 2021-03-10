@@ -45,7 +45,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
-      ssh_key:
+      ssh_key:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDYRBfF/yw28UVkxXPMi8sRRCawSPgBTBE4I+MkMB1gSQXUL1Kv0IRA9QyFB3HD7cJ0q8TiscwV+RVOEJbPepujPVUbR4Xmo8mgTgVHFDgJt1ipTNWgjqi5vMsHTP7vAh4AVvDZGk5tLDiRsUTrAkEpoxFpRcwPDfNymx7+2CNkiqyZKrLEGRA6LKaQrgPy5IBkzOVX7s/xo/WBBdjW7dFsoJKHnecEvwTDLyaGuKkWW/G2kcri7BLhTxwNXkS/PPB06k/fcbfWqo1U0i4caYI4HmeyXVcuxooIbm3D9nAtgtQS3a2yzvv0nLpmT1PjvKPhZ+Y5uUvuEU/5bVZ+Khqt+vPCeNF7+O9sPQJYZ8kJrVLcE16t2/CbnAO7o8wm6s8hfwTpzP7sqUpZdXnsDSW7It7B+YFdgFMLIKlVtSMgL7DrSX8lhSs/jCac/THGCPVt8aDvY48XHA1mANsaaGk15yVt4YioUugZWgT1YYxqCAQFIfEd7veqS9v5UGMS/ekFIn3EG+uZ9YGkvQwLB+9fzQa+g27MHP0kTRgSSnbm1beCf3rK8K4rrGpDr3NIc14g7QhkairCAYeghWkoSYM0R5dztqIoJeNhaCMaYeyTwfiqGXyP6XlR5CNzksR17D6uvMzLQxIZkFC2ynpa1I29cFk0Lar2tEmFoI8UKMLR0Q== kati@DESKTOP-R66MVUO
       servers:
         - proxmox
         - ubuntu
