@@ -8,3 +8,6 @@
 2.1 diesen Nutzer benötigt ansible um sich beim ersten mal auf diesen PC zu verbinden
 3. Playbook bootstrap auf DIESEM Rechner ausführen
 4. danach alle weiteren notwendigen Playbooks ausführen
+
+## Rechte für ansible-user-private-key
+`chmod 0400`
