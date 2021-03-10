@@ -12,6 +12,10 @@
           ws-ubuntu3.grote.lan:
           ws-ubuntu4.grote.lan:
           ws-ubuntu5.grote.lan:
+          ws-ubuntu7.grote.lan:
+          ws-ubuntu8.grote.lan:
+          ws-ubuntu9.grote.lan:
+          ws-ubuntu10.grote.lan:
       ansible:
         hosts:
           ws-ubuntu5.grote.lan:
