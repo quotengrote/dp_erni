@@ -34,7 +34,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
-      ssh_key:
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXGE+OnkP5+fkUAH7pmDSSYkfp+LixFbGA8XKP7+Ew1XaJ5COM4b3OWzk+sthU724zfom5vCcroeImeukQpQVjJfFfPLTMkNWluTqc9Hvar7OqqggSvSuEasl8MiUlptCxNAKHG1uUkoacerQR1aXnZnvzvwvnWkwYMeB7lhswr81c/kNGptxsXn0gYsjpLYtyFlX7C0iFkd7KDLSnQ6vyFmd5lIjbCjLMYyewEtqgTcEMR3YFCqe7coJ6mMIl7CrqZF+f8D4m1cCZXJgIouIrlYjuUtqbgYjKXEIHbUyBsRAQy4J6YxADBaA1oDy8XbVNrglFqQZIeZ8sbo0MJVFX max@DESKTOP-2FNLGMV
       servers:
         - proxmox
         - ubuntu
