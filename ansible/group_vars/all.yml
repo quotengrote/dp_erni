@@ -11,6 +11,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
+      ssh_key:
       servers:
         - proxmox
         - ubuntu
@@ -21,6 +22,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
+      ssh_key:
       servers:
         - proxmox
         - ubuntu
@@ -31,6 +33,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
+      ssh_key:
       servers:
         - proxmox
         - ubuntu
@@ -41,6 +44,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
+      ssh_key:
       servers:
         - proxmox
         - ubuntu
@@ -51,6 +55,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
+      ssh_key:
       servers:
         - proxmox
         - ubuntu
