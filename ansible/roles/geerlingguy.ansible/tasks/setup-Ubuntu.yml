@@ -1,7 +1,9 @@
 ---
 - name: Ensure dirmngr is installed (gnupg dependency).
   apt:
-    name: dirmngr
+    name:
+      - dirmngr
+      - sshpass
     state: present
 
 - name: Add ansible repository.
