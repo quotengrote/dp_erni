@@ -6,3 +6,9 @@ server {{ item.address }} {{ item.options |default() }}
 
 # Drift file
 driftfile {{ ntp_driftfile_directory }}/drift
+
+# restrictions
+restrict -4 default nomodify nopeer noquery notrap
+restrict -6 default nomodify nopeer noquery notrap
+restrict 127.0.0.1
+restrict ::1
