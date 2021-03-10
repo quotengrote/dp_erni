@@ -1,4 +1,12 @@
 ---
+  - name: stop systemd-resolved service on port 53
+    become: true
+    ansible.builtin.systemd:
+      name: systemd-resolved
+      enabled: no
+      state: stopped
+      masked: yes
+
   - name: Install dnsmasq
     become: true
     ansible.builtin.package:
