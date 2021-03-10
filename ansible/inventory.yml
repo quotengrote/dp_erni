@@ -8,7 +8,7 @@
       ubuntu:
         hosts:
           ws-ubuntu1.grote.lan:
-          ws-ubuntu2.grote.lan:
+          ws-ubuntu6.grote.lan:
           ws-ubuntu3.grote.lan:
           ws-ubuntu4.grote.lan:
           ws-ubuntu5.grote.lan:
