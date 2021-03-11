@@ -1,0 +1,6 @@
+---
+  - name: proxy setzen
+    become: yes
+    ansible.builting.lineinfile:
+      path: /etc/apt/apt.conf
+      line: http://11.8.108.254:8080
