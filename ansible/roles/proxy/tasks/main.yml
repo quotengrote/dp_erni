@@ -1,0 +1,7 @@
+---
+  - name: proxy setzen
+    become: yes
+    ansible.builtin.lineinfile:
+      path: /etc/apt/apt.conf
+      line: Acquire::http::proxy "http://{{ server }}:{{ port }}";
+      state: present
