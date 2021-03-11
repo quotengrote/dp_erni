@@ -1,4 +1,12 @@
 ---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+  ufw_default_incoming_policy: deny
+  ufw_default_outgoing_policy: allow
   ### ntp-client
   ntp_client_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
   ntp_client_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
