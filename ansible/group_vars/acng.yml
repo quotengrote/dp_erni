@@ -1,3 +1,15 @@
 ---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 192.168.2.0/24
+    - rule: allow
+      to_port: 9999
+      from_ip: 192.168.2.0/24
+      comment: 'acng'
+  ### mgrote.acng
   acng_server_port: 9999
   acng_server_exthreshold: "60" #hebt Pakete 60 Tage auf

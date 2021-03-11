@@ -1,0 +1,26 @@
+---
+  - hosts: pihole
+    become: yes
+
+    tasks:
+      - name: Setze DNS-Resolver fuer pihole-*
+        ansible.builtin.lineinfile:
+          path: /etc/resolv.conf.head
+          line: nameserver 192.168.2.3
+          create: yes
+          backrefs: false
+          mode: 0664
+
+# Wenn die VM beim Start mit "systemd-networkd-wait-online." hängt
+# Deaktiviere DHCP in:
+# sudo nano /etc/netplan/01-netcfg.yaml
+#    network:
+#      version: 2
+#      ethernets:
+#        ens18:
+#          addresses:
+#            - 192.168.2.3/24
+#          dhcp4: no
+#          gateway4: 192.168.2.1
+# netplan apply
+# sudo init 6
