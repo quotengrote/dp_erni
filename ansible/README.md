@@ -17,7 +17,7 @@
 
 
 ## Rechte für ansible-user-private-key
-`chmod 0400`
+`chmod 0400 ansible_private_key`
 
 ## ansible - vault + KeePass LookUp-Plugin
 
