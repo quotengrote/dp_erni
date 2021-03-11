@@ -37,7 +37,7 @@
   ### robertdebock.bootstrap
   users:
     - username: mg
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_mg_password', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -48,7 +48,7 @@
         - proxmox
         - ubuntu
     - username: daniel
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_daniel_password', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -59,7 +59,7 @@
         - proxmox
         - ubuntu
     - username: max
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_max_password', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -70,7 +70,7 @@
         - proxmox
         - ubuntu
     - username: kati
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_kati_password', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -81,7 +81,7 @@
         - proxmox
         - ubuntu
     - username: ansible-user
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ.
+      password: "{{ lookup('keepass', 'linux_user_ansible_password', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: on_create
       use_sudo: yes
       use_sudo_nopass: yes
