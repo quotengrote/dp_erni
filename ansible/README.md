@@ -24,10 +24,7 @@
 
 ### Einrichtung
   * Das Plugin wird bei einer Installation mit dem Playbook "ansible" mit eingerichtet.
-  * Die "Secrets" liegen in der KeepassDB die mit dem Kennwort aus `vault-pass.yml` verschlüsselt ist.
-  * `vault-pass.yml` steht mit in der .gitignore
-  * Die Variable `vault_password_file` ist mit `~/ansible/vault-pass.yml` in der `ansible.cfg` gesetzt.
-  * Diese Datei enthält das Passwort mit dem die KeePassDB verschlüsselt ist.
+  * Die "Secrets" liegen in der KeepassDB die mit dem Kennwort aus `--ask-vault-pass` verschlüsselt ist.
   * Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
 
 ### Erklärung
@@ -39,7 +36,7 @@
           62383737XXXXXX531
 ```
 
-1. mit `vault-pass.yml` wird das Kennwort an ansible-vault übergeben
+1. mit `--ask-vault-pass` wird das Kennwort an ansible-vault übergeben
 2. ansible-vault entschlüsselt hiermit die Variable `keepass_psw`
 3. der Inhalt der Variable wird dann an das KeePass-Lookup-Plugin übergeben was damit die KeePass-Datei öffnet
 
