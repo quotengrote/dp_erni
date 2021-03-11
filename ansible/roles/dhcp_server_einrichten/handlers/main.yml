@@ -1,4 +1,4 @@
-- name: dnsmasq Konfigurationsänderungen aktivieren
+- name: dnsmasq Konfigurationsaenderungen aktivieren
   become: true
   ansible.builtin.systemd:
     name: dnsmasq
