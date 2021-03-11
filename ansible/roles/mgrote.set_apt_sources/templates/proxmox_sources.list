@@ -1,0 +1,3 @@
+deb http://{{ acng_server }}:{{ acng_server_port }}/ftp.de.debian.org/debian buster main contrib
+deb http://{{ acng_server }}:{{ acng_server_port }}/ftp.de.debian.org/debian buster-updates main contrib
+deb http://{{ acng_server }}:{{ acng_server_port }}/security.debian.org buster/updates main contrib

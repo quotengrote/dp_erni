@@ -1,7 +1,7 @@
 ---
-  ntp_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
-  ntp_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
-  ntp_servers: # welche Server sollen befragt werden
+  ntp_client_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
+  ntp_client_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
+  ntp_client_servers: # welche Server sollen befragt werden
     - address: ptbtime1.ptb.de
       options: iburst #optionaler parameter
     - address: ptbtime2.ptb.de
@@ -12,5 +12,5 @@
       options: iburst
     - address: ntp0.fau.de
       options: iburst
-  ntp_daemon_user: ntp # Nutzer + Gruppe für den Dienst
-  ntp_daemon_group: ntp # Nutzer + Gruppe für den Dienst
+  ntp_client_daemon_user: ntp # Nutzer + Gruppe für den Dienst
+  ntp_client_daemon_group: ntp # Nutzer + Gruppe für den Dienst
