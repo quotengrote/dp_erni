@@ -3,3 +3,4 @@
   - import_playbook: 1_create_users.yml
   - import_playbook: 2_packages.yml
   - import_playbook: ntp-client.yml
+  - import_playbook: proohibit_ssh_passwordlogin.yml
