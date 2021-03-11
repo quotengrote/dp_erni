@@ -3,8 +3,8 @@
     become: yes
     ansible.builtin.lineinfile:
       path: /etc/ssh/sshd_config
-      regexp: '#PasswordAuthentification yes'
-      line: 'PasswordAuthentification no'
+      regexp: '#PasswordAuthentication yes'
+      line: 'PasswordAuthentication no'
       state: present
       validate: "/usr/sbin/sshd -T -f %s"
     notify: restart_sshd
