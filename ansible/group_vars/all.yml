@@ -37,7 +37,7 @@
   ### robertdebock.bootstrap
   users:
     - username: mg
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_mg_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -48,7 +48,7 @@
         - proxmox
         - ubuntu
     - username: daniel
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_daniel_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -59,7 +59,7 @@
         - proxmox
         - ubuntu
     - username: max
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_max_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -70,7 +70,7 @@
         - proxmox
         - ubuntu
     - username: kati
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ. # = hallowelt; mkpasswd --method=SHA-512 --stdin
+      password: "{{ lookup('keepass', 'linux_user_kati_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
       use_sudo: yes
       use_sudo_nopass: yes
@@ -81,7 +81,7 @@
         - proxmox
         - ubuntu
     - username: ansible-user
-      password: $6$llUfBmJVYjVc6V$0C8PaatCqxv.uDwTIHHYAOJA89ZbtWNX/lGiP8uFDO5m2HCPIaPhzBovpv8QiaJBfFeDIY/jnix4s0yxuEpDJ.
+      password: "{{ lookup('keepass', 'linux_user_ansible_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: on_create
       use_sudo: yes
       use_sudo_nopass: yes
@@ -123,3 +123,15 @@
   ansible_become_pass: "hallowelt"
   ### SSH
   ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
+
+  # Ansible Plugin Variablen
+  ### Keepass
+  # https://github.com/viczem/ansible-keepass
+  keepass_dbx: "./keepass_db.kdbx"
+  keepass_psw: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          66616265623166303430613332396266313037613463393262616565663138623938343166666533
+          3663303031636335313234653332613330656635613139300a663662633962613665623734663164
+          37353561623430313662376464336539306364363664353239343338303065653830353034336331
+          3965646662333930330a363061333538333032343732373431386462623434316363326236613038
+          6330
