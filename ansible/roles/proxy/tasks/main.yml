@@ -3,4 +3,5 @@
     become: yes
     ansible.builting.lineinfile:
       path: /etc/apt/apt.conf
-      line: http://11.8.108.254:8080
+      line: Acquire::http::proxy "http://{{ server }} {{ port }}"
+      state: present
