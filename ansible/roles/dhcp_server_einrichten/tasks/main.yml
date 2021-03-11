@@ -29,4 +29,4 @@
       line: "dhcp-range=set:server,{{ dnsmasq_netid }}{{ dnsmasq_firstclient }},{{ dnsmasq_netid }}{{ dnsmasq_lastclient }},{{ dnsmasq_leasetime }}"
       create: yes
       state: present
-    notify: dnsmasq Konfigurationsänderungen aktivieren
+    notify: dnsmasq Konfigurationsaenderungen aktivieren
