@@ -1,0 +1,7 @@
+---
+  - hosts: all
+    roles:
+      - { role: oefenweb.ufw, # Regeln werden in den Group/Host-Vars gesetzt
+          tags: "ufw",
+          become: true,
+          when: "not 'proxmox' in group_names" }
