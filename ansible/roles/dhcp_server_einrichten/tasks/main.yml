@@ -16,6 +16,8 @@
   - name: journalconf bearbeiten
     become: true
     ansible.builtin.lineinfile:
+      name: journalconf storage persistent machen
+      state: present
       path: /etc/systemd/journald.conf
       line: "Storage=persistent"
       create: yes
