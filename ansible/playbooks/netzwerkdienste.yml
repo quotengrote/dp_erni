@@ -1,0 +1,4 @@
+---
+  - hosts: netzwerkverwalter
+    roles:
+      - dhcp_server_einrichten

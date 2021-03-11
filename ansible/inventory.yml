@@ -16,6 +16,11 @@
           ws-ubuntu8.grote.lan:
           ws-ubuntu9.grote.lan:
           ws-ubuntu10.grote.lan:
+      
+      netzwerkverwalter:
+        hosts:
+          ws-ubuntu1.grote.lan:
+
       ansible:
         hosts:
           ws-ubuntu5.grote.lan:
