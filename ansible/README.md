@@ -1,5 +1,8 @@
 # Readme
 
+## example-cli
+`ansible-playbook playbooks/XXX.yml  -i inventory --ask-vault-pass`
+
 ## Aufnahme neuer Rechner in ansible
 1. in Inventory ergänzen
 1.1 mit Gruppe `<Betriebssystem>` - Cave: Wichtig für verschiedene Rollen + Updates!
