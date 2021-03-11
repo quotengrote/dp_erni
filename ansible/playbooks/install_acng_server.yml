@@ -1,0 +1,4 @@
+---
+  - hosts: acng
+    roles:
+      - { role: mgrote.acng, tags: "acng-server", become: yes}
