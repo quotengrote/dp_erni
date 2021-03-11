@@ -5,3 +5,4 @@
           tags: "ufw",
           become: true,
           when: "not 'proxmox' in group_names" }
+      - deactivate_ssh_password_login
