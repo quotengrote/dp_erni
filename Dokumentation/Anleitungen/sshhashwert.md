@@ -2,4 +2,4 @@
 
 ### Hashwert erstellen
 
-* mkpasswd --method=SHA-512 --stdin
+* `kpasswd --method=SHA-512 --stdin`
