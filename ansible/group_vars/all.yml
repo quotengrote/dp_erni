@@ -1,4 +1,5 @@
 ---
+
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
@@ -7,6 +8,12 @@
       comment: 'ssh'
   ufw_default_incoming_policy: deny
   ufw_default_outgoing_policy: allow
+  ### allgemeine variablen
+  file_header: |
+    #------------------------------------------------------------------
+    #-              This file is managed with ansible!                -
+    #------------------------------------------------------------------
+
   ### ntp-client
   ntp_client_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
   ntp_client_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
