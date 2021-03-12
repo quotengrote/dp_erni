@@ -16,7 +16,6 @@
   - name: journalconf bearbeiten
     become: true
     ansible.builtin.lineinfile:
-      name: journalconf storage persistent machen
       state: present
       path: /etc/systemd/journald.conf
       line: "Storage=persistent"
@@ -25,9 +24,13 @@
 
   - name: set dnsmasq make dhcp
     become: true
-    ansible.builtin.lineinfile:
-      path: /etc/dnsmasq.conf
-      line: "dhcp-range=set:{{ server_bereich }},{{ dnsmasq_netid }}{{ dnsmasq_firstclient }},{{ dnsmasq_netid }}{{ dnsmasq_lastclient }},{{ dnsmasq_leasetime }}"
-      create: yes
-      state: present
+    ansible.builtin.template:
+      src: "dnsmasq.conf"
+      dest: "/etc/dnsmasq.conf"
     notify: dnsmasq Konfigurationsaenderungen aktivieren
+
+  - name: save examples to /etc/dnsmasqconf.examples
+    become: true
+    ansible.builtin.template:
+      src: "dnsmasqconf.examples"
+      dest: "/etc/dnsmasqconf.examples"
