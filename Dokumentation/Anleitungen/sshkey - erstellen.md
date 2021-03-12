@@ -23,7 +23,6 @@
 * Passphrase anlegen oder nicht
 * mit Putty Key Generator öffnen:
 	* Key auswählen, laden und speichern
-* Key mit WinSCP auf den Server kopieren
 
 #### direkt unter Putty erstellen
 
