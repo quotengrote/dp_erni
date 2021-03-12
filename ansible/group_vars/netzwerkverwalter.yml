@@ -1,0 +1,21 @@
+---
+  ### dhcp_server_einrichten
+  dnsmasq_netid: "192.168.2."
+  dnsmasq_firstclient: "222"
+  dnsmasq_lastclient: "240"
+  dnsmasq_leasetime: "12h"
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+    - rule: allow
+      to_port: 53
+      comment: 'dns'
+    - rule: allow
+      to_port: 67
+      comment: 'dhcp'
+    - rule: allow
+      to_port: 68
+      comment: 'dhcp'
