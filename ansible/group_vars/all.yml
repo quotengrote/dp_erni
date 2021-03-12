@@ -127,7 +127,7 @@
   ### User
   ansible_user: "ansible-user"
   #ansible_ssh_pass: "hallowelt"
-  ansible_become_pass: "hallowelt"
+  ansible_become_pass: "{{ lookup('keepass', 'ansible_become_pass', 'password') }}"
   ### SSH
   ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
   host_key_checking: False
