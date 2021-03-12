@@ -28,3 +28,6 @@
       ntpserver:
         hosts:
           ws-ubuntu3.grote.lan:
+      database:
+        hosts:
+          ws-ubuntu7.grote.lan:
