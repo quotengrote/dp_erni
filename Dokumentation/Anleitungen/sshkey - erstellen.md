@@ -13,7 +13,6 @@
 * Key auf den Server kopieren
 
 ### SSH-Key erstellen unter Windows
-
 #### auf Kommandozeile und umwandlung mit Putty
 * CMD öffnen
 * Eintrage:
@@ -31,4 +30,3 @@
 * Generieren
 * Passphrase anlegen oder nicht
 * Speichern des Keys
-* Key it WinSCP auf den Server kopieren

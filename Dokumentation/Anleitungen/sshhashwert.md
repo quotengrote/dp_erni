@@ -1,5 +1,5 @@
-#Aus SSH-Key Hashwert erstellen
+#Linux Passwort erstellen
 
 ### Hashwert erstellen
 
-* `kpasswd --method=SHA-512 --stdin`
+* `mkpasswd --method=SHA-512 --stdin`
