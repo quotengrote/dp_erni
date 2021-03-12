@@ -19,7 +19,7 @@
 
       dhcp:
         hosts:
-          192.168.178.3:
+          ws-ubuntu1.grote.lan:
 
       ansible:
         hosts:
