@@ -1,4 +1,4 @@
 ---
-  - hosts: acng
+  - hosts: all
     roles:
       - proxy
