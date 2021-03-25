@@ -1,5 +1,5 @@
 ---
-- hosts: ansible
-  roles:
-    - { role: geerlingguy.pip, tags: "pip", become: true }
-    - { role: geerlingguy.ansible, tags: "ansible", become: true }
+  - hosts: ansible
+    roles:
+      - { role: geerlingguy.pip, tags: "pip", become: true }
+      - { role: geerlingguy.ansible, tags: "ansible", become: true }
