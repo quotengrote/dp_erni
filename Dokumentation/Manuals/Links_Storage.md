@@ -1,0 +1,5 @@
+[EMC Data Domain Operating System Initial Configuration Guide](https://vmarena.com/wp-content/uploads/2018/03/Data-Domain-Admin-Guide.pdf)
+[PowerProtect and Data Domain core documents | Dell Deutschland](https://www.dell.com/support/kbdoc/de-de/000126375/powerprotect-and-data-domain-core-documents)
+[PowerProtect and Data Domain hardware documents | Dell Deutschland](https://www.dell.com/support/kbdoc/de-de/000130388/powerprotect-and-data-domain-hardware-documents)
+[Data Domain Eos Overview, Installation, and Setup Guide](http://www.gurago.pl/DataDomainDocumentation/docu79598_Data-Domain-DD6300,-DD6800,-and-DD9300-Systems-Hardware-Overview-and-Installation-Guide.pdf)
+[EMC Data Domain Operating System Initial Configuration Guide](https://vmarena.com/wp-content/uploads/2018/03/Data-Domain-Admin-Guide.pdf)
