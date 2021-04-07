@@ -1,4 +1,4 @@
-# Linux Passwort erstellen
+# Linux Passwort hashen
 
 ### Hashwert erstellen
 
