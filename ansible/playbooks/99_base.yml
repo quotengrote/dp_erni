@@ -1,5 +1,6 @@
 ---
   - import_playbook: 1_create_users.yml
+  - import_playbook: 2_sources.yml
   - import_playbook: 2_packages.yml
   - import_playbook: configure_ntp_client.yml
   - import_playbook: 3_haertung.yml
