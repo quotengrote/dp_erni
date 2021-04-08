@@ -1,4 +1,5 @@
-11.10.31.220	VM-acng
+11.10.31.220	acng
+11.10.31.221  ansible
 11.10.31.254	GATEWAY.azubi.erni		
 11.10.31.11	RMPHLPVE1(derzeit noch linker Port)
 11.10.31.12	RMPHLPVE2(derzeit noch linker Port)
