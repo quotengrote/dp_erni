@@ -1,0 +1,6 @@
+## Lokales Netzwerk
+#  = IP =     =  Domainname =                 = Rechnernamen =
+11.10.31.11      RMPHLPVE1.ausbildung.md        RMPHLPVE1             ## pve1
+11.10.31.12      RMPHLPVE2.ausbildung.md        RMPHLPVE2             ## pve2
+11.10.31.6       IPMI-RMPHLPVE1.ausbildung.md   IPMI-RMPHLPVE1        ## pve1
+11.10.31.7       IPMI-RMPHLPVE2.ausbildung.md   IPMI-RMPHLPVE2        ## pve2
