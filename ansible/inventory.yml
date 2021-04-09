@@ -11,10 +11,14 @@
         hosts:
           acng:
             ansible_host: 11.10.31.220
+          ansible:
+            ansible_host: 11.10.31.221
       dhcp:
         hosts:
       ansible:
         hosts:
+          ansible:
+            ansible_host: 11.10.31.221
       acng:
         hosts:
           acng:
