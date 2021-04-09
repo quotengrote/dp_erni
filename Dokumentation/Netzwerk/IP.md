@@ -1,13 +1,17 @@
-11.10.31.220	VM-acng
+11.10.31.220	acng
+11.10.31.221  ansible
 11.10.31.254	GATEWAY.azubi.erni		
-11.10.31.11	RMPHLPVE1(derzeit noch linker Port)
-11.10.31.12	RMPHLPVE2(derzeit noch linker Port)
-11.10.31.6	RMPHLPVE1-IPMI (MGMT-Port)
-11.10.31.7	RMPHLPVE2-IPMI (MGMT-Port)
+11.10.31.10	  dnsmasq
+11.10.31.11	  RMPHLPVE1(data/links)
+11.10.31.12	  RMPHLPVE2(data/links)
+11.10.31.13	  RMPHLPVE1(corosync/rechts)
+11.10.31.14	  RMPHLPVE2(corosync/rechts)
+11.10.31.6	  RMPHLPVE1-IPMI (MGMT-Port)
+11.10.31.7	  RMPHLPVE2-IPMI (MGMT-Port)
 11.10.31.201	Kati Laptop
-11.8.43.1	NTP Ingo
-11.8.43.2	NTP Ingo
-11.8.108.254:8080	Proxy
+11.8.43.1	    NTP Ingo
+11.8.43.2	    NTP Ingo
+11.8.108.254	Proxy(8080)
 11.10.31.98	RMKVM0
 11.10.31.59	RMPHLTTY0
 11.10.31.10 DHCP/DNS Server

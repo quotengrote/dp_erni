@@ -1,4 +1,4 @@
 ---
   - hosts: acng
     roles:
-      - proxy
+      - set_apt_proxy
