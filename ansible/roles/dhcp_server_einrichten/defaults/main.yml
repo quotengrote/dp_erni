@@ -5,3 +5,4 @@
       firsthostaddress: "5"
       lasthostadrdess: "10"
       leasetime: "12h"
+  dhcp-dns-ipaddress: "11.10.31.10"
