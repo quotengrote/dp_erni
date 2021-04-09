@@ -18,7 +18,7 @@ Ablauf
 3. alle IPs müssen im DNS stehen
 
 ##### Erstellen
-`pvecm create CLUSTERNAME -link0 <ip>`
+`pvecm create CLUSTERNAME -link0 <ip> -link1 <ip>`
 * Link0 ist die NIC über die der Corosyncverkehr laufen soll
 
 When adding a node to a cluster with a separated cluster network you need to use the link0 parameter to set the nodes address on that network:
