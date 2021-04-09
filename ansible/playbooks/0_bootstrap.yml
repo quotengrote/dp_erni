@@ -16,7 +16,7 @@
 
     vars:
       ### reobertdebock.bootstrap
-      bootstrap_user: mg
+      bootstrap_user: kati
       bootstrap_wait_for_host: no
       bootstrap_timeout: 1
       ### ansible
