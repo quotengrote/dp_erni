@@ -10,17 +10,18 @@
           state: absent
         when: "'proxmox' in group_names"
     roles:
-      - { role: mgrote.set_apt_sources, tags: "sources", become: yes}
+      - set_apt_proxy
+#      - { role: mgrote.set_apt_sources, tags: "sources", become: yes}
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
 
     vars:
       ### reobertdebock.bootstrap
-      bootstrap_user: mg
+      bootstrap_user: kati
       bootstrap_wait_for_host: no
       bootstrap_timeout: 1
       ### ansible
-      ansible_user: "mg"
+      ansible_user: "kati"
       ansible_password: hallowelt
       ansible_become_password: hallowelt
       ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
