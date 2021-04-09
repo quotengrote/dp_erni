@@ -10,7 +10,8 @@
           state: absent
         when: "'proxmox' in group_names"
     roles:
-      - { role: mgrote.set_apt_sources, tags: "sources", become: yes}
+      - set_apt_proxy
+#      - { role: mgrote.set_apt_sources, tags: "sources", become: yes}
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
 
