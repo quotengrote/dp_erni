@@ -47,14 +47,14 @@
     - rangename: "server"
       netaddress: "11.10.31."
       firsthostaddress: "6"
-      lasthostadrdess: "50"
+      lasthostaddress: "50"
       leasetime: "12h"
       # erst nach ersten test auskommentieren
       # (keine ahnung wie das verhalten bei zwei dhcp ranges im selben subnetz ist)
 #    - rangename: "clients"
 #      netaddress: "11.10.31."
 #      firsthostaddress: "51"
-#      lasthostadrdess: "200"
+#      lasthostaddress: "200"
 #      leasetime: "12h"
   ### robertdebock.bootstrap
   users:
