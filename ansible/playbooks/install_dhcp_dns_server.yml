@@ -1,4 +1,0 @@
----
-  - hosts: dhcp
-    roles:
-      - dhcp_server_einrichten
