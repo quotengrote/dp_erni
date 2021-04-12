@@ -1,4 +1,4 @@
 ---
   - hosts: dhcp
     roles:
-      - dhcp_server_einrichten
+      - dnsmasq_server_einrichten
