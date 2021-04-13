@@ -138,6 +138,7 @@
     - qemu-guest-agent
     - bmon
     - tmux
+    - sudo
 
   # Ansible Variablen
   ### User
