@@ -135,6 +135,7 @@
     - ntpdate
     - acl
     - vim
+    - qemu-guest-agent
 
 
 
