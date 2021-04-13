@@ -136,8 +136,8 @@
     - acl
     - vim
     - qemu-guest-agent
-
-
+    - bmon
+    - tmux
 
   # Ansible Variablen
   ### User
