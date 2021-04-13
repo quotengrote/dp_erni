@@ -58,6 +58,15 @@
 #      leasetime: "12h"
   ### robertdebock.bootstrap
   users:
+    - username: root
+      password: "{{ lookup('keepass', 'linux_user_root_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
+      update_password: always
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh, sudo
+      servers:
+        - proxmox
     - username: mg
       password: "{{ lookup('keepass', 'linux_user_mg_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
