@@ -15,7 +15,7 @@
             ansible_host: 11.10.31.221
           dnsmasq:
             ansible_host: 11.10.31.10
-      dhcp:
+      dnsmasq:
         hosts:
           dnsmasq:
             ansible_host: 11.10.31.10

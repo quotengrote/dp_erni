@@ -1,4 +1,4 @@
 ---
-  - hosts: dhcp
+  - hosts: dnsmasq
     roles:
       - dnsmasq_server_einrichten
