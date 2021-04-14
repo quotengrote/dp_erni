@@ -1,7 +1,3 @@
-
-exclude_paths:
-
-
 parseable: true
 quiet: true
 skip_list:
