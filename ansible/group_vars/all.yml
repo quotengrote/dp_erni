@@ -135,8 +135,10 @@
     - ntpdate
     - acl
     - vim
-
-
+    - qemu-guest-agent
+    - bmon
+    - tmux
+    - sudo
 
   # Ansible Variablen
   ### User
