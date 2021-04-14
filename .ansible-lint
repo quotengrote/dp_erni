@@ -1,8 +1,4 @@
-
-exclude_paths:
-
-
-parseable: true
+parseable: false
 quiet: true
 skip_list:
   - '204'
