@@ -26,5 +26,6 @@ dhcp_ranges: # welche ranges sollen gesetzt werden
     firsthostaddress: "5" # erster vergebener Host in der Range
     lasthostadrdess: "10" # letzter vergebener Host in der Range
     leasetime: "12h" # Leasetime, zum Beispiel 12h für 12 Stunden oder 3m für 3 Minuten
-dhcp_dns_ipaddress: "11.10.31.10" # Adresse des dnsmasq servers
+    dhcp_ipaddress: "11.10.31.10" # Adresse des dhcp servers
+    dns_ipaddress: "11.10.31.10" # Adresse des dns servers
 ```
