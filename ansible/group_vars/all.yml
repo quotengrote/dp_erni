@@ -44,7 +44,7 @@
   ### dhcp_server_einrichten
   dhcp_ipaddress: "11.10.31.10"
   dns_ipaddress: "11.10.31.10"
-  gateway: 11.10.31.254
+  gateway_server: 11.10.31.254
   ntp_server: 11.8.43.1
   dhcp_ranges: # welche ranges  gesetzt werden
     - rangename: "server"
