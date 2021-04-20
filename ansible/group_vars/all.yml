@@ -61,6 +61,15 @@
 #      leasetime: "12h"
   ### robertdebock.bootstrap
   users:
+    - username: root
+      password: "{{ lookup('keepass', 'linux_user_root_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
+      update_password: always
+      use_sudo: yes
+      use_sudo_nopass: yes
+      user_state: present
+      groups: ssh, sudo
+      servers:
+        - proxmox
     - username: mg
       password: "{{ lookup('keepass', 'linux_user_mg_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
@@ -68,7 +77,7 @@
       use_sudo_nopass: yes
       user_state: present
       groups: ssh, sudo
-      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDhCkPnS741TxJLZxYZYoUGlZgcrBDuubyF4VDNufzqajCFrP1y54+IZ4VjRUcvldJwAjUT72FOF/HcCYxckQuBT4PtN+Ys784uwddMFCk3vzPFUrPfP/87vVhRUO1EZHTwv2zQ8BKAZ1tGulOJ1uZRfmiKrb0aqdPuKB9iNixuHzysOvppvAnN7CoNqrvUqc/zMqw2RJRwFMVhsQRKtzwx2haP5xUh7i9JBb2kEG9YhQXTxMKwK9M5iPkWV5Q5RTKzT0stiWKSEOc+km4Rz7HxGaaBbz0V6bMUCc9n+owgWdnyxIqi8k3oii0/rfsnmLP75r+ZjhaP5AeCNSBP5kWoi85Dwq51iSKiuRoKL6lEC8zEYUNtPJkrSG8U8MPpia59O4EF8r+HHuu7mxThJn09QdYWeHco9rCzCD8D3UUS+RLLg4m8c+JPNXZ+6MfpJJhODiJcoZ9glpL2gHRcVi8LjPD0TS41SfFVixOj/Yo5W/gVd8qzzW1lnMsD/FmejAEIhZfFv40rwMmdB3M58Ow9Et/tV2/m6CaYUhcmYZgTWvaKVSS1OTz4DT53b1qqqu8NA+XXFeo4WNC3lvbplolUOpKMUUHHYNjtRIa9LA7RCxHMFt2yJXSbeAsDhx2hbMKUzh+aGo7Oh/NsFcIHajrvBdotkG6imNhocg/AaIAZJw== mg@vm-test
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDTy/g9yfJie8S9mljaYKjOxh6k1ksMqs3bh43KNBXydtoVpOMOUC2nDvJnDwKnnZhuCrqBMrQ3DLoEwg3HBYYzV4pObLgKSek8EuJSVgz1ckeFBjbDlJq4PcUNmK9YurG1stqffWELbrS+EVs6yAu/RoxNSb2/G4aPEWG4ql+88w== mg@vm-test
       servers:
         - proxmox
         - ubuntu
@@ -138,8 +147,10 @@
     - ntpdate
     - acl
     - vim
-
-
+    - qemu-guest-agent
+    - bmon
+    - tmux
+    - sudo
 
   # Ansible Variablen
   ### User

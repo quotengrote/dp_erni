@@ -1,7 +1,15 @@
 ---
-  - name: proxy setzen
+  - name: ensure apt.conf exists
+    become: true
+    ansible.builtin.file:
+      path: "{{ set_apt_proxy_apt_conf_path }}"
+      state: touch
+      access_time: preserve
+      modification_time: preserve
+
+  - name: set proxy
     become: yes
     ansible.builtin.lineinfile:
-      path: /etc/apt/apt.conf
+      path: "{{ set_apt_proxy_apt_conf_path }}"
       line: Acquire::http::proxy "http://{{ server }}:{{ port }}";
       state: present
