@@ -29,6 +29,13 @@
       dest: "/etc/dnsmasq.conf"
     notify: dnsmasq Konfigurationsaenderungen aktivieren
 
+  - name: resolv.conf bearbeiten
+    become: true
+    ansible.builtin.template:
+      src: "resolv.conf"
+      dest: "/etc/resolv.conf"
+    notify: dnsmasq Konfigurationsaenderungen aktivieren
+
   - name: set dnsmasq make dns
     become: true
     ansible.builtin.template:
