@@ -1,4 +1,4 @@
 ---
-  - hosts: all,!ntpserver
+  - hosts: all,!g_ntpserver
     roles:
       - ntp-client

@@ -1,4 +1,4 @@
 ---
-  - hosts: acng
+  - hosts: g_acng
     roles:
       - { role: mgrote.acng, tags: "acng-server", become: yes}

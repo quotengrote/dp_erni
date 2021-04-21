@@ -1,4 +1,4 @@
 ---
-  - hosts: dnsmasq
+  - hosts: g_dnsmasq
     roles:
       - dnsmasq_server_einrichten
