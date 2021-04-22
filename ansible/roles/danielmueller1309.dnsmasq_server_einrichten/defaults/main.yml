@@ -1,11 +1,11 @@
 ---
-  dhcp_ranges: # welche ranges sollen gesetzt werden
+  dnsmasq_server_einrichten_dhcp_ranges: # welche ranges sollen gesetzt werden
     - rangename: "server" # Name der Range, zum beispiel für Server und Clients getrente Ranges oder wenn der DHCP-Server Ranges in verschiedenen subnetzten verteilt.
       netaddress: "192.168.178." # Netzwerkadresse der Range, der Punkt am ende des Strings ist entscheident da mit der ersten und letzten Hostadresse zusammen eine IP gebildet wird (Beispiel: {{ netaddress }}{{ firsthostaddress }} -> 192.168.178.5)
       firsthostaddress: "5" # erster vergebener Host in der Range
       lasthostadrdess: "10" # letzter vergebener Host in der Range
       leasetime: "12h" # Leasetime, zum Beispiel 12h für 12 Stunden oder 3m für 3 Minuten
-  dhcp_ipaddress: "11.10.31.10" # Adresse des dhcp servers
-  dns_ipaddress: "11.10.31.10" # Adresse des dns servers
-  gateway_server: 11.10.31.254
-  ntp_server: 11.8.43.1
+  dnsmasq_server_einrichten_dhcp_ipaddress: "11.10.31.10" # Adresse des dhcp servers
+  dnsmasq_server_einrichten_dns_ipaddress: "11.10.31.10" # Adresse des dns servers
+  dnsmasq_server_einrichten_gateway_server: 11.10.31.254
+  dnsmasq_server_einrichten_ntp_server: 11.8.43.1
