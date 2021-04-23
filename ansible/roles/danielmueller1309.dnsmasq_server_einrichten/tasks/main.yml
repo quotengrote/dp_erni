@@ -42,9 +42,3 @@
       src: "hosts"
       dest: "/etc/hosts"
     notify: dnsmasq Konfigurationsaenderungen aktivieren
-
-  - name: save examples to /etc/dnsmasqconf.examples
-    become: true
-    ansible.builtin.template:
-      src: "dnsmasqconf.examples"
-      dest: "/etc/dnsmasqconf.examples"
