@@ -1,0 +1,5 @@
+---
+  - hosts: g_jenkins
+    roles:
+      - geerlingguy.java
+      - geerlingguy.jenkins
