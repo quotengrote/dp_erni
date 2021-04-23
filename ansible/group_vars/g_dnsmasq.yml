@@ -52,6 +52,9 @@
       ip: 11.10.31.98
     - shortname: RMPHLTTY0
       ip: 11.10.31.59
+    - shortname: jenkins
+      ip: 11.10.31.223
+
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
