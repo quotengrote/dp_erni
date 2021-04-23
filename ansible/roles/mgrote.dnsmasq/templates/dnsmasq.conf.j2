@@ -44,7 +44,7 @@ bogus-priv
 
 # Change this line if you want dns to get its upstream servers from
 # somewhere other that /etc/resolv.conf
-resolv-file={{ dnsmasq_resolv_file | default(/etc/resolv.conf) }}
+resolv-file={{ dnsmasq_resolv_file | default("/etc/resolv.conf") }}
 
 # By  default,  dnsmasq  will  send queries to any of the upstream
 # servers it knows about and tries to favour servers to are  known
@@ -156,6 +156,7 @@ domain={{ dnsmasq_domain | default()  }}
 # repeat this for each network on which you want to supply DHCP
 # service.
 {% for item in dnsmasq_dhcp_pools %}
+# {{ item.name }}
 dhcp-range={{ item.ip_start }},{{ item.ip_end }},{{ item.leasetime }}
 {% endfor %}
 
@@ -229,7 +230,7 @@ dhcp-range={{ item.ip_start }},{{ item.ip_end }},{{ item.leasetime }}
 # Always allocate the host with Ethernet address 11:22:33:44:55:66
 # The IP address 192.168.0.60
 {% for item in dnsmasq_dhcp_static_leases %}
-dhcp-host={{ item.mac }},{{ item.hostname }}{{ item.ip }}
+dhcp-host={{ item.mac }},{{ item.name }},{{ item.ip }}
 {% endfor %}
 
 # Always set the name of the host with hardware address
@@ -331,9 +332,9 @@ dhcp-host={{ item.mac }},{{ item.hostname }}{{ item.ip }}
 # are some options which are recommended, they are detailed at the
 # end of this section.
 #------
-{% for item in dnsmasq_dhcp_static_leases %}
+{% for item in dnsmasq_dhcp_options %}
 #{{ item.name }}
-dhcp-option={{ item.opt_nr }},{{ item.value }}
+dhcp-option={{ item.optnr }},{{ item.value }}
 #------
 {% endfor %}
 

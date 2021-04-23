@@ -7,6 +7,6 @@
 
   - name: templating dnsmasq_extra_resolve_file
     ansible.builtin.template:
-      src:
+      src: dnsmasq_extra_resolve_file.j2
       dest: "{{ dnsmasq_extra_resolve_file }}"
     notify: restart dnsmasq
