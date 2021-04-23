@@ -12,12 +12,8 @@
       masked: yes
       state: stopped
 
-  - name: remove old /etc/resolv.conf
-    ansible.builtin.file:
-      path: /etc/resolv.conf
-      state: absent
-
-  - name: templating new /etc/resolv.conf
+  - name: templating new resolv.conf
     ansible.builtin.template:
       src: resolv.conf.j2
-      dest: /etc/resolv.conf
+      dest: "{{ dnsmasq_resolv_file }}"
+    notify: restart dnsmasq
