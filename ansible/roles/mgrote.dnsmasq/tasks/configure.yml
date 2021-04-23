@@ -4,9 +4,11 @@
       src: dnsmasq.conf.j2
       dest: /etc/dnsmasq.conf
     notify: restart dnsmasq
+      backup: yes
 
   - name: templating dnsmasq_extra_resolve_file
     ansible.builtin.template:
       src: dnsmasq_extra_resolve_file.j2
       dest: "{{ dnsmasq_extra_resolve_file }}"
+      backup: yes
     notify: restart dnsmasq

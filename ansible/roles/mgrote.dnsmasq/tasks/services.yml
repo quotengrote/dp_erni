@@ -16,4 +16,5 @@
     ansible.builtin.template:
       src: resolv.conf.j2
       dest: "{{ dnsmasq_resolv_file }}"
+      backup: yes
     notify: restart dnsmasq
