@@ -5,3 +5,7 @@
       name: dnsmasq
       enabled: yes
       state: restarted
+
+  - name: check config
+    become: yes
+    ansible.builtin.shell: dnsmasq --test

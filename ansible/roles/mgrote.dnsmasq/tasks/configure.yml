@@ -3,8 +3,11 @@
     ansible.builtin.template:
       src: dnsmasq.conf.j2
       dest: /etc/dnsmasq.conf
-    notify: restart dnsmasq
       backup: yes
+    notify:
+      - restart dnsmasq
+      - check config
+
 
   - name: templating dnsmasq_extra_resolve_file
     ansible.builtin.template:
