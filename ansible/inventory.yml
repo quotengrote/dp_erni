@@ -31,7 +31,5 @@
         hosts:
           h_jenkins:
             ansible_host: 11.10.31.223
-      ntpserver:
-        hosts:
       database:
         hosts:
