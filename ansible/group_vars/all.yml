@@ -1,5 +1,4 @@
 ---
-
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
