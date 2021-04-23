@@ -21,22 +21,6 @@
       options: iburst #optionaler parameter
   ntp_client_daemon_user: ntp # Nutzer + Gruppe für den Dienst
   ntp_client_daemon_group: ntp # Nutzer + Gruppe für den Dienst
-  ### net-server
-  ntp_server_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
-  ntp_server_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
-  ntp_server_servers: # welche Server sollen befragt werden
-    - address: ptbtime1.ptb.de
-      options: iburst #optionaler parameter
-    - address: ptbtime2.ptb.de
-      options: iburst
-    - address: ptbtime3.ptb.de
-      options: iburst
-    - address: time3.google.com
-      options: iburst
-    - address: ntp0.fau.de
-      options: iburst
-  ntp_server_daemon_user: ntp # Nutzer + Gruppe für den Dienst
-  ntp_server_daemon_group: ntp # Nutzer + Gruppe für den Dienst
   ### mgrote.set_apt_sources
   acng_server: 11.10.31.220
   acng_server_port: 9999
