@@ -1,4 +1,4 @@
 ---
   - hosts: g_dnsmasq
     roles:
-      - dnsmasq_server_einrichten
+      - { role: mgrote.dnsmasq, tags: "dnsmasq", become: true}
