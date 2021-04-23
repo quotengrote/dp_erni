@@ -1,0 +1,35 @@
+---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+    - rule: allow
+      to_port: 8080
+      protocol: tcp
+      comment: 'jenkins-webinterface'
+  ### geerlingguy.jenkins
+  jenkins_package_state: present
+  jenkins_home: /var/lib/jenkins
+  jenkins_admin_username: admin
+  jenkins_admin_password: "{{ lookup('keepass', 'jenkins_admin_password', 'password') }}"
+  jenkins_package_state: latest
+  jenkins_http_port: 8080
+  jenkins_plugins_install_dependencies: true
+  jenkins_plugins_state: latest
+  jenkins_java_options: "-Djenkins.install.runSetupWizard=true"
+  jenkins_proxy_host: "11.8.108.254"
+  jenkins_proxy_port: "8080"
+  jenkins_proxy_noproxy:
+    - "127.0.0.1"
+    - "localhost"
+  ### geerlingguy.pip
+  pip_package: python3-pip
+  pip_install_packages:
+    - name: pykeepass
+    - name: Jinja2
+    - name: markupsafe
+  ### geerlingguy.ansible
+  ansible_install_method: pip
+  ansible_install_version_pip: '2.10'
