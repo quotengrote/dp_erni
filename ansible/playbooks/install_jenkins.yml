@@ -1,0 +1,7 @@
+---
+  - hosts: g_jenkins
+    roles:
+      - { role: geerlingguy.java, tags: "java", become: true }
+      - { role: geerlingguy.pip, tags: "pip", become: true }
+      - { role: geerlingguy.ansible, tags: "ansible", become: true }
+      - { role: geerlingguy.jenkins, tags: "jenkins", become: true }
