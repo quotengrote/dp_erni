@@ -18,6 +18,9 @@
   jenkins_http_port: 8080
   jenkins_plugins_install_dependencies: true
   jenkins_plugins_state: latest
+  jenkins_plugins:
+    - ansible
+    - github
   jenkins_java_options: "-Djenkins.install.runSetupWizard=true"
   jenkins_proxy_host: "11.8.108.254"
   jenkins_proxy_port: "8080"
