@@ -1,7 +1,0 @@
----
-  - name: restart ntpd
-    become: yes
-    systemd:
-      name: ntp
-      enabled: yes
-      state: restarted
