@@ -135,7 +135,7 @@
     - cifs-utils
     - netdiscover
     - tree
-    - curl
+    - curl # benötigt für jenkins
     - logrotate
     - ncdu
     - net-tools
@@ -145,6 +145,7 @@
     - vim
     - qemu-guest-agent
     - bmon
+    - sshpass # für ansible
     - tmux
     - sudo
 
