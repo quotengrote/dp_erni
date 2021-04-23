@@ -1,0 +1,4 @@
+{{ file_header }}
+{% for item in dnsmasq_addresses_to_resolve %}
+{{ item.ip }} {{ item.shortname }}
+{% endfor %}
