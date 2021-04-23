@@ -1,5 +1,13 @@
 # Readme
 
+## Host und Gruppennamen
+```yaml
+  g_<gruppenname>:
+    hosts:
+      h_<hostname; später FQDN>:
+        ansible_host: 11.10.31.223
+```
+
 ## example-cli
 `ansible-playbook playbooks/XXX.yml  -i inventory --ask-vault-pass`
 
