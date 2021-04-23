@@ -1,26 +1,27 @@
 ---
-  dnsmasq_packages:
+  dnsmasq_resolv_file: /etc/resolv.conf # wo liegt die resolv.conf
+  dnsmasq_extra_resolve_file: /etc/dnsmasq_extra_resolve_file # wo liegen extra hosts/ersatz fur /etc/hosts
+  dnsmasq_packages: # Pakete
     - dnsmasq
     - dnsutils
     - ldnsutils
-  dnsmasq_external_nameserver: "9.9.9.9"
-
-
-
-
-
-
-
-
-
-
-  dnsmasq_server_einrichten_dhcp_ranges: # welche ranges sollen gesetzt werden
-    - rangename: "server" # Name der Range, zum beispiel für Server und Clients getrente Ranges oder wenn der DHCP-Server Ranges in verschiedenen subnetzten verteilt.
-      netaddress: "192.168.178." # Netzwerkadresse der Range, der Punkt am ende des Strings ist entscheident da mit der ersten und letzten Hostadresse zusammen eine IP gebildet wird (Beispiel: {{ netaddress }}{{ firsthostaddress }} -> 192.168.178.5)
-      firsthostaddress: "5" # erster vergebener Host in der Range
-      lasthostadrdess: "10" # letzter vergebener Host in der Range
-      leasetime: "12h" # Leasetime, zum Beispiel 12h für 12 Stunden oder 3m für 3 Minuten
-  dnsmasq_server_einrichten_dhcp_ipaddress: "11.10.31.10" # Adresse des dhcp servers
-  dnsmasq_server_einrichten_dns_ipaddress: "11.10.31.10" # Adresse des dns servers
-  dnsmasq_server_einrichten_gateway_server: 11.10.31.254
-  dnsmasq_server_einrichten_ntp_server: 11.8.43.1
+  dnsmasq_max_leases: "200" # wieviel leases darf dnsmasq gleichzeitig vergeben
+  dnsmasq_external_nameserver:  # Welche nameserver soll dnsmasq befragen
+    - address: "9.9.9.9"
+  dnsmasq_listen_port: "53" # auf welchem Port soll dnsmasq hören
+  dnsmasq_domain: ausbildung.md # wie heißt die lokale domain
+  dnsmasq_dhcp_pools: # welche dhcp pools gibt es
+    - ip_start: 11.10.31.220
+      ip_end: 11.10.31.230
+      leasetime: "3m"
+  dnsmasq_dhcp_static_leases: # statische leases; also max 11:22:33:44:55:66 kriegt immer IP 192.168.0.60 mit dem hostnamen klauspeter
+    - mac: "11:22:33:44:55:66"
+      ip: "192.168.0.60"
+      hostname: "klauspeter"
+  dnsmasq_dhcp_options: # welche dhcp optionen werden gesetzt
+    - name: ntp-server
+      opt_nr: "42"
+      value: "11.8.43.1,11.8.43.2"
+  dnsmasq_addresses_to_resolve: # namensauflösung für geräte ohne leases
+    - shortname: acng
+      ip: 11.10.31.220
