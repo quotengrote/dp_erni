@@ -29,3 +29,4 @@ dhcp_ranges: # welche ranges sollen gesetzt werden
     dhcp_ipaddress: "11.10.31.10" # Adresse des dhcp servers
     dns_ipaddress: "11.10.31.10" # Adresse des dns servers
 ```
+teste on ubuntu

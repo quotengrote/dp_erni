@@ -1,4 +1,42 @@
 ---
+  - name: include disable unneeded services
+    include_tasks: services.yml
+    when: ansible_distribution == 'Ubuntu'
+  - name: include install packages
+    include_tasks: install.yml
+    when: ansible_distribution == 'Ubuntu'
+  - name: include configure dnsmasq
+    include_tasks: configure.yml
+    when: ansible_distribution == 'Ubuntu'
+
+
+
+
+
+
+
+
+  - name: update package lists # noqa 503 503
+    become: yes
+    ansible.builtin.apt:
+      update_cache: yes
+    when: copy_src.changed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   - name: stop systemd-resolved service on port 53
     become: true
     ansible.builtin.systemd:

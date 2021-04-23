@@ -1,0 +1,23 @@
+---
+  - name: stop systemd-resolved service
+    become: yes
+    systemd:
+      name: systemd-resolved
+      state: stopped
+
+  - name: mask systemd-resolved service
+    become: yes
+    systemd:
+      name: systemd-resolved
+      masked: yes
+      state: stopped
+
+  - name: remove old /etc/resolv.conf
+    ansible.builtin.file:
+      path: /etc/resolv.conf
+      state: absent
+
+  - name: templating new /etc/resolv.conf
+    ansible.builtin.template:
+      src: resolv.conf.j2
+      dest: /etc/resolv.conf

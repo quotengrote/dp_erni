@@ -1,4 +1,19 @@
 ---
+  dnsmasq_packages:
+    - dnsmasq
+    - dnsutils
+    - ldnsutils
+  dnsmasq_external_nameserver: "9.9.9.9"
+
+
+
+
+
+
+
+
+
+
   dnsmasq_server_einrichten_dhcp_ranges: # welche ranges sollen gesetzt werden
     - rangename: "server" # Name der Range, zum beispiel für Server und Clients getrente Ranges oder wenn der DHCP-Server Ranges in verschiedenen subnetzten verteilt.
       netaddress: "192.168.178." # Netzwerkadresse der Range, der Punkt am ende des Strings ist entscheident da mit der ersten und letzten Hostadresse zusammen eine IP gebildet wird (Beispiel: {{ netaddress }}{{ firsthostaddress }} -> 192.168.178.5)
