@@ -27,6 +27,10 @@
         hosts:
           acng:
             ansible_host: 11.10.31.220
+      g_jenkins:
+        hosts:
+          h_jenkins:
+            ansible_host: 11.10.31.223
       ntpserver:
         hosts:
       database:
