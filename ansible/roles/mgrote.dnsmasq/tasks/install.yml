@@ -1,6 +1,5 @@
 ---
   - name: install packages
-    become: yes
     ansible.builtin.package:
       name: "{{ dnsmasq_packages }}"
       state: present

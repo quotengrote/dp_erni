@@ -1,12 +1,10 @@
 ---
   - name: stop systemd-resolved service
-    become: yes
     systemd:
       name: systemd-resolved
       state: stopped
 
   - name: mask systemd-resolved service
-    become: yes
     systemd:
       name: systemd-resolved
       masked: yes
