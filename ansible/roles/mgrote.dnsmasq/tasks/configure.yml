@@ -8,7 +8,6 @@
       - restart dnsmasq
       - check config
 
-
   - name: templating dnsmasq_extra_resolve_file
     ansible.builtin.template:
       src: dnsmasq_extra_resolve_file.j2
