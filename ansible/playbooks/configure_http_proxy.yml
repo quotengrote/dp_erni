@@ -1,0 +1,4 @@
+---
+  - hosts: all
+    roles:
+      - { role: mgrote.set_http_proxy, tags: "http_proxy", become: yes}
