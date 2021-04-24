@@ -1,4 +1,4 @@
 ---
-  server: 11.8.108.254
-  port: 8080
-  set_apt_proxy_apt_conf_path: /etc/apt/apt.conf
+  http_proxy_ip: "11.8.108.254"  # ip des proxys
+  http_proxy_port: "8080" # port des proxys
+  http_proxy_local_subnet: "11.10.31.0./24" # lokales subnetz das nicht über den proxy geht

@@ -1,15 +1,13 @@
 ---
-  - name: ensure apt.conf exists
-    become: true
-    ansible.builtin.file:
-      path: "{{ set_apt_proxy_apt_conf_path }}"
-      state: touch
-      access_time: preserve
-      modification_time: preserve
-
-  - name: set proxy
-    become: yes
-    ansible.builtin.lineinfile:
-      path: "{{ set_apt_proxy_apt_conf_path }}"
-      line: Acquire::http::proxy "http://{{ server }}:{{ port }}";
-      state: present
+  - name: set http-proxy in /etc/environment
+    blockinfile:
+      path: /etc/environment
+      block: |
+        export HTTP_PROXY="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export http_proxy="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export HTTPS_PROXY="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export https_proxy="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export NO_PROXY="localhost,127.0.0.1,::1,{{ http_proxy_local_subnet }}"
+        export no_proxy="localhost,127.0.0.1,::1,{{ http_proxy_local_subnet }}"
+      create: true
+      backup: yes
