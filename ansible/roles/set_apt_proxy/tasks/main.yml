@@ -11,5 +11,5 @@
     become: yes
     ansible.builtin.lineinfile:
       path: "{{ set_apt_proxy_apt_conf_path }}"
-      line: Acquire::http::proxy "http://{{ apt_proxy_server }}:{{ port }}";
+      line: Acquire::http::proxy "http://{{ apt_proxy_server }}:{{ apt_proxy_port }}";
       state: present
