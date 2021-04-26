@@ -4,3 +4,5 @@
   acng_security_conf_path: "/etc/apt-cacher-ng/security.conf"
   acng_server_auth_user: aadmin
   acng_server_auth_pass: "{{ lookup('keepass', 'acng_adminauth_password', 'password') }}"
+  acng_proxy_extern_ip: "11.8.108.254"
+  acng_proxy_extern_port: "8080"
