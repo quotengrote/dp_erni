@@ -25,7 +25,7 @@
   ntp_client_daemon_group: ntp # Nutzer + Gruppe für den Dienst
   ### mgrote.set_apt_sources
   acng_server: 11.10.31.220
-  acng_server_port: 9999
+  acng_port: 9999
   ### dhcp_server_einrichten
   dhcp-dns-ipaddress: "11.10.31.10"
   dhcp_ranges: # welche ranges  gesetzt werden
