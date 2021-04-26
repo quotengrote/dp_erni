@@ -34,11 +34,19 @@ __Nutzernamen:__ u_mustermann_steffi,
 - Derzeit ohne Funktion
 
 ### Namenskonvention Netzwerk
-1. Position: R1 oder RM oder R2
-2. Position: PH(ysisch) oder VM  oder CO(ntainer)
-3. Position: L(inux) oder W(indows)
-4. Position: Funktion (ProxMox = pve)
-5. Position: Laufende Nummer pro Rack(bei 0 beginnend)
+```
+1. Position: B(asis)/S(chulung)/T(est)
+2. Position: L(inux)/W(indows)/A(ppliance)
+3-6. Position: Bezeichnung
+7-9. Position: Laufende Nummer
+```
+
+
+
+B/S/T - Basisdienst oder Schulung oder Test
+L/W/A - Linux/Windows/Appliance
+4-Stellen Bezeichnung - z.B. dnsm
+3-Stellige Nummer - 001
 #### Beispiel
 R1PHLPVE1.ausbildung.md
 Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
@@ -57,5 +65,3 @@ Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
 
 ## "Best Practises"
 - VMs und LXC-Container sollten immer aus dem Base-Image erstellt werden.
-
-
