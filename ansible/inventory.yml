@@ -9,7 +9,7 @@
             ansible_host: 11.10.31.12
       ubuntu:
         hosts:
-          acng:
+          h_acng:
             ansible_host: 11.10.31.220
           ansible:
             ansible_host: 11.10.31.221
@@ -23,9 +23,9 @@
         hosts:
           ansible:
             ansible_host: 11.10.31.221
-      acng:
+      g_acng:
         hosts:
-          acng:
+          h_acng:
             ansible_host: 11.10.31.220
       g_jenkins:
         hosts:
