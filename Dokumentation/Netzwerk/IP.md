@@ -10,7 +10,7 @@
 11.10.31.7	  RMPHLPVE2-IPMI (MGMT-Port)
 11.10.31.201	Kati Laptop
 11.8.43.1	    NTP Ingo
-11.8.43.2	    NTP Ingo
+11.8.43.2	    NTP Ingo #derzeit nicht erreichbar, 270824Bapr21
 11.8.108.254	Proxy(8080)
 11.10.31.98	  RMKVM0
 11.10.31.59	  RMPHLTTY0
