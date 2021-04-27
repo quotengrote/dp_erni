@@ -21,11 +21,12 @@
     - ansible
     - github
   jenkins_java_options: "-Djenkins.install.runSetupWizard=true"
-  jenkins_proxy_host: "11.8.108.254"
+  jenkins_proxy_host: "proxy.ausbildung.md"
   jenkins_proxy_port: "8080"
   jenkins_proxy_noproxy:
     - "127.0.0.1"
     - "localhost"
+    - "11.10.31.0"
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:

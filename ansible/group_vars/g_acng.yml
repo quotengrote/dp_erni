@@ -15,6 +15,6 @@
   acng_server_auth_user: aadmin
   acng_server_auth_pass: "{{ lookup('keepass', 'acng_adminauth_password', 'password') }}"
   ### set_apt_proxy
-  apt_proxy_server: 11.8.108.254
+  apt_proxy_server: proxy.ausbildung.md
   apt_proxy_port: 8080
   apt_proxy_apt_conf_path: /etc/apt/apt.conf
