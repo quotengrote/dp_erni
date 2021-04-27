@@ -15,9 +15,9 @@
   dnsmasq_domain: ausbildung.md # wie heißt die lokale domain
   dnsmasq_dhcp_pools: # welche dhcp pools gibt es
     - name: pool1
-      ip_start: 11.10.31.220
-      ip_end: 11.10.31.230
       leasetime: "3m"
+      ip_start: 11.10.31.51
+      ip_end: 11.10.31.200
   dnsmasq_dhcp_static_leases: # statische leases; also max 11:22:33:44:55:66 kriegt immer IP 192.168.0.60 mit dem hostnamen klauspeter
     - name: "klauspeter" # gleichzeitg auch hostname
       mac: "11:22:33:44:55:66"
