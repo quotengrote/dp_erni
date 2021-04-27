@@ -1,5 +1,5 @@
 ---
-  - hosts: all
+  - hosts: g_ubuntu
     roles:
       - { role: oefenweb.ufw, # Regeln werden in den Group/Host-Vars gesetzt
           tags: "ufw",
