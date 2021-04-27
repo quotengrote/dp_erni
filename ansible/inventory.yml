@@ -27,9 +27,9 @@
         hosts:
           h_acng:
             ansible_host: 11.10.31.220
-      g_jenkins:
-        hosts:
-          h_jenkins:
-            ansible_host: 11.10.31.223
-      database:
+#      g_jenkins:
+#        hosts:
+#          h_jenkins:
+#            ansible_host: 11.10.31.223
+      g_database:
         hosts:
