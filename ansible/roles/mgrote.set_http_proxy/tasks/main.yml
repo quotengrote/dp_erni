@@ -1,0 +1,13 @@
+---
+  - name: set http-proxy in /etc/environment
+    blockinfile:
+      path: /etc/environment
+      block: |
+        export HTTP_PROXY="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export http_proxy="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export HTTPS_PROXY="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export https_proxy="http://{{ http_proxy_ip }}:{{ http_proxy_port }}"
+        export NO_PROXY="localhost,127.0.0.1,::1,{{ http_proxy_local_subnet }}"
+        export no_proxy="localhost,127.0.0.1,::1,{{ http_proxy_local_subnet }}"
+      create: true
+      backup: yes
