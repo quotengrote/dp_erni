@@ -1,27 +1,27 @@
 ---
   all:
     children:
-      proxmox:
+      g_proxmox:
         hosts:
-          RMPHLPVE1:
+          h_RMPHLPVE1:
             ansible_host: 11.10.31.11
-          RMPHLPVE2:
+          h_RMPHLPVE2:
             ansible_host: 11.10.31.12
-      ubuntu:
+      g_ubuntu:
         hosts:
           h_acng:
             ansible_host: 11.10.31.220
-          ansible:
+          h_ansible:
             ansible_host: 11.10.31.221
-          dnsmasq:
+          h_dnsmasq:
             ansible_host: 11.10.31.10
-      dhcp:
+      g_dhcp:
         hosts:
-          dnsmasq:
+          h_dnsmasq:
             ansible_host: 11.10.31.10
-      ansible:
+      g_ansible:
         hosts:
-          ansible:
+          h_ansible:
             ansible_host: 11.10.31.221
       g_acng:
         hosts:
