@@ -9,27 +9,21 @@
             ansible_host: 11.10.31.12
       g_ubuntu:
         hosts:
-          h_acng:
-            ansible_host: 11.10.31.220
-          h_ansible:
-            ansible_host: 11.10.31.221
-          h_dnsmasq:
-            ansible_host: 11.10.31.10
+          BLACNG001:
+          BLANSI001:
+          BLDNSM001:
+#            ansible_host: 11.10.31.10
       g_dnsmasq:
         hosts:
-          h_dnsmasq:
-            ansible_host: 11.10.31.10
+          BLDNSM001:
       g_ansible:
         hosts:
-          h_ansible:
-            ansible_host: 11.10.31.221
+          BLANSI001:
       g_acng:
         hosts:
-          h_acng:
-            ansible_host: 11.10.31.220
+          BLACNG001:
 #      g_jenkins:
 #        hosts:
-#          h_jenkins:
-#            ansible_host: 11.10.31.223
+#          BLJENK001:
       g_database:
         hosts:

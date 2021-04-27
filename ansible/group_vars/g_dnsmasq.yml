@@ -30,10 +30,6 @@
       optnr: "3"
       value: "11.10.31.254"
   dnsmasq_addresses_to_resolve: # namensauflösung für geräte ohne leases
-    - shortname: acng
-      ip: 11.10.31.220
-    - shortname: ansible
-      ip: 11.10.31.221
     - shortname: GATEWAY
       ip: 11.10.31.254
     - shortname: RMPHLPVE1L #data/links
@@ -48,15 +44,12 @@
       ip: 11.10.31.6
     - shortname: RMPHLPVE2-IPMI #MGMT-Port
       ip: 11.10.31.7
-    - shortname: RMKVM0
+    - shortname: BAKVMM001
       ip: 11.10.31.98
-    - shortname: RMPHLTTY0
+    - shortname: BLSERI001
       ip: 11.10.31.59
-    - shortname: jenkins
-      ip: 11.10.31.223
     - shortname: proxy
       ip: 11.8.108.254
-
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
