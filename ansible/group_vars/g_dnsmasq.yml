@@ -54,6 +54,8 @@
       ip: 11.10.31.59
     - shortname: jenkins
       ip: 11.10.31.223
+    - shortname: proxy
+      ip: 11.8.108.254
 
   ### oefenweb.ufw
   ufw_rules:
