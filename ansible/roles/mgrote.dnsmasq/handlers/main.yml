@@ -1,0 +1,9 @@
+---
+  - name: restart dnsmasq
+    systemd:
+      name: dnsmasq
+      enabled: yes
+      state: restarted
+
+  - name: check config
+    ansible.builtin.shell: dnsmasq --test

@@ -1,0 +1,5 @@
+{{ file_header }}
+
+{% for item in dnsmasq_external_nameserver %}
+nameserver {{ item.address }}
+{% endfor %}

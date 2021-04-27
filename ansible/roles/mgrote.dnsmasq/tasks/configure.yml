@@ -1,0 +1,16 @@
+---
+  - name: templating /etc/dnsmasq.conf
+    ansible.builtin.template:
+      src: dnsmasq.conf.j2
+      dest: /etc/dnsmasq.conf
+      backup: yes
+    notify:
+      - restart dnsmasq
+      - check config
+
+  - name: templating dnsmasq_extra_resolve_file
+    ansible.builtin.template:
+      src: dnsmasq_extra_resolve_file.j2
+      dest: "{{ dnsmasq_extra_resolve_file }}"
+      backup: yes
+    notify: restart dnsmasq

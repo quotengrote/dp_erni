@@ -1,0 +1,10 @@
+---
+  - name: include install packages
+    include_tasks: install.yml
+    when: ansible_distribution == 'Ubuntu'
+  - name: include disable unneeded services
+    include_tasks: services.yml
+    when: ansible_distribution == 'Ubuntu'
+  - name: include configure dnsmasq
+    include_tasks: configure.yml
+    when: ansible_distribution == 'Ubuntu'
