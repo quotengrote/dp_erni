@@ -62,7 +62,10 @@
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDTy/g9yfJie8S9mljaYKjOxh6k1ksMqs3bh43KNBXydtoVpOMOUC2nDvJnDwKnnZhuCrqBMrQ3DLoEwg3HBYYzV4pObLgKSek8EuJSVgz1ckeFBjbDlJq4PcUNmK9YurG1stqffWELbrS+EVs6yAu/RoxNSb2/G4aPEWG4ql+88w== mg@vm-test
       servers:
         - proxmox
-        - ubuntu
+        - g_jenkins
+        - g_acng
+        - g_dnsmasq
+        - g_ansible
     - username: daniel
       password: "{{ lookup('keepass', 'linux_user_daniel_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
@@ -73,7 +76,10 @@
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAuMew12jn9S1sWc1bCNcPbi1lmEbKSdEoxzKHRlO3IOMivDUUIqmqjaml7ZPun7hL+sBCEVSyKiCr5wNR+VWY6e0p/7E3iDlSlD2fpymff1yWqvsnEmzBnRPGUQdpbGmfNciDt+XnF+nvQgxPBf30BR2//cSBeVpXA1289q0mbc8Z7hDctLjvM43NwjHg0g5KSLx8yXL4VVRg0S/e05azyA7IvQFTf2gVu5NC/rKpI8bs63KMJOR5LTDEYq8V7IlrsBjqTihl+gkXK08x9bqYPWucV3Zg3VGtKcun0WvSmNZPLZ2q5uq+VQFrfv7ioqZVur0XLX78fC9Se+1aC/+Mr0YAdle1P3yenUYFXntTIpI9ID9/EiV0x1cW6dreUy98fVjYmriaXeOK3AxkupQq34aEqXgN8/EH7bJfevvlPYf2JlBIr14MovlIN7zU2sJ2xxQ5jg3H8U2datWwgHoOKt9PAJ7eMsiITUe3310RRQcvkZ/vGHI07ZGfNfleC4fBXcLt+mwaup6rq7pgR+7FMICPiEOn21ektScatVRXGTx47JsMS7YjmAY1qOlUoQC8FXQ8Vp7wunitar6WY45iGTZTDnujkhQfZkllXmpzi8OK0cRwPYfyNPMxaadTY9B9U6CMxjpFV3iq5XgrhhOgtIZfCkW9cX5A7XXy0xXdvQ== user@Acer5
       servers:
         - proxmox
-        - ubuntu
+        - g_jenkins
+        - g_acng
+        - g_dnsmasq
+        - g_ansible
     - username: max
       password: "{{ lookup('keepass', 'linux_user_max_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
@@ -84,7 +90,10 @@
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXGE+OnkP5+fkUAH7pmDSSYkfp+LixFbGA8XKP7+Ew1XaJ5COM4b3OWzk+sthU724zfom5vCcroeImeukQpQVjJfFfPLTMkNWluTqc9Hvar7OqqggSvSuEasl8MiUlptCxNAKHG1uUkoacerQR1aXnZnvzvwvnWkwYMeB7lhswr81c/kNGptxsXn0gYsjpLYtyFlX7C0iFkd7KDLSnQ6vyFmd5lIjbCjLMYyewEtqgTcEMR3YFCqe7coJ6mMIl7CrqZF+f8D4m1cCZXJgIouIrlYjuUtqbgYjKXEIHbUyBsRAQy4J6YxADBaA1oDy8XbVNrglFqQZIeZ8sbo0MJVFX max@DESKTOP-2FNLGMV
       servers:
         - proxmox
-        - ubuntu
+        - g_jenkins
+        - g_acng
+        - g_dnsmasq
+        - g_ansible
     - username: kati
       password: "{{ lookup('keepass', 'linux_user_kati_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: always
@@ -95,7 +104,10 @@
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDYRBfF/yw28UVkxXPMi8sRRCawSPgBTBE4I+MkMB1gSQXUL1Kv0IRA9QyFB3HD7cJ0q8TiscwV+RVOEJbPepujPVUbR4Xmo8mgTgVHFDgJt1ipTNWgjqi5vMsHTP7vAh4AVvDZGk5tLDiRsUTrAkEpoxFpRcwPDfNymx7+2CNkiqyZKrLEGRA6LKaQrgPy5IBkzOVX7s/xo/WBBdjW7dFsoJKHnecEvwTDLyaGuKkWW/G2kcri7BLhTxwNXkS/PPB06k/fcbfWqo1U0i4caYI4HmeyXVcuxooIbm3D9nAtgtQS3a2yzvv0nLpmT1PjvKPhZ+Y5uUvuEU/5bVZ+Khqt+vPCeNF7+O9sPQJYZ8kJrVLcE16t2/CbnAO7o8wm6s8hfwTpzP7sqUpZdXnsDSW7It7B+YFdgFMLIKlVtSMgL7DrSX8lhSs/jCac/THGCPVt8aDvY48XHA1mANsaaGk15yVt4YioUugZWgT1YYxqCAQFIfEd7veqS9v5UGMS/ekFIn3EG+uZ9YGkvQwLB+9fzQa+g27MHP0kTRgSSnbm1beCf3rK8K4rrGpDr3NIc14g7QhkairCAYeghWkoSYM0R5dztqIoJeNhaCMaYeyTwfiqGXyP6XlR5CNzksR17D6uvMzLQxIZkFC2ynpa1I29cFk0Lar2tEmFoI8UKMLR0Q== kati@DESKTOP-R66MVUO
       servers:
         - proxmox
-        - ubuntu
+        - g_jenkins
+        - g_acng
+        - g_dnsmasq
+        - g_ansible
     - username: ansible-user
       password: "{{ lookup('keepass', 'linux_user_ansible_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
       update_password: on_create
@@ -105,8 +117,11 @@
       groups: ssh, sudo
       ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDaPigi9Q2+eiwYjs32SRqSlBDa3DFY2I2rhFhGHFCDEJYiCTxb8C0FCvgfH5w7MqzyTwJHvrEtsG0VO+xhSsRdq95wsHsDSuiiLP0Zr+pjbpR3IZKwoWiPpfCNBpRlj9X1m+VExhzTEwrIaKD31AfLQ07RvOcamyYZ1ttlODE0f/ALs6/sCeCa14KOaed/IVyGe5hA4vHZirlrzqt+ygwQBLkdvvHymS/Pn1H6JZ15M7SlNdCkJXtPQGOGwlWZr6TH5So0Lppn2cvhSFG8NfxOfaTbLsUy6aBEDPAL+3Q9co/GGFzOydnWLodVpIgG6fXr8qGj/FS9JFT3eEjkCWd2jfEieXsZ0ygzhHMNJ55yeSMD7m/mRW4yqLrgrvDv2aKsyvS8H/kZcoM4/XCTVo1Nf3nivfD/n6xDkTgmqPOjRHgyMZI02CmpCmJWxgf4V67aFeXpDzDwc82fQcFDzxnqBTQCjQnTvF3HqMMTBtXZuGx2jf5oovOBLfFbrNPhFDkBw/oaJxr7d1oUlkXhT7atADZiWKDW64ile4qCy5aPz/F5S9A4vTe9vDYIcxXoIQjVV9QchfF3DxKanp7CZgPpzn0zt40L+7pMkvJLJruCY5B9bh9EYAj+EZXdRD54FY9VJLy8ck+Ckyft35Rqyd6MO+Y6rAEzAwuVVQkdf0/bjQ== Kati@DESKTOP-R66MVUO
       servers:
-        - proxmox
-        - ubuntu
+        - g_proxmox
+        - g_jenkins
+        - g_acng
+        - g_dnsmasq
+        - g_ansible
   ### mgrote.install_packages
   install_packages:
     - locales
