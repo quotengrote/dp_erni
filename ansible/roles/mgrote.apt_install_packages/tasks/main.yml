@@ -1,0 +1,27 @@
+---
+  - name: install common-packages
+    become: yes
+    ansible.builtin.package:
+      name: "{{ programs_common }}"
+      state: present
+
+  - name: install extra-packages
+    become: yes
+    ansible.builtin.package:
+      name: "{{ programs_extra }}"
+      state: present
+    when:  programs_extra is defined
+
+  - name: install vm-packages
+    become: yes
+    ansible.builtin.package:
+      name: "{{ programs_only_vms }}"
+      state: present
+    when: ansible_virtualization_role == 'guest'
+
+  - name: install physical-packages
+    become: yes
+    ansible.builtin.package:
+      name: "{{ programs_only_physical }}"
+      state: present
+    when: ansible_virtualization_role != 'guest'
