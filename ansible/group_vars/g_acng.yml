@@ -4,9 +4,11 @@
     - rule: allow
       to_port: 22
       protocol: tcp
+      from_ip: 11.10.31.0/24
       comment: 'ssh'
     - rule: allow
       to_port: 9999
+      from_ip: 11.10.31.0/24
       comment: 'acng'
   ### mgrote.acng
   acng_exthreshold: "60"
