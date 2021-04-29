@@ -1,0 +1,5 @@
+---
+  - hosts: acng
+    roles:
+      - { role: set_apt_proxy, tags: "apt-proxy", become: yes}
+      - { role: mgrote.acng, tags: "acng-server", become: yes}
