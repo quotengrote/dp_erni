@@ -1,0 +1,33 @@
+---
+  programs_common:
+    - locales
+    - build-essential
+    - ntp
+    - htop
+    - git
+    - dnsutils
+    - nano
+    - mc
+    - cifs-utils
+    - netdiscover
+    - tree
+    - curl
+    - logrotate
+    - ncdu
+    - net-tools
+    - sysstat
+    - apt-transport-https
+    - neofetch
+    - ntpdate
+    - acl
+    - python3
+    - vim
+  programs_only_physical:
+    - hddtemp
+    - ipmitool
+    - powertop
+    - s-tui
+  programs_only_vms:
+    - qemu-guest-agent
+    - open-vm-tools
+  programs_extra:
