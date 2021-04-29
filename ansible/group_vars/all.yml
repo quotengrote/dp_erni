@@ -33,7 +33,7 @@
   programs_only_vms:
     - qemu-guest-agent
     - open-vm-tools
-  
+
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow
