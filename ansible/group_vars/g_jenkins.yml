@@ -4,10 +4,12 @@
     - rule: allow
       to_port: 22
       protocol: tcp
+      from_ip: 11.10.31.0/24
       comment: 'ssh'
     - rule: allow
       to_port: 8080
       protocol: tcp
+      from_ip: 11.10.31.0/24
       comment: 'jenkins-webinterface'
   ### geerlingguy.jenkins
   jenkins_package_state: present
