@@ -15,7 +15,7 @@
   - name: templating security.conf
     become: yes
     ansible.builtin.template:
-      src: "acng.conf"
+      src: "security.conf"
       dest: "{{ acng_security_conf_path }}"
       mode: 0640
     notify: acng_starten_aktivieren
