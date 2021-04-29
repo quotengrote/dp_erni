@@ -1,4 +1,39 @@
 ---
+  ### mgrote.apt_install_packages
+  programs_common:
+    - locales
+    - python3
+    - build-essential
+    - htop
+    - git
+    - dnsutils
+    - nano
+    - mc
+    - cifs-utils
+    - ca-certificates
+    - netdiscover
+    - tree
+    - curl
+    - logrotate
+    - ncdu
+    - net-tools
+    - apt-transport-https
+    - tmux
+    - neofetch
+    - moreutils
+    - ntpdate
+    - acl
+    - vim
+  programs_only_physical:
+    - hddtemp
+    - ipmitool
+    - s-tui
+    - smartmontools
+    - lm-sensors
+  programs_only_vms:
+    - qemu-guest-agent
+    - open-vm-tools
+  
   ### oefenweb.ufw
   ufw_rules:
     - rule: allow

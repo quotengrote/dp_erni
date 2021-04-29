@@ -13,7 +13,6 @@
     - tree
     - curl
     - logrotate
-    - tmux
     - ncdu
     - net-tools
     - sysstat
@@ -21,3 +20,14 @@
     - neofetch
     - ntpdate
     - acl
+    - python3
+    - vim
+  programs_only_physical:
+    - hddtemp
+    - ipmitool
+    - powertop
+    - s-tui
+  programs_only_vms:
+    - qemu-guest-agent
+    - open-vm-tools
+  programs_extra:
