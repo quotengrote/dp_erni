@@ -9,7 +9,7 @@
             ansible_host: 11.10.31.12
       g_ubuntu:
         hosts:
-          plnex001:
+          plnext001:
           BLACNG001:
           BLANSI001:
           BLDNSM001:
