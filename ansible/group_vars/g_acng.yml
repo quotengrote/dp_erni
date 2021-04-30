@@ -13,6 +13,7 @@
   ### mgrote.acng
   acng_exthreshold: "60" # Wie lange Pakete gespeichert werden
   acng_port: "9999" # Port für acng
+  acng_acng_conf_path: "/etc/apt-cacher-ng/acng.conf" # Pfad für acng.conf
   acng_security_conf_path: "/etc/apt-cacher-ng/security.conf" # Pfad für security conf
   acng_auth_user: aadmin # login user (webinterface)
   acng_auth_pass: "{{ lookup('keepass', 'acng_adminauth_password', 'password') }}" # login passwort (webinterface)
