@@ -43,7 +43,7 @@ __Nutzernamen:__ u_mustermann_steffi,
 
 
 
-B/S/T - Basisdienst oder Schulung oder Test
+B/S/T/P - Basisdienst oder Schulung oder Test oder Produktion
 L/W/A - Linux/Windows/Appliance
 4-Stellen Bezeichnung - z.B. dnsm
 3-Stellige Nummer - 001
