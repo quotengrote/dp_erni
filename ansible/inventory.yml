@@ -9,6 +9,7 @@
             ansible_host: 11.10.31.12
       g_ubuntu:
         hosts:
+          plnext001:
           BLACNG001:
           BLANSI001:
           BLDNSM001:
@@ -27,3 +28,6 @@
           BLJENK001:
       g_database:
         hosts:
+      g_nextcloud:
+        hosts:
+          plnext001:
