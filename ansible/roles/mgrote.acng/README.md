@@ -9,7 +9,4 @@ Die Daten werden auf der Maschine abgelegt.
 
 
 ### Variablen + Defaults
-##### Auf welchen Port ACNG laufen soll
-- acng_port: "9999"
-##### Wie lange Pakete gespeichert werden sollen
-- acng_exthreshold: "60"
+siehe [.defaults](./defaults/main.yml)
