@@ -18,8 +18,6 @@
       to_port: 8080
       comment: 'jenkins'
       from_ip: 11.10.31.0/24
-  ### mgrote.restic
-  restic_folders_to_backup: /usr/local /etc /root /home /var/lib/jenkins
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:
