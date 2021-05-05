@@ -40,7 +40,7 @@ __Nutzernamen:__ u_mustermann_steffi,
 
     - Server: rmphlpve2l
     - Servermodel: Fujitsu Primergy rx200 s7
-    - RAM: 184 GB Nanya Technology DDR3 / RDIMM
+    - RAM: 184 GB Nanya Technology DDR3 / RDIMM (Speicherplatz DIMM 3H defekt)
     - CPU: Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz
       - Cores/Threads: 6 / 12
     - RAID:
