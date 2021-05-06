@@ -15,6 +15,35 @@
 #### Nutzermatrix
 siehe Keepass.
 
+
+#### Namenskonvention Nutzer
+- Position 1: u_ oder a_ (__U__ ser oder __A__ dmin)
+- Position 2: Nachname (klein)
+- Position 3: Vorname (klein)
+- Position 4: aufsteigend durch nummerrieren.
+##### Beipiel:
+__Name:__ Steffi Mustermann
+__Nutzernamen:__ u_mustermann_steffi,
+		 a_mustermann_steffi
+
+### Rack Management
+ - Aufbau:
+    - Server: rmphlpve1l
+    - Servermodel: Fujitsu Primergy rx200 s7
+    - RAM: 192 GB Nanya Technology DDR3 / RDIMM
+    - CPU: Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz
+      - Cores/Threads: 6 / 12
+    - RAID:
+    - Festplatten:
+
+    - Server: rmphlpve2l
+    - Servermodel: Fujitsu Primergy rx200 s7
+    - RAM: 184 GB Nanya Technology DDR3 / RDIMM (Speicherplatz DIMM 3H defekt)
+    - CPU: Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz
+      - Cores/Threads: 6 / 12
+    - RAID:
+    - Festplatten:
+    
 ### Rack 1
 - Derzeit ohne Funktion
 
