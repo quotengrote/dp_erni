@@ -1,4 +1,0 @@
----
-  - hosts: g_ntpserver
-    roles:
-      - ntp-server

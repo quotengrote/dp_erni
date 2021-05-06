@@ -8,7 +8,7 @@
     become: yes
     ansible.builtin.template:
       src: "acng.conf"
-      dest: "/etc/apt-cacher-ng/acng.conf"
+      dest: "{{ acng_acng_conf_path }}"
       mode: 0664
     notify: acng_starten_aktivieren
 

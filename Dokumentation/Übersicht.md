@@ -13,10 +13,8 @@
 
 
 #### Nutzermatrix
-Gruppe	|Nutzer					| Rollen
-----  	|---					|---
-User	|					| PVEVMAdmin, PVEDatastoreUser
-Admin	|root					| Administrator
+siehe Keepass.
+
 
 #### Namenskonvention Nutzer
 - Position 1: u_ oder a_ (__U__ ser oder __A__ dmin)
@@ -45,6 +43,7 @@ __Nutzernamen:__ u_mustermann_steffi,
       - Cores/Threads: 6 / 12
     - RAID:
     - Festplatten:
+    
 ### Rack 1
 - Derzeit ohne Funktion
 
@@ -61,7 +60,7 @@ __Nutzernamen:__ u_mustermann_steffi,
 
 
 
-B/S/T - Basisdienst oder Schulung oder Test
+B/S/T/P - Basisdienst oder Schulung oder Test oder Produktion
 L/W/A - Linux/Windows/Appliance
 4-Stellen Bezeichnung - z.B. dnsm
 3-Stellige Nummer - 001
@@ -70,7 +69,7 @@ R1PHLPVE1.ausbildung.md
 Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
 
 ### IP-Addressplan
-* Netz: 11.10.31.XX/24
+* Netz: 11.10.31.0/24
 * VLAN 45
 * Gateway: 11.10.31.254
 * Proxy: 11.8.108.254:8080
