@@ -1,0 +1,5 @@
+---
+  - hosts: all
+    gather_facts: false
+  - import_playbook: ./base/0_bootstrap.yml
+  - import_playbook: ./base/99_base
