@@ -24,6 +24,8 @@
     - ntpdate
     - acl
     - vim
+    - rsync
+    - at
   programs_only_physical:
     - hddtemp
     - ipmitool
