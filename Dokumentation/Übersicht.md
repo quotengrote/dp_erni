@@ -15,17 +15,6 @@
 #### Nutzermatrix
 siehe Keepass.
 
-
-#### Namenskonvention Nutzer
-- Position 1: u_ oder a_ (__U__ ser oder __A__ dmin)
-- Position 2: Nachname (klein)
-- Position 3: Vorname (klein)
-- Position 4: aufsteigend durch nummerrieren.
-##### Beipiel:
-__Name:__ Steffi Mustermann
-__Nutzernamen:__ u_mustermann_steffi,
-		 a_mustermann_steffi
-
 ### Rack Management
  - Aufbau:
     - Server: rmphlpve1l
@@ -43,7 +32,7 @@ __Nutzernamen:__ u_mustermann_steffi,
       - Cores/Threads: 6 / 12
     - RAID:
     - Festplatten:
-    
+
 ### Rack 1
 - Derzeit ohne Funktion
 
@@ -58,12 +47,11 @@ __Nutzernamen:__ u_mustermann_steffi,
 7-9. Position: Laufende Nummer
 ```
 
-
-
 B/S/T/P - Basisdienst oder Schulung oder Test oder Produktion
 L/W/A - Linux/Windows/Appliance
 4-Stellen Bezeichnung - z.B. dnsm
 3-Stellige Nummer - 001
+
 #### Beispiel
 R1PHLPVE1.ausbildung.md
 Rack 1, Physischer Rechner, Linux, ProxMox, Nummer 0
