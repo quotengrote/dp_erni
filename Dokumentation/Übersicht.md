@@ -11,6 +11,8 @@
 |------------------------------------------	|------------------------------------------------	|---------------------------------------------	|
 | vSrv1Srv2<br>Sto1<br>Sto2 	| Srv1<br>Srv2<br>Konsole<br>TTY<br>Sto1<br>Sto2 	| Srv1<br>Srv2<br>Sto1<br>Sto2 	|
 
+#### Nutzermatrix
+siehe Keepass.
 
 ### Rack Management
  - Aufbau:
