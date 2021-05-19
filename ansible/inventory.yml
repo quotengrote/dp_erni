@@ -3,10 +3,8 @@
     children:
       g_proxmox:
         hosts:
-          h_RMPHLPVE1:
-            ansible_host: 11.10.31.11
-          h_RMPHLPVE2:
-            ansible_host: 11.10.31.12
+          RMPHLPVE1:
+          RMPHLPVE2:
       g_ubuntu:
         hosts:
           plnext001:
