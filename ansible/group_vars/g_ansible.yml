@@ -11,7 +11,7 @@
   pip_https_proxy: '11.8.108.254:8080' # für pip und ansible
   ### geerlingguy.ansible
   ansible_install_method: pip
-  ansible_install_version_pip: '2.10.8'
+  ansible_install_version_pip: '2.10'
   ### mgrote.restic
   restic_folders_to_backup: "/usr/local /etc /root /home"
   ### mgrote.apt_install_packages
