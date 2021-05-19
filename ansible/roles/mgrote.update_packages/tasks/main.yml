@@ -4,7 +4,7 @@
       update_cache: yes
       cache_valid_time: 30
 
-  - name: updated installed packages
+  - name: update installed packages
     become: yes
     apt:
       upgrade: dist
