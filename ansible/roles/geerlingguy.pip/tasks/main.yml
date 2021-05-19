@@ -12,3 +12,6 @@
     state: "{{ item.state | default(omit) }}"
     executable: "{{ pip_executable }}"
   with_items: "{{ pip_install_packages }}"
+  environment:
+    HTTP_PROXY: "{{ pip_http_proxy | default() }}"
+    HTTPS_PROXY: "{{ pip_https_proxy | default() }}"
