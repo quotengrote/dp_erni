@@ -52,7 +52,7 @@
     #------------------------------------------------------------------
 
   ### ntp-client
-  ntp_client_timezone: "Europe/Berlin" #Zeitzone in der sich der Cpmputer befindet
+  ntp_client_timezone: "Europe/Berlin" #Zeitzone in der sich der Computer befindet
   ntp_client_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile
   ntp_client_servers: # welche Server sollen befragt werden
     - address: 11.8.43.1
