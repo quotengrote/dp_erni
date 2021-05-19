@@ -3,7 +3,7 @@
   pip_package: python3-pip
   pip_install_packages:
     - name: pykeepass==3.2.1
-    - name: Jinja2
+    - name: jinja2>=2.11.2
     - name: markupsafe
   ### geerlingguy.ansible
   ansible_install_method: pip
