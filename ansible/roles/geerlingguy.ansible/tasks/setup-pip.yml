@@ -3,3 +3,6 @@
   pip:
     name: ansible
     version: "{{ ansible_install_version_pip | default(omit) }}"
+  environment:
+    HTTP_PROXY: "{{ pip_http_proxy | default() }}"
+    HTTPS_PROXY: "{{ pip_https_proxy | default() }}"

@@ -7,8 +7,8 @@
     - name: Jinja2
       version: "2.11.2"
     - name: markupsafe
-  pip_http_proxy: '11.8.108.254:8080'
-  pip_https_proxy: '11.8.108.254:8080'
+  pip_http_proxy: '11.8.108.254:8080' # für pip und ansible
+  pip_https_proxy: '11.8.108.254:8080' # für pip und ansible
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10.8'
