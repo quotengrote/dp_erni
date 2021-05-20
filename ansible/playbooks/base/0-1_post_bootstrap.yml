@@ -1,0 +1,10 @@
+---
+  - hosts: all
+    become: true
+    tasks:
+      - name: entferne den bootstrap_user
+        ansible.builtin.user:
+          name: user
+          state: absent
+          remove: yes
+          force: yes
