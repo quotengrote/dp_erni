@@ -1,5 +1,4 @@
 ---
-- hosts: gitea
+- hosts: g_gitea
   roles:
-    - { role: mgrote.postfix, tags: "postfix" }
     - { role: tmaurice.gitea, tags: "gitea", become: true }
