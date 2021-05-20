@@ -5,6 +5,7 @@
     - python3
     - build-essential
     - htop
+    - acl
     - git
     - dnsutils
     - nano
