@@ -16,6 +16,19 @@
       protocol: tcp
       comment: 'gitea'
       from_ip: 11.10.31.0/24
+  ### geerlingguy.mysql
+  mysql_root_password_update: true
+  mysql_root_password: super-secure-password
+  mysql_port: "3306"
+  mysql_databases:
+    - name: gitea_db
+      encoding: utf8
+      collation: utf8_general_ci
+  mysql_users:
+    - name: gitea_user
+      host: "%"
+      password: similarly-secure-passwordwww
+      priv: "gitea_db.*:ALL"
   ### tmaurice.gitea
   gitea_version: "1.13.7"
   gitea_app_name: "Gitea"
@@ -42,8 +55,11 @@
 
   gitea_mailer_enabled: false
 
-  gitea_db_type: sqlite3
-  gitea_db_path: "{{ gitea_home }}/data/gitea.db" # for sqlite3
+  gitea_db_type: mysql
+  gitea_db_host: localhost:3306
+  gitea_db_name: gitea_db
+  gitea_db_user: gitea_user
+  gitea_db_password: similarly-secure-passwordwww
 
   gitea_ssh_listen: 0.0.0.0
   gitea_ssh_domain: BLGITE001.ausbildung.md
