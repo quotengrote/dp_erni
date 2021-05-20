@@ -25,10 +25,7 @@
       ansible_password: hallowelt
       ansible_become_password: hallowelt
       ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
-
-
-    
-
+      
 #    tasks:
 #      - name: Change user password
 #        become: true
