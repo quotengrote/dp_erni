@@ -38,6 +38,7 @@
   gitea_oauth2_enabled: false
   gitea_repo_indexer_enabled: true
   gitea_extra_config: ""
+  gitea_backup_on_upgrade: true
 
   gitea_mailer_enabled: false
 
