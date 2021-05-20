@@ -3,15 +3,12 @@
     gather_facts: false
   - import_playbook: ./base/0_bootstrap.yml
   - import_playbook: ./base/99_base.yml
-
-
-
-    post_tasks:
-      - name: entferne den bootstrap_user
-        become: true
-        become_user: ansible-user
-        user:
-          name: user
-          state: absent
-          remove: yes
-        tags: user
+  - post_tasks:
+    - name: entferne den bootstrap_user
+      become: true
+      become_user: ansible-user
+      user:
+        name: user
+        state: absent
+        remove: yes
+      tags: user
