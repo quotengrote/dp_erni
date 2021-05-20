@@ -32,4 +32,3 @@
       g_testserver:
         hosts:
           TLDNSM001:
-            ansible_host: 11.10.31.200
