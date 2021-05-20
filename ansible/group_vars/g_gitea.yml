@@ -27,7 +27,7 @@
   mysql_users:
     - name: gitea_user
       host: "%"
-      password: "{{ lookup('keepass', 'gitea_db_passwort_gitea_usery', 'password') }}"
+      password: "{{ lookup('keepass', 'gitea_db_passwort_gitea_user', 'password') }}"
       priv: "gitea_db.*:ALL"
   ### tmaurice.gitea
   gitea_version: "1.13.7"
