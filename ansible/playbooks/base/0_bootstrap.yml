@@ -26,6 +26,16 @@
       ansible_become_password: hallowelt
       ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
 
+
+    post_tasks:
+      - name: entferne den bootstrap_user
+        become: true
+        user:
+          name: user
+          state: absent
+          remove: yes
+        tags: user
+
 #    tasks:
 #      - name: Change user password
 #        become: true
