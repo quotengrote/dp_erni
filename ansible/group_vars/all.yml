@@ -51,7 +51,8 @@
     #------------------------------------------------------------------
     #-              This file is managed with ansible!                -
     #------------------------------------------------------------------
-
+  proxy_ip: "11.8.108.254" #ansible, acng, jenkins
+  proxy_port: "8080"
   ### ntp-client
   ntp_client_timezone: "Europe/Berlin" #Zeitzone in der sich der Computer befindet
   ntp_client_driftfile_directory: "/var/lib/ntp" # Ordner für das driftfile

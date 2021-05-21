@@ -17,7 +17,7 @@
   acng_security_conf_path: "/etc/apt-cacher-ng/security.conf" # Pfad für security conf
   acng_auth_user: aadmin # login user (webinterface)
   acng_auth_pass: "{{ lookup('keepass', 'acng_adminauth_password', 'password') }}" # login passwort (webinterface)
-  acng_proxy_extern_ip: "11.8.108.254" # Externe IP Proxy
-  acng_proxy_extern_port: "8080" # Externer Port für Proxy
+  acng_proxy_extern_ip: "{{ proxy_ip }}" # Externe IP Proxy
+  acng_proxy_extern_port: "{{ proxy_port }}" # Externer Port für Proxy
   acng_verboselog: "1" # Speichert mehr Infos als im normalen Modus.
   acng_debug: "0" # Speichert mehr Infos bei Fehlern.

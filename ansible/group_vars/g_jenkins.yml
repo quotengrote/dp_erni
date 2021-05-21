@@ -8,8 +8,8 @@
   jenkins_plugins_state: latest
   jenkins_java_options: "-Djenkins.install.runSetupWizard=true"
   jenkins_java_options: "-Djenkins.install.runSetupWizard=true"
-  jenkins_proxy_host: "proxy.ausbildung.md"
-  jenkins_proxy_port: "8080"
+  jenkins_proxy_host: "{{ proxy_ip }}"
+  jenkins_proxy_port: "{{ proxy_port }}"
   jenkins_proxy_noproxy:
     - "127.0.0.1"
     - "localhost"
@@ -33,6 +33,8 @@
     - name: Jinja2
       version: "2.11.2"
     - name: markupsafe
+  pip_http_proxy: '"{{ proxy_ip }}:{{ proxy_port }}"' # für pip und ansible
+  pip_https_proxy: '"{{ proxy_ip }}:{{ proxy_port }}"' # für pip und ansible
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10'
