@@ -662,10 +662,19 @@ dhcp-lease-max={{ dnsmasq_max_leases | default(150) }}
 
 # For debugging purposes, log each DNS query as it passes through
 # dnsmasq.
-#log-queries
+{% if dnsmasq_log_queries %}
+    log-queries
+{% else %}
+    #log-queries
+{% endif %}
 
 # Log lots of extra information about DHCP transactions.
-#log-dhcp
+
+{% if dnsmasq_log_dhcp %}
+    log-dhcp
+{% else %}
+    #log-dhcp
+{% endif %}
 
 # Include another lot of configuration options.
 #conf-file=/etc/dnsmasq.more.conf
