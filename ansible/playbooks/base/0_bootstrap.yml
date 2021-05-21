@@ -15,7 +15,8 @@
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
     post_tasks:
-      - name: reboot für qemu-guest-agent
+      - name: reboot für qemu-guest-agent (dauert bis zu 2min!)
+        become: true
         reboot:
           reboot_timeout: 120
     vars:
@@ -28,7 +29,7 @@
       ansible_password: hallowelt
       ansible_become_password: hallowelt
       ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
-      
+
 #    tasks:
 #      - name: Change user password
 #        become: true
