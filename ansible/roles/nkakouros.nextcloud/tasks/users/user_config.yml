@@ -1,0 +1,76 @@
+---
+
+- name: Get local python version
+  become: false
+  command: python -V
+  delegate_to: localhost
+  register: localhost_python
+  changed_when: false
+
+- name: Register local python version
+  set_fact:
+    localhost_python: >-
+      {{
+        localhost_python.stdout
+        | regex_replace('^Python ([0-9])\\..*$', '\\1')
+      }}
+  changed_when: false
+
+# TODO simplify this with filters
+- name: Create user settings list
+  set_fact:
+    user_settings: >-
+      [
+        {%- for user in nextcloud_users -%}
+          {%- for app_setting in user.settings -%}
+            {%- if localhost_python == '2' -%}
+              {%- for app, settings in app_setting.iteritems() -%}
+                {%- for key, value in settings.iteritems() -%}
+                  {
+                    'user': "{{ user.name }}",
+                    'app': "{{ app }}",
+                    'key': "{{ key }}",
+                    'value': "{{ value }}"
+                  },
+                {%- endfor -%}
+              {%- endfor -%}
+            {%- elif localhost_python == '3' -%}
+              {%- for app, settings in app_setting.items() -%}
+                {%- for key, value in settings.items() -%}
+                  {
+                    'user': "{{ user.name }}",
+                    'app': "{{ app }}",
+                    'key': "{{ key }}",
+                    'value': "{{ value }}"
+                  },
+                {%- endfor -%}
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      ]
+
+- name: Read existing config values
+  command: "php occ user:setting {{ item.user }} {{ item.app }} {{ item.key }}"
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  failed_when: false
+  changed_when: false
+  register: user_config_values
+  loop: "{{ user_settings }}"
+
+- name: Enable user settings
+  command: >-
+    php occ user:setting
+      {{ item.0.user }}
+      {{ item.0.app }}
+      {{ item.0.key }}
+      {{ item.0.value }}
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  when: item.0.value != item.1.stdout
+  loop: "{{ user_settings | zip(user_config_values.results) | list }}"

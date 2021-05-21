@@ -1,0 +1,60 @@
+---
+  ### geerlingguy.mysql
+  mysql_port: "3306"
+  mysql_root_password_update: true
+  mysql_user_password_update: true
+  mysql_root_password: "{{ lookup('keepass', 'mysql_root', 'password') }}"
+    - name: nextcloud_db
+      encoding: utf8
+      collation: utf8_general_ci
+  mysql_users:
+    - name: mysql_user
+      host: "%"
+      password: "{{ lookup('keepass', 'mysql_user', 'password') }}"
+      priv: "nextcloud_db.*:ALL"
+  ### nkakouros.nextcloud
+  nextcloud_version: 21
+  nextcloud_installation_dir: '/var/www/html/nextcloud/'
+  nextcloud_data_dir: "{{ nextcloud_installation_dir }}/data"
+  nextcloud_file_owner: 'www-data'
+  nextcloud_database:
+    backend: mysql
+    name: nextcloud_db
+    user: mysql_user
+    pass: "{{ lookup('keepass', 'mysql_user', 'password') }}"
+    host: localhost
+    port: 3306
+    prefix: oc_
+  nextcloud_urls:
+    - "http://{{ ansible_hostname }}.ausbildung.md"
+  nextcloud_admin_user: nc_admin
+  nextcloud_admin_pass: "{{ lookup('keepass', 'nextcloud_admin', 'password') }}"
+  nextcloud_users:
+    - name: daniel
+      pass: "{{ lookup('keepass', 'nextcloud_daniel', 'password') }}"
+      resetpassword: no
+    - name: max
+      pass: "{{ lookup('keepass', 'nextcloud_max', 'password') }}"
+      resetpassword: no
+    - name: mg
+      pass: "{{ lookup('keepass', 'nextcloud_mg', 'password') }}"
+      resetpassword: no
+    - name: kati
+      pass: "{{ lookup('keepass', 'nextcloud_kati', 'password') }}"
+      resetpassword: no
+  ### geerlingguy.apache
+  apache_remove_default_vhost: true
+  apache_vhosts:
+    - {servername: "{{ ansible_hostname }}.ausbildung.md", documentroot: "/var/www/html/nextcloud"}
+
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      from_ip: 11.10.31.0/24
+      comment: 'ssh'
+    - rule: allow
+      to_port: 80
+      from_ip: 11.10.31.0/24
+      comment: 'webserver'

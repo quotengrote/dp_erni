@@ -1,5 +1,0 @@
----
-  - hosts: g_database
-    roles:
-      - role: geerlingguy.mysql
-        become: yes

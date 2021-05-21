@@ -1,0 +1,73 @@
+---
+
+- name: Converge
+  hosts: all
+  become: true
+  vars:
+    mysql_databases:
+      - name: nextcloud
+    mysql_users:
+      - name: nextcloud
+        password: password
+        priv: "nextcloud.*:ALL"
+    apache_vhosts:
+      - servername: localhost
+        documentroot: /var/www/html/nextcloud
+        extra_parameters: |
+          SetEnv HOME /var/www/html/nextcloud
+          SetEnv HTTP_HOME /var/www/html/nextcloud
+    nextcloud_database:
+      name: "{{ mysql_databases[0].name }}"
+      user: "{{ mysql_users[0].name }}"
+      pass: "{{ mysql_users[0].password }}"
+    nextcloud_admin_user: admin
+    nextcloud_admin_pass: password
+    nextcloud_urls_tmp: >-
+      {{ apache_vhosts
+        | map(attribute='servername')
+        | list
+        | zip_longest([], fillvalue=':80')
+        | map('join')
+        | list }}
+    nextcloud_urls: >-
+      {{ []
+        | zip_longest(nextcloud_urls_tmp, fillvalue='http://')
+        | map('join')
+        | list }}
+    nextcloud_apps:
+      - name: calendar
+      - name: tasks
+      - name: news
+    nextcloud_config:
+      apps:
+        core:
+          backgroundjobs_mode: cron
+    nextcloud_users:
+      - name: demo
+        pass: 'tE(DVOsdo24)$@#f9S'
+        groups:
+          - admin
+        resetpassword: false
+        display_name: Nikolaos Kakouros
+        settings:
+          - firstrunwizard:
+              show: 0
+          - calendar:
+              showWeekNr: true
+  pre_tasks:
+    - name: Gather facts
+      setup: ~
+      become: false
+  tasks:
+    - include_role:
+        name: nkakouros-original.nextcloud
+  post_tasks:
+    - name: Check Nextcloud responds ok
+      uri:
+        url: http://localhost
+        return_content: true
+      register: _result
+    - name: Check Nextcloud return login form
+      assert:
+        that:
+          - _result.content is search('a safe home for all your data')

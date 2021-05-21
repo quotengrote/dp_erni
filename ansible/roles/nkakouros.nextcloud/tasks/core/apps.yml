@@ -1,0 +1,149 @@
+---
+
+- name: Read apps shipped with Nextcloud
+  command: php occ app:list --shipped=true --no-warnings --output=json
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  register: _result
+  changed_when: false
+
+- name: Parse occ command response as JSON
+  set_fact:
+    nextcloud_shipped_apps: "{{ _result.stdout | from_json }}"
+
+- name: Read external apps installed by the user
+  command: php occ app:list --shipped=false --no-warnings --output=json
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  register: _result
+  changed_when: false
+
+- name: Parse occ command response as JSON
+  set_fact:
+    nextcloud_installed_apps: "{{ _result.stdout | from_json }}"
+
+- name: Remove unknown external apps
+  command: php occ app:remove "{{ item.key }}"
+  loop: >-
+    {{
+      nextcloud_installed_apps.enabled
+      | combine(nextcloud_installed_apps.disabled)
+      | dict2items
+    }}
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  register: result
+  failed_when: result.stdout is not search('removed') or result is failed
+  changed_when: result is not failed
+  when:
+    - nextcloud_remove_unknown_apps | bool
+    - not (nextcloud_apps | selectattr('name', 'search', item.key) | list)
+
+- name: Remove unwanted external apps
+  command: php occ app:remove "{{ item.name }}"
+  loop: "{{ nextcloud_apps }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  register: result
+  failed_when: result.stdout is not search('removed') or result is failed
+  changed_when: result is not failed
+  when:
+    - item.name in (nextcloud_installed_apps.enabled
+      | combine(nextcloud_installed_apps.disabled))
+    - item.state | default('enabled') == 'absent'
+
+# Install all apps from the configured list which
+# - are external apps (not in the shipped apps list) and
+# - are not yet installed (not in the installed apps list) and
+# - have their state not set to "absent"
+- name: Install external apps
+  command: php occ app:install "{{ item.name }}"
+  loop: "{{ nextcloud_apps }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  register: result
+  failed_when: result.stdout is not search('installed') or result is failed
+  changed_when: result is not failed
+  when:
+    - item.name not in (nextcloud_shipped_apps.enabled
+      | combine(nextcloud_shipped_apps.disabled))
+    - item.name not in (nextcloud_installed_apps.enabled
+      | combine(nextcloud_installed_apps.disabled))
+    - item.state | default('enabled') != 'absent'
+  notify: nextcloud set file permissions
+
+# Update list of available apps after installation and removal:
+- name: Re-read installed external apps
+  command: php occ app:list --shipped=false --no-warnings --output=json
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  register: _result
+  changed_when: false
+
+- name: Parse occ command response as JSON
+  set_fact:
+    nextcloud_installed_apps: "{{ _result.stdout | from_json }}"
+
+# Check and update all external apps
+- name: Update external apps
+  command: php occ app:update "{{ item.key }}"
+  loop: >-
+    {{
+      nextcloud_installed_apps.enabled
+      | combine(nextcloud_installed_apps.disabled)
+      | dict2items
+    }}
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  register: result
+  failed_when: result.stdout is search('not installed') or result is failed
+  changed_when: result.stdout is search('updated') and result is not failed
+  notify: nextcloud set file permissions
+
+# Enable all apps from the configured list which
+# - are not yet enabled and
+# - have their state set to "enabled"
+- name: Enable apps
+  command: php occ app:enable "{{ item.name }}"
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  loop: "{{ nextcloud_apps }}"
+  when:
+    - (item.state | default('enabled')) == 'enabled'
+    - item.name not in (
+        nextcloud_installed_apps.enabled
+        | combine(nextcloud_shipped_apps.enabled)
+      )
+
+# Disable all apps from the configured list which
+# - are not yet disabled and
+# - have their state set to "disabled"
+- name: Disable apps
+  command: php occ app:disable "{{ item.name }}"
+  args:
+    chdir: "{{ nextcloud_installation_dir }}"
+  become: true
+  become_user: "{{ nextcloud_file_owner }}"
+  loop: "{{ nextcloud_apps }}"
+  when:
+    - (item.state | default('enabled')) == 'disabled'
+    - item.name not in (
+        nextcloud_installed_apps.disabled
+        | combine(nextcloud_shipped_apps.disabled)
+      )
