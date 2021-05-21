@@ -12,3 +12,33 @@
       host: "%"
       password: "{{ lookup('keepass', 'mysql_user', 'password') }}"
       priv: "nextcloud_db.*:ALL"
+  ### nkakouros.nextcloud
+  nextcloud_version: 21
+  nextcloud_installation_dir: '/var/www/html/nextcloud/'
+  nextcloud_data_dir: "{{ nextcloud_installation_dir }}/data"
+  nextcloud_file_owner: 'www-data'
+  nextcloud_database:
+    backend: mysql
+    name: nextcloud_db
+    user: mysql_user
+    pass: "{{ lookup('keepass', 'mysql_user', 'password') }}"
+    host: localhost
+    port: 3306
+    prefix: oc_
+  nextcloud_urls:
+    - "http://{{ ansible_hostname }}"
+  nextcloud_admin_user: nc_admin
+  nextcloud_admin_pass: "{{ lookup('keepass', 'nextcloud_admin', 'password') }}"
+  nextcloud_users:
+    - name: daniel
+      pass: "{{ lookup('keepass', 'nextcloud_daniel', 'password') }}"
+      resetpassword: no
+    - name: max
+      pass: "{{ lookup('keepass', 'nextcloud_max', 'password') }}"
+      resetpassword: no
+    - name: mg
+      pass: "{{ lookup('keepass', 'nextcloud_mg', 'password') }}"
+      resetpassword: no
+    - name: kati
+      pass: "{{ lookup('keepass', 'nextcloud_kati', 'password') }}"
+      resetpassword: no
