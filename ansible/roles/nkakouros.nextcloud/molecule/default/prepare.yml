@@ -1,0 +1,69 @@
+---
+
+- name: Prepare
+  hosts: all
+  become: true
+  vars:
+    mysql_root_password_update: false
+    mysql_databases:
+      - name: nextcloud
+    mysql_users:
+      - name: nextcloud
+        password: password
+        priv: "nextcloud.*:ALL"
+    mysql_packages:
+      - mariadb-client
+      - mariadb-server
+      - python-mysqldb
+    php_default_version_debian: '7.3'
+    php_packages_extra:
+      - "libapache2-mod-php{{ php_default_version_debian }}"
+      - "php{{ php_default_version_debian }}-zip"
+      - "php{{ php_default_version_debian }}-mysql"
+      - "php{{ php_default_version_debian }}-bz2"
+      - "php{{ php_default_version_debian }}-intl"
+      - "php{{ php_default_version_debian }}-gmp"
+      - "php{{ php_default_version_debian }}-apcu"
+      - "php{{ php_default_version_debian }}-imagick"
+      - "php{{ php_default_version_debian }}-dom"
+      - "php{{ php_default_version_debian }}-gd"
+      - "php{{ php_default_version_debian }}-curl"
+      - "php{{ php_default_version_debian }}-mbstring"
+      - php-mcrypt
+    apache_remove_default_vhost: true
+    apache_vhosts:
+      - servername: cloud.kakouros.net
+        documentroot: /var/www/html/nextcloud
+        extra_parameters: |
+          SetEnv HOME /var/www/html/nextcloud
+          SetEnv HTTP_HOME /var/www/html/nextcloud
+    apache_mods_enabled:
+      - rewrite.load
+      - "php{{ php_default_version_debian }}.load"
+      - headers.load
+      - env.load
+      - dir.load
+      - mime.load
+    apache_state: restarted
+    manala_cron_files:
+      - file: nextcloud
+        user: www-data
+        jobs:
+          - name: Run nextcloud cron
+            job: "php-cli -f {{ apache_vhosts.0.documentroot }}/cron.php"
+            minute: "*/1"
+  pre_tasks:
+    - name: Gather facts
+      setup: null
+      become: false
+  tasks:
+    - include_role:
+        name: iambryancs.ppa-ondrej
+    - include_role:
+        name: geerlingguy.php
+    - include_role:
+        name: geerlingguy.apache
+    - include_role:
+        name: geerlingguy.mysql
+    - include_role:
+        name: manala.cron

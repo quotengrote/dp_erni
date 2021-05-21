@@ -1,0 +1,174 @@
+---
+
+nextcloud_enable: true
+# Set this to 'no' to completely disable the role
+
+# Installation {{{
+nextcloud_version: 17
+# The major nextcloud version to install. You can use this to upgrade to a new
+# major version as well. Even if you set 'nextcloud_download_url' manually (see
+# next option), 'nextcloud_version' should be set as it is also used to
+# correctly install the apps.
+
+nextcloud_download_url: >-
+  {%- if nextcloud_version > 0 -%}
+    https://download.nextcloud.com/server/releases/latest-{{
+      nextcloud_version }}.zip
+  {%- else -%}
+    https://download.nextcloud.com/server/releases/latest.zip
+  {%- endif -%}
+# The url to download nextcloud from. Currently only the latest stable version
+# is supported by the role.
+
+nextcloud_installation_dir: '/var/www/html/nextcloud/'
+# Where to extract nextcloud files. This is the directory where the web server
+# will load nextcloud from.
+
+nextcloud_data_dir: "{{ nextcloud_installation_dir }}/data"
+# Path to nextcloud user data directory.
+
+nextcloud_file_owner: 'www-data'
+# The user that will own nextcloud files.
+
+nextcloud_database:
+  backend: mysql
+  # The database server that will be used. It should be already installed and
+  # the database should already exist. For 'mariadb', set this to 'mysql'.
+
+  name: nextcloud
+  # The name of the database nextcloud will use. It should already exist on the
+  # system.
+
+  user: nextcloud
+  # The database user that nextcloud will use to access the database. The user
+  # should already exist in the database backend (together with their password).
+
+  pass: ''
+  # The database user's password. This variable should not be empty.
+
+  host: localhost
+  # The database host
+
+  port: 3306
+  # The port the db server listens on
+
+  prefix: oc_
+  # Prefix for the nextcloud tables in the database.
+# }}}
+# Core configuration {{{
+# TODO make this part of nextcloud_config_system
+nextcloud_enable_pretty_urls: true
+# Set to yes to enable urls of the form https://example.org/calendar replacing
+# https://example.org/nextcloud/index.php/s/Sv1b7krAUqmF8QQ.
+
+# TODO make this part of nextcloud_config_system
+nextcloud_urls:
+  - https://localhost:80/folder
+# This is a list of urls where your nextcloud installation should be accessible.
+# You would normally need only one. If you specify more than one, the first one
+# will be as the "main" one, for pretty urls, etc.
+# }}}
+# occ {{{
+nextcloud_occ_make_executable: true
+# Whether to make the occ tool executable (to avoid using `php occ ...` and use
+# `occ ...` directly).
+
+nextcloud_occ_system_command: true
+# Whether to create a /usr/bin/occ executable script that will allow all users
+# of the system to run `occ` (with completion if `nextcloud_occ_completions` is
+# enabled). The script calls sudo to run `occ` as the nextcloud user.
+
+nextcloud_occ_completions: true
+# Whether to enable bash completion for the occ tool
+# }}}
+# Users {{{
+nextcloud_admin_user: admin
+# The name of the admin user
+
+nextcloud_admin_pass: ''
+# The password of the admin user. This variable should not be empty.
+
+nextcloud_users: []
+# The ansible users to create, other than the admin.
+# It is a list of hashes. Eg
+#
+# nextcloud_users:
+#   - name: alice
+#     pass: superstrongnot
+#     resetpassword: yes  # reset the passsword every time the playbook is run
+#     display_name: Alice B. Charlie
+#     settings:
+#       - firstrunwizard:
+#           show: 0
+#       - calendar:
+#           showWeekNr: 'yes'
+#     app_config:
+#       ...
+#
+# App and core configuration happens per user. To find out what config options
+# are available, either make the changes manually and then the oc_preferences
+# table in your nextcloud database or use the `occ config:list` command on your
+# server to get a listing of the current configuration options.
+# }}}
+# Apps {{{
+nextcloud_remove_unknown_apps: false
+# Setting to choose whether to remove or keep external apps which have not been
+# installed through this role, but manually or via the Nextcloud admin interface
+
+nextcloud_apps: []
+# Nextcloud apps to be installed, removed, enabled or disabled
+# It is a list of hashes. Eg
+#
+# nextcloud_apps:
+#   - name: calendar
+#     state: enabled
+#
+# The action can be defined using the app's state, the following states are
+# supported:
+# - present: The app will be installed, the enabled status will not be changed
+# - absent: The app will be removed. Only available for external apps.
+# - enabled: The app will be installed if not available yet, and will be
+#   enabled
+# - disabled: The app will be installed if not available yet, and will be
+#   disabled
+#
+# Installation and removal is only supported for external apps, apps shipped
+# with Nextcloud can only be enabled or disabled. By default, only apps with
+# the explicit state `absent` are removed, to remove all apps missing from the
+# list, set `nextcloud_remove_unknown_apps: true`.
+# Currently, always the latest version available from the App Store is
+# installed.
+
+nextcloud_config: {}
+# A yaml array with settings of nextcloud apps.
+#
+# Nextcloud organizes its configuration in two categories:
+# - system: this category contains all basic configuration parameters for the
+#           framework to operate. Its keys are stored in the `config.php` file
+#           of the instance installation's `config` directory.
+# - apps: this category contains settings for the individual apps as well as
+#         for some core components of the framework (in `core`). These settings
+#         are stored in the database directly and require a correctly
+#         configured system to be accessed.
+#
+# For instance:
+# ```
+# nextcloud_config:
+#   apps:
+#     core:
+#       backgroundjobs_mode: cron
+#   system:
+#     overwrite:
+#       cli:
+#         url: "{{ nextcloud_urls[0] | regex_replace(':[0-9]{2,5}', '') }}"
+#     trusted_domains:
+#       "{{ nextcloud_urls | map('urlsplit', 'hostname') | list }}"
+#     htaccess:
+#       RewriteBase: >-
+#         /{{ nextcloud_urls[0]
+#           | regex_replace('/$', '')
+#           | urlsplit('path')
+#           | regex_replace('^/')
+#         }}
+# ```
+# }}}
