@@ -24,8 +24,6 @@
       g_jenkins:
         hosts:
           BLJENK001:
-      g_database:
-        hosts:
       g_nextcloud:
         hosts:
           plnext001:
