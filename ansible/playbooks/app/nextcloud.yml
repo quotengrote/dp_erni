@@ -1,5 +1,6 @@
 ---
   - hosts: g_nextcloud
     roles:
-      - role: geerlingguy.mysql
-        become: yes
+      - { role: geerlingguy.mysql, become: true }
+      - { role: geerlingguy.apache, become: true }
+      - { role: nkakouros.nextcloud, become: true }
