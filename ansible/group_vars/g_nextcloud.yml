@@ -46,3 +46,15 @@
   apache_remove_default_vhost: true
   apache_vhosts:
     - {servername: "{{ ansible_hostname }}.ausbildung.md", documentroot: "/var/www/html/nextcloud"}
+
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      from_ip: 11.10.31.0/24
+      comment: 'ssh'
+    - rule: allow
+      to_port: 80
+      from_ip: 11.10.31.0/24
+      comment: 'webserver'
