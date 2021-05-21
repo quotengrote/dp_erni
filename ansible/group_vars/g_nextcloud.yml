@@ -26,7 +26,7 @@
     port: 3306
     prefix: oc_
   nextcloud_urls:
-    - "http://{{ ansible_hostname }}"
+    - "http://{{ ansible_hostname }}.ausbildung.md"
   nextcloud_admin_user: nc_admin
   nextcloud_admin_pass: "{{ lookup('keepass', 'nextcloud_admin', 'password') }}"
   nextcloud_users:
