@@ -61,9 +61,7 @@
       comment: 'dns'
     - rule: allow
       to_port: 67
-      from_ip: 11.10.31.0/24
       comment: 'dhcp'
     - rule: allow
       to_port: 68
-      from_ip: 11.10.31.0/24
       comment: 'dhcp'
