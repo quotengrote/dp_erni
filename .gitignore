@@ -4,7 +4,7 @@ ansible/ansible_private_key
 ansible/private_key_mg
 ansible/public_key_mg
 ansible/private_key_mg_putty.ppk
-
+ansible/passwort
 
 
 # Created by https://www.gitignore.io/api/archive,diskimage,executable
