@@ -10,6 +10,7 @@
           plnext001:
           BLACNG001:
           BLANSI001:
+          tldnsm002:
           BLJENK001:
           BLDNSM001:
 #            ansible_host: 11.10.31.10
