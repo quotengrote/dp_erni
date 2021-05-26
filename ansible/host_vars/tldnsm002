@@ -59,9 +59,9 @@
       to_port: 53
       from_ip: 11.10.31.0/24
       comment: 'dns'
-    - rule: drop
+    - rule: deny
       to_port: 67
       comment: 'dhcp'
-    - rule: drop
+    - rule: deny
       to_port: 68
       comment: 'dhcp'
