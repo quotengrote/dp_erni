@@ -1,0 +1,7 @@
+---
+  - name: restart_smbd
+    become: yes
+    systemd:
+      name: smbd
+      enabled: yes
+      state: restarted
