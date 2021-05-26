@@ -1,4 +1,4 @@
 ---
-  - hosts: g_dnsmasq
+  - hosts: g_dnsmasq,tldnsm002
     roles:
       - { role: mgrote.dnsmasq, tags: "dnsmasq", become: true}
