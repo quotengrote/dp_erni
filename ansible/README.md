@@ -9,9 +9,9 @@
 ```
 
 ## example-cli
-`ansible-playbook playbooks/XXX.yml  -i inventory `
+`ansible-playbook playbooks/XXX.yml`
 
-Vorbereitend ist noch eine Datei namens "__vault_password_file__" anzulegen welche das Klartextpasswort zur entschlüsselung der KeePass beinhaltet. 
+Vorbereitend ist noch eine Datei namens "__vault_password_file__" anzulegen welche das Klartextpasswort zur entschlüsselung der KeePass beinhaltet.
 
 ## Aufnahme neuer Rechner in ansible
 1. in Inventory ergänzen
