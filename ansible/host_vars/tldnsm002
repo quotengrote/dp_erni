@@ -1,0 +1,67 @@
+---
+  ### mgrote.dnsmasq
+  dnsmasq_resolv_file: "/etc/resolv.conf" # wo liegt die resolv.conf
+  dnsmasq_extra_resolve_file: "/etc/dnsmasq_extra_resolve_file" # wo liegen extra hosts/ersatz fur /etc/hosts
+  dnsmasq_packages: # Pakete
+    - dnsmasq
+    - dnsutils
+    - ldnsutils
+  dnsmasq_max_leases: "200" # wieviel leases darf dnsmasq gleichzeitig vergeben
+  dnsmasq_external_nameserver:  # Welche nameserver soll dnsmasq befragen
+    - address: "127.0.0.1" # sonst kann dnsmasq selber nichts auflösen
+  dnsmasq_listen_port: "53" # auf welchem Port soll dnsmasq hören
+  dnsmasq_domain: ausbildung.md # wie heißt die lokale domain
+  dnsmasq_dhcp_pools: # welche dhcp pools gibt es
+    - name: pool1
+      ip_start: 11.10.31.51
+      ip_end: 11.10.31.200
+      leasetime: "120m"
+  dnsmasq_dhcp_static_leases: # statische leases; also max 11:22:33:44:55:66 kriegt immer IP 192.168.0.60 mit dem hostnamen klauspeter
+    - name: "klauspeter" # gleichzeitg auch hostname
+      mac: "11:22:33:44:55:66"
+      ip: "192.168.0.60"
+  dnsmasq_dhcp_options: # welche dhcp optionen werden gesetzt
+    - name: ntp-server
+      optnr: "42"
+      value: "11.8.43.1,11.8.43.2"
+    - name: router
+      optnr: "3"
+      value: "11.10.31.254"
+  dnsmasq_addresses_to_resolve: # namensauflösung für geräte ohne leases
+    - shortname: GATEWAY
+      ip: 11.10.31.254
+    - shortname: RMPHLPVE1 #data/links
+      ip: 11.10.31.11
+    - shortname: RMPHLPVE2 #data/links
+      ip: 11.10.31.12
+    - shortname: RMPHLPVE1R #corosync/rechts
+      ip: 11.10.31.13
+    - shortname: RMPHLPVE2R #corosync/rechts
+      ip: 11.10.31.14
+    - shortname: RMPHLPVE1-IPMI #MGMT-Port
+      ip: 11.10.31.6
+    - shortname: RMPHLPVE2-IPMI #MGMT-Port
+      ip: 11.10.31.7
+    - shortname: BAKVMM001
+      ip: 11.10.31.98
+    - shortname: BLSERI001
+      ip: 11.10.31.59
+    - shortname: proxy
+      ip: 11.8.108.254
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      from_ip: 11.10.31.0/24
+      comment: 'ssh'
+    - rule: allow
+      to_port: 53
+      from_ip: 11.10.31.0/24
+      comment: 'dns'
+    - rule: drop
+      to_port: 67
+      comment: 'dhcp'
+    - rule: drop
+      to_port: 68
+      comment: 'dhcp'
