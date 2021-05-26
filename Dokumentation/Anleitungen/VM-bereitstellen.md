@@ -5,6 +5,7 @@
 2. Template-Ubu-Server klonen(Full-Clone)
 3. Ubuntu installieren(Layout: DE, mit LVM; Nutzer=User:hallowelt)
 3. Hostname nach Namenschema setzen
+4. OpenSSH-Server installieren(mit Leertaste auswählen)
 3. Install-ISO aus Hardware entfernen
 4. nach Abschluss Installation Snapshot erstellen
 
