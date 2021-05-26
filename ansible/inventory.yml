@@ -33,3 +33,4 @@
       g_testserver:
         hosts:
           TLDNSM001:
+          tldnsm002:
