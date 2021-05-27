@@ -132,6 +132,51 @@
       servers:
         - g_proxmox
         - g_ubuntu
+
+  ### tmux
+  users_tmux:
+    - username: daniel
+      tmux_allow: true
+      tmux_downloadpath: "https://raw.githubusercontent.com/DanielMueller1309/linux/master/Programme/tmux/.tmux.conf"
+      tmux_conf_destination: "/home/daniel/.tmux.conf"
+      tmux_bashrc_destination: "/home/daniel/.bashrc"
+      tmux_standardsession_name: "default"
+
+    - username: root
+      tmux_allow: false
+      tmux_downloadpath: ""
+      tmux_conf_destination: "/home/root/.tmux.conf"
+      tmux_bashrc_destination: "/home/root/.bashrc"
+      tmux_standardsession_name: "default"
+
+    - username: mg
+      tmux_allow: false
+      tmux_downloadpath: ""
+      tmux_conf_destination: "/home/mg/.tmux.conf"
+      tmux_bashrc_destination: "/home/mg/.bashrc"
+      tmux_standardsession_name: "default"
+
+    - username: max
+      tmux_allow: false
+      tmux_downloadpath: ""
+      tmux_conf_destination: "/home/max/.tmux.conf"
+      tmux_bashrc_destination: "/home/max/.bashrc"
+      tmux_standardsession_name: "default"
+
+    - username: kati
+      tmux_allow: false
+      tmux_downloadpath: ""
+      tmux_conf_destination: "/home/kati/.tmux.conf"
+      tmux_bashrc_destination: "/home/kati/.bashrc"
+      tmux_standardsession_name: "default"
+
+    - username: ansible-user
+      tmux_allow: false
+      tmux_downloadpath: ""
+      tmux_conf_destination: "/home/ansible-user/.tmux.conf"
+      tmux_bashrc_destination: "/home/ansible-user/.bashrc"
+      tmux_standardsession_name: "default"
+
   ### mgrote.install_packages
   install_packages:
     - locales
