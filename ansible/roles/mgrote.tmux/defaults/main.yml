@@ -1,8 +1,1 @@
 ---
-  users_tmux:
-    - username: daniel
-      tmux_allow: true
-      tmux_downloadpath: "https://raw.githubusercontent.com/DanielMueller1309/linux/master/Programme/tmux/.tmux.conf"
-      tmux_conf_destination: "/home/daniel/.tmux.conf"
-      tmux_bashrc_destination: "/home/daniel/.bashrc"
-      tmux_standardsession_name: "default"
