@@ -28,7 +28,7 @@
       url: "{{ item.tmux_downloadpath }}"
       dest: "{{ item.tmux_conf_destination }}"
       mode: '0664'
-    when: item.tmux_allow|bool  == true
+    when: item.tmux_allow
     with_items: "{{ users_tmux }}"
 
   - name: add tmux-session config to .bashrc
