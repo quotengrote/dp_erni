@@ -14,6 +14,11 @@
     with_items:
       - "{{ users_tmux }}"
 
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: stat_result.stat
+      #verbosity: 3
+
   - name: touch bashrc if it doesnt exist already ###{{ item.tmux_bashrc_destination }}
     become: yes
     file:
