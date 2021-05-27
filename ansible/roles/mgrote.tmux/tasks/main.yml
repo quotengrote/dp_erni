@@ -7,10 +7,11 @@
       state: present
       cache_valid_time: 360
 
+  - name: add bashrc if it doesnt exist already ###{{ item.tmux_bashrc_destination }}
     become: yes
     file:
       path: "{{ item.tmux_bashrc_destination }}"
-      state: touch
+      state: file
     with_items:
       - "{{ users_tmux }}"
     ##when: not stat_result.stat.exists
