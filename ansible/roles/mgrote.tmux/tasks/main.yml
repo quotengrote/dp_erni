@@ -15,10 +15,6 @@
     with_items:
       - "{{ users_tmux }}"
 
-    # prerole damit get_url downloaden kann
-  - include_role:
-      name: mgrote.set_http_proxy
-
   - name: download tmux.conf for "{{ item.username }}"
     get_url:
       url: "{{ item.tmux_downloadpath }}"
