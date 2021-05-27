@@ -1,0 +1,4 @@
+---
+  - hosts: g_testserver
+    roles:
+      - { role: mgrote.tmux, tags: "tmux", become: true}
