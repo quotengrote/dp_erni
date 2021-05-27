@@ -32,4 +32,5 @@
         if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
         tmux attach -t {{ item.tmux_standardsession_name }} || tmux new -s {{ item.tmux_standardsession_name }}
         fi
+    when: item.tmux_allow
     with_items: "{{ users_tmux }}"
