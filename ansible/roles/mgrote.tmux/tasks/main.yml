@@ -1,0 +1,42 @@
+---
+  - name: install tmux packages
+    become: yes
+    ansible.builtin.package:
+      name:
+        - tmux
+      state: present
+      cache_valid_time: 360
+
+  - name: Check if {{ item.tmux_bashrc_destination }} exists
+    stat:
+      path: "{{ item.tmux_bashrc_destination }}"
+    register: stat_result
+    with_items:
+      - "{{ users_tmux }}"
+
+  - name: touch bashrc if it doesnt exist already ###{{ item.tmux_bashrc_destination }}
+    become: yes
+    file:
+      path: "{{ item.tmux_bashrc_destination }}"
+      state: touch
+    when: not stat_result.stat.exists
+    with_items:
+      - "{{ users_tmux }}"
+
+  - name: download tmux.conf for "{{ item.username }}"
+    get_url:
+      url: "{{ item.tmux_downloadpath }}"
+      dest: "{{ item.tmux_conf_destination }}"
+      mode: '0664'
+    when: item.tmux_allow|bool  == true
+    with_items: "{{ users_tmux }}"
+
+  - name: add tmux-session config to .bashrc
+    become: yes
+    ansible.builtin.blockinfile:
+      path: "{{ item.tmux_bashrc_destination }}"
+      block: |
+        if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+        tmux attach -t {{ item.tmux_standardsession_name }} || tmux new -s {{ item.tmux_standardsession_name }}
+        fi
+    with_items: "{{ users_tmux }}"
