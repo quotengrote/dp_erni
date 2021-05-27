@@ -142,13 +142,6 @@
       tmux_bashrc_destination: "/home/daniel/.bashrc"
       tmux_standardsession_name: "default"
 
-    - username: root
-      tmux_allow: false
-      tmux_downloadpath: ""
-      tmux_conf_destination: "/home/root/.tmux.conf"
-      tmux_bashrc_destination: "/home/root/.bashrc"
-      tmux_standardsession_name: "default"
-
     - username: mg
       tmux_allow: false
       tmux_downloadpath: ""
