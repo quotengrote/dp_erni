@@ -24,8 +24,8 @@
     when: item.tmux_allow
     with_items: "{{ users_tmux }}"
     environment:
-    HTTP_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
-    HTTPS_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
+      HTTP_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
+      HTTPS_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
 
   - name: add tmux-session config to .bashrc
     become: yes
