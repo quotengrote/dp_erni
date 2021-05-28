@@ -1,4 +1,5 @@
 ---
   - hosts: all
+    become: yes
     roles:
       - { role: mgrote.tmux, tags: "tmux", become: true}
