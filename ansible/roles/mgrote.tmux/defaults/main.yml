@@ -1,0 +1,8 @@
+---
+  users_tmux:
+    - username: user
+      tmux_allow: false
+      tmux_downloadpath: ""
+      tmux_conf_destination: "/home/user/.tmux.conf"
+      tmux_bashrc_destination: "/home/user/.bashrc"
+      tmux_standardsession_name: "default"
