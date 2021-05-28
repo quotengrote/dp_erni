@@ -1,39 +1,36 @@
 ---
   - name: install tmux packages
-    become: yes
     ansible.builtin.package:
       name:
         - tmux
       state: present
       cache_valid_time: 360
 
-  - name: add bashrc if it doesnt exist already
-    become: yes
-    file:
-      path: "{{ item.tmux_bashrc_destination }}"
-      state: file
-    with_items:
-      - "{{ users_tmux }}"
+  - name: config tmux
+    block:
+      - name: add bashrc if it doesnt exist already
+        file:
+          path: "{{ item.tmux_bashrc_destination }}"
+          state: file
+        with_items: "{{ users_tmux }}"
 
-  - name: download tmux.conf for "{{ item.username }}"
-    get_url:
-      url: "{{ item.tmux_downloadpath }}"
-      dest: "{{ item.tmux_conf_destination }}"
-      use_proxy: yes
-      mode: '0664'
-    when: item.tmux_allow
-    with_items: "{{ users_tmux }}"
-    environment:
-      HTTP_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
-      HTTPS_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
+      - name: download tmux.conf for "{{ item.username }}"
+        get_url:
+          url: "{{ item.tmux_downloadpath }}"
+          dest: "{{ item.tmux_conf_destination }}"
+          use_proxy: yes
+          mode: '0664'
+        environment:
+          HTTP_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
+          HTTPS_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
+        with_items: "{{ users_tmux }}"
 
-  - name: add tmux-session config to .bashrc
-    become: yes
-    ansible.builtin.blockinfile:
-      path: "{{ item.tmux_bashrc_destination }}"
-      block: |
-        if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-        tmux attach -t {{ item.tmux_standardsession_name }} || tmux new -s {{ item.tmux_standardsession_name }}
-        fi
+      - name: add tmux-session config to .bashrc
+        ansible.builtin.blockinfile:
+          path: "{{ item.tmux_bashrc_destination }}"
+          block: |
+            if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+            tmux attach -t {{ item.tmux_standardsession_name }} || tmux new -s {{ item.tmux_standardsession_name }}
+            fi
+        with_items: "{{ users_tmux }}"
     when: item.tmux_allow
-    with_items: "{{ users_tmux }}"
