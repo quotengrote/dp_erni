@@ -1,0 +1,14 @@
+---
+  - name: install packages
+    become: yes
+    ansible.builtin.package:
+      name: qemu-guest-agent
+      state: present
+    when: ansible_virtualization_role == 'guest'
+    register: qemu_installed
+
+  - name: reboot (dauert bis zu 2min!)
+    become: true
+    reboot:
+      reboot_timeout: 120
+    when: qemu_installed.changed == true
