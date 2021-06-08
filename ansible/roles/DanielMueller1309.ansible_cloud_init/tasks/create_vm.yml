@@ -1,0 +1,54 @@
+---
+  - name: download cloud image
+    get_url:
+      url: https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64.img
+      dest: /home/user/focal-server-cloudimg-amd64.img
+
+  - name: Create empty VM using proxmox_kvm and cloudinit user
+    community.general.proxmox_kvm:
+      node: "{{ vm_node }}"
+      api_user: "{{ vm_api_user }}"
+      api_password: "{{ vm_api_password }}"
+      api_host: "{{ vm_api_host }}"
+      name: "{{ item.vm_name }}"
+      scsihw: "{{ vm_scsihw }}"
+      scsi:
+       scsi0: "{{ vm_scsi0 }}"
+      ide:
+        ide2: "{{ vm_ide2 }}"
+      bootdisk: "{{ vm_bootdisk }}"
+      ciuser: "{{ vm_ciuser }}"
+      cipassword: "{{ vm_cipassword }}"
+      vmid: "{{ item.vm_vmid }}"
+      net:
+        net0: "{{ vm_net0 }}"
+      ipconfig:
+        ipconfig0: "{{ item.vm_ipconfig0 }}"
+      nameservers: "{{ vm_nameservers }}"
+      proxmox_default_behavior: compatibility
+      sshkeys: "{{ vm_sshkeys }}"
+    with_items: "{{ vms }}"
+    register: addvm
+    notify:
+      - Pause for 3 minutes to refresh vms with cloudinit setup
+
+  - name: import init disk
+    ansible.builtin.command:
+      cmd: "qm importdisk {{ item.vm_vmid }} /home/user/focal-server-cloudimg-amd64.img local-lvm"
+      creates: "/dev/mapper/pve-vm--{{ item.vm_vmid }}--disk--1"
+    with_items: "{{ vms }}"
+
+  - name: attache base image disk
+    ansible.builtin.lineinfile:
+      path: /etc/pve/local/qemu-server/{{ item.vm_vmid }}.conf
+      regexp: '^scsi0:.*'
+      line: 'scsi0: local-lvm:vm-{{ item.vm_vmid }}-disk-1'
+    with_items: "{{ vms }}"
+
+  - name: restart cloud-init.service
+    service:
+      name: cloud-init.service
+      enabled: true
+      state: restarted
+    become: true
+    when: addvm

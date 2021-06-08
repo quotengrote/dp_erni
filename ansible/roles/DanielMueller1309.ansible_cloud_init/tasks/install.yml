@@ -1,0 +1,14 @@
+---
+- name: install | Install cloud-init
+  package:
+    name: cloud-init
+    state: present
+  become: true
+
+- name: install | Install pip
+  include_role:
+    name: geerlingguy.ansible_role_pip
+
+- name: install | pip install proxmoxer
+  pip:
+    name: proxmoxer

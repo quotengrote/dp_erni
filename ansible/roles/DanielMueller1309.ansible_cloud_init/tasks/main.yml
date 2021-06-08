@@ -1,0 +1,6 @@
+---
+  - include_tasks: install.yml
+
+  - include_tasks: create_vm.yml
+
+  - include_tasks: startup_vms.yml
