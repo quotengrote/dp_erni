@@ -32,4 +32,3 @@
           plnext001:
       g_testserver:
         hosts:
-          TLDNSM001:
