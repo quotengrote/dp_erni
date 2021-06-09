@@ -14,11 +14,6 @@
 #      - { role: mgrote.set_apt_sources, tags: "sources", become: yes}
       - { role: robertdebock.bootstrap, tags: "bootstrap", become: yes}
       - { role: ryandaniels.create_users, tags: "user", become: yes}
-    post_tasks:
-      - name: reboot für qemu-guest-agent (dauert bis zu 2min!)
-        become: true
-        reboot:
-          reboot_timeout: 120
     vars:
       ### reobertdebock.bootstrap
       bootstrap_user: user

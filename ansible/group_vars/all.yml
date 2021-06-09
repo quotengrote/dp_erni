@@ -34,7 +34,6 @@
     - smartmontools
     - lm-sensors
   programs_only_vms:
-    - qemu-guest-agent
     - open-vm-tools
 
   ### oefenweb.ufw
