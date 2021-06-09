@@ -9,8 +9,7 @@
     register: copy_src
     when:
       - "'g_ubuntu' in group_names"
-      - acng_server is defined
-      - acng_server_port is defined
+      - acng_server_and_port is defined
 
   - name: Proxmox debian.list kopieren
     become: yes
@@ -21,8 +20,7 @@
     register: copy_src
     when:
       - "'g_proxmox' in group_names"
-      - acng_server is defined
-      - acng_server_port is defined
+      - acng_server_and_port is defined
 
   - name: Proxmox pve-no-subscription.list kopieren
     become: yes
@@ -33,8 +31,7 @@
     register: copy_src
     when:
       - "'g_proxmox' in group_names"
-      - acng_server is defined
-      - acng_server_port is defined
+      - acng_server_and_port is defined
 
   - name: apt_update # noqa 503 503
     become: yes
