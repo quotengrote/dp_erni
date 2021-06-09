@@ -1,0 +1,4 @@
+---
+  - hosts: all
+    roles:
+      - { role: DanielMueller1309.ansible_cloud_init, tags: "cloudinit_bootstrap", become: yes}
