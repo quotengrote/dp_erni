@@ -8,7 +8,6 @@
 
 
 ### Variablen + Defaults
-##### Apt-Cacher-NG Adresse
-acng_server: acng.ausbildung.md
-##### Apt-Cacher-NG Port
-acng_server_port: 9999
+acng_server_and_port: acng.ausbildung.md:9999/
+
+* Cave: der `/` am Ende ist notwendig
