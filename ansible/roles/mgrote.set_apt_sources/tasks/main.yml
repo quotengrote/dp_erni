@@ -8,7 +8,7 @@
       backup: yes
     register: copy_src
     when:
-      - "'ubuntu' in group_names"
+      - "'g_ubuntu' in group_names"
       - acng_server is defined
       - acng_server_port is defined
 
@@ -20,7 +20,7 @@
       backup: yes
     register: copy_src
     when:
-      - "'proxmox' in group_names"
+      - "'g_proxmox' in group_names"
       - acng_server is defined
       - acng_server_port is defined
 
@@ -32,7 +32,7 @@
       backup: yes
     register: copy_src
     when:
-      - "'proxmox' in group_names"
+      - "'g_proxmox' in group_names"
       - acng_server is defined
       - acng_server_port is defined
 
