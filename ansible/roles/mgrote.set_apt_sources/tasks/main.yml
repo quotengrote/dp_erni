@@ -11,11 +11,11 @@
       - "'g_ubuntu' in group_names"
       - acng_server_and_port is defined
 
-  - name: Proxmox debian.list kopieren
+  - name: Proxmox sources.list kopieren
     become: yes
     template:
       src: "proxmox_sources.list"
-      dest: "/etc/apt/sources.list.d/debian.list"
+      dest: "/etc/apt/sources.list"
       backup: yes
     register: copy_src
     when:
