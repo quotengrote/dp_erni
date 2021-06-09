@@ -63,7 +63,7 @@
   ntp_client_daemon_user: ntp # Nutzer + Gruppe für den Dienst
   ntp_client_daemon_group: ntp # Nutzer + Gruppe für den Dienst
   ### mgrote.set_apt_sources
-  acng_server_and_port: ""  # ip/fqdn:port
+  acng_server_and_port: ""  # ip/fqdn:port/
   ### robertdebock.bootstrap
   users:
     - username: root
