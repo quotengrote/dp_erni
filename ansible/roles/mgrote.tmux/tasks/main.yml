@@ -25,6 +25,13 @@
           HTTPS_PROXY: "{{ proxy_ip }}:{{ proxy_port }}"
         with_items: "{{ users_tmux }}"
 
+      - name: touch "{{ item.tmux_bashrc_destination }}" , if it doesnt exist already
+        become: yes
+        file:
+          path: "{{ item.tmux_bashrc_destination }}"
+          state: touch
+        when: not stat_result.stat.exists
+
       - name: add tmux-session config to .bashrc
         ansible.builtin.blockinfile:
           path: "{{ item.tmux_bashrc_destination }}"
