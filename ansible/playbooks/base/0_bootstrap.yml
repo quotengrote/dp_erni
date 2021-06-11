@@ -8,7 +8,7 @@
         file:
           path: /etc/apt/sources.list.d/pve-enterprise.list
           state: absent
-        when: "'proxmox' in group_names"
+        when: "'g_proxmox' in group_names"
     roles:
       - set_apt_proxy
 #      - { role: mgrote.set_apt_sources, tags: "sources", become: yes}
