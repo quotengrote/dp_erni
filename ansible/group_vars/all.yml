@@ -65,7 +65,7 @@
   ### mgrote.set_apt_sources
   acng_server: acng.ausbildung.md
   acng_server_port: 9999
-  ### robertdebock.bootstrap
+  ### ryandaniels.create_users
   users:
     - username: root
       password: "{{ lookup('keepass', 'linux_user_root_password_hash', 'password') }}" # mkpasswd --method=SHA-512 --stdin
