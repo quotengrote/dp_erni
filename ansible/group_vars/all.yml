@@ -26,6 +26,7 @@
     - acl
     - vim
     - rsync
+    - whois
     - at
   programs_only_physical:
     - hddtemp
