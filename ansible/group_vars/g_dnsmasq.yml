@@ -30,9 +30,9 @@
   dnsmasq_addresses_to_resolve: # namensauflösung für geräte ohne leases
     - shortname: GATEWAY
       ip: 11.10.31.254
-    - shortname: RMPHLPVE1L #data/links
+    - shortname: RMPHLPVE1 #data/links
       ip: 11.10.31.11
-    - shortname: RMPHLPVE2L #data/links
+    - shortname: RMPHLPVE2 #data/links
       ip: 11.10.31.12
     - shortname: RMPHLPVE1R #corosync/rechts
       ip: 11.10.31.13
@@ -61,9 +61,7 @@
       comment: 'dns'
     - rule: allow
       to_port: 67
-      from_ip: 11.10.31.0/24
       comment: 'dhcp'
     - rule: allow
       to_port: 68
-      from_ip: 11.10.31.0/24
       comment: 'dhcp'

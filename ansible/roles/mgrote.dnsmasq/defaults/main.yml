@@ -26,3 +26,5 @@
   dnsmasq_addresses_to_resolve: # namensauflösung für geräte ohne leases
     - shortname: acng
       ip: 11.10.31.220
+  dnsmasq_log_dhcp: false # Log lots of extra information about DHCP transactions.
+  dnsmasq_log_queries: false # For debugging purposes, log each DNS query as it passes through dnsmasq.

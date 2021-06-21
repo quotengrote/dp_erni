@@ -19,7 +19,7 @@
     file:
       state: directory
       path: "{{ ntp_client_driftfile_directory }}"
-      mode: 0644
+      mode: 0777
       owner: "{{ ntp_client_daemon_user }}"
       group: "{{ ntp_client_daemon_group }}"
 

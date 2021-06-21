@@ -2,14 +2,16 @@
   ### geerlingguy.pip
   pip_package: python3-pip
   pip_install_packages:
-    - name: pykeepass==3.2.1
+    - name: pykeepass
+      version: "3.2.1"
     - name: Jinja2
+      version: "2.11.2"
     - name: markupsafe
+  pip_http_proxy: '"{{ proxy_ip }}:{{ proxy_port }}"' # für pip und ansible
+  pip_https_proxy: '"{{ proxy_ip }}:{{ proxy_port }}"' # für pip und ansible
   ### geerlingguy.ansible
   ansible_install_method: pip
   ansible_install_version_pip: '2.10'
-  ### mgrote.restic
-  restic_folders_to_backup: "/usr/local /etc /root /home"
   ### mgrote.apt_install_packages
   programs_extra:
     - sshpass

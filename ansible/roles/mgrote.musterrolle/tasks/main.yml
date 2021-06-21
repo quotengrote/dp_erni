@@ -1,0 +1,47 @@
+---
+# für scripte
+  - name: create /etc/restic
+    become: yes
+    ansible.builtin.file:
+      path: /etc/restic
+      state: directory
+
+
+
+      ##### install logroate
+
+  - name: copy restic_backup.sh
+    become: yes
+    ansible.builtin.template:
+      src: "restic_backup.sh"
+      dest: "/usr/local/bin/restic_backup.sh"
+      mode: a+x
+  - name: copy exclude.txt
+    become: yes
+    ansible.builtin.template:
+      src: "exclude.txt"
+      dest: "/etc/restic/exclude.txt"
+
+  - name: Create restic log
+    become: true
+    ansible.builtin.file:
+      path: /var/log/restic.log
+      state: touch
+      owner: root
+      group: root
+      mode: 0644
+      access_time: preserve
+      modification_time: preserve
+
+  - name: copy logrotate config
+    become: yes
+    ansible.builtin.template:
+      src: logrotate_chrony
+      dest: /etc/logrotate.d/chrony
+      owner: root
+      group: root
+      mode: 0644
+
+
+
+# SIEHE: http://dokuwiki2.grote.lan/artikel/technik/linux_-_scripte_-_speicherorte

@@ -1,3 +1,2 @@
 ---
-  acng_server: acng.grote.lan
-  acng_server_port: 9999
+  acng_server_and_port: acng.grote.lan:9999

@@ -1,0 +1,4 @@
+---
+  - hosts: all
+    roles:
+      - { role: mgrote.qemu_guest_agent }
