@@ -2,7 +2,7 @@
     become: yes
     apt:
       update_cache: yes
-      cache_valid_time: 30
+      cache_valid_time: 300
 
   - name: update installed packages
     become: yes
