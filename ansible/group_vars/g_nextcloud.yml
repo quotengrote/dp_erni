@@ -4,6 +4,7 @@
   mysql_root_password_update: true
   mysql_user_password_update: true
   mysql_root_password: "{{ lookup('keepass', 'mysql_root', 'password') }}"
+  mysql_databases:
     - name: nextcloud_db
       encoding: utf8
       collation: utf8_general_ci
