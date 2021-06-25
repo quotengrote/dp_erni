@@ -7,4 +7,6 @@ Setzt einen Proxy für apt.
 - [x] Ubuntu
 
 ### Variablen + Defaults
-[defaults](./defaults/main.yml)
+apt_proxy_server: 172.16.17.1 # wenn nicht definiert = leer
+apt_proxy_port: 8080 # wenn nicht definiert = leer
+apt_proxy_apt_conf_path: /etc/apt/apt.conf
