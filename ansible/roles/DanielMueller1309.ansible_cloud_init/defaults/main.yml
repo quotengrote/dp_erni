@@ -1,0 +1,25 @@
+---
+# defaults file for ansible-cloud-init
+#static vars for vms:
+  vm_node: pve # nodename which we working on
+  vm_api_user: root@pam # the root user to use the api
+  vm_api_password: hallowelt # password for api user, also can use with keepass plugin
+  vm_api_host: pve # hostname of the api host, most same as node
+  vm_scsihw: virtio-scsi-pci # Proxmox scsi module for vm
+  vm_scsi0: 'local-lvm:1,format=raw' # scsi0 device in local-lvm with 1GB and format raw
+  vm_ide2: 'local:cloudinit,format=qcow2' # ide2 device for cloudinit
+  vm_bootdisk: scsi0 # bootdisk is scsi 0
+  vm_ciuser: user # cloudinit username
+  vm_cipassword: hallowelt # cloudinit user passwort
+  vm_net0: 'virtio,bridge=vmbr0' # networkdevice
+  vm_proxmox_default_behavior: compatibility # is needet to avoid deprication warning because of new default in paramenter
+  vm_nameservers: 192.168.178.11 # ip address of the DNS
+  vm_sshkeys: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAuMew12jn9S1sWc1bCNcPbi1lmEbKSdEoxzKHRlO3IOMivDUUIqmqjaml7ZPun7hL+sBCEVSyKiCr5wNR+VWY6e0p/7E3iDlSlD2fpymff1yWqvsnEmzBnRPGUQdpbGmfNciDt+XnF+nvQgxPBf30BR2//cSBeVpXA1289q0mbc8Z7hDctLjvM43NwjHg0g5KSLx8yXL4VVRg0S/e05azyA7IvQFTf2gVu5NC/rKpI8bs63KMJOR5LTDEYq8V7IlrsBjqTihl+gkXK08x9bqYPWucV3Zg3VGtKcun0WvSmNZPLZ2q5uq+VQFrfv7ioqZVur0XLX78fC9Se+1aC/+Mr0YAdle1P3yenUYFXntTIpI9ID9/EiV0x1cW6dreUy98fVjYmriaXeOK3AxkupQq34aEqXgN8/EH7bJfevvlPYf2JlBIr14MovlIN7zU2sJ2xxQ5jg3H8U2datWwgHoOKt9PAJ7eMsiITUe3310RRQcvkZ/vGHI07ZGfNfleC4fBXcLt+mwaup6rq7pgR+7FMICPiEOn21ektScatVRXGTx47JsMS7YjmAY1qOlUoQC8FXQ8Vp7wunitar6WY45iGTZTDnujkhQfZkllXmpzi8OK0cRwPYfyNPMxaadTY9B9U6CMxjpFV3iq5XgrhhOgtIZfCkW9cX5A7XXy0xXdvQ== user@Acer5' # ssh key (more than one are possible)
+#Dictionary for vars that differ from vm to vm
+  vms:
+    - vm_name: testvm1 # name of the vm
+      vm_vmid: 101 # vm id
+      vm_ipconfig0: 'ip=192.168.178.15/24,gw=192.168.178.1' # set ip of vm and give gateway
+    - vm_name: testvm2
+      vm_vmid: 102
+      vm_ipconfig0: 'ip=192.168.55.202/24,gw=192.168.55.1'

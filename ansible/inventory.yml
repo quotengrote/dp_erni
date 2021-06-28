@@ -12,6 +12,7 @@
           BLANSI001:
           BLJENK001:
           BLDNSM001:
+          TLTMUX001:
 #            ansible_host: 11.10.31.10
       g_dnsmasq:
         hosts:

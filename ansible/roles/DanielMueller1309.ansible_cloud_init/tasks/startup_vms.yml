@@ -1,0 +1,11 @@
+---
+  - name: Start VMs
+    community.general.proxmox_kvm:
+      api_user: root@pam
+      api_password: "{{ lookup('keepass', 'pveroot', 'password') }}"
+      api_host: pve
+      name: "{{ item.vm_name }}"
+      node: pve
+      state: started
+      proxmox_default_behavior: compatibility
+    with_items: "{{ vms }}"

@@ -1,0 +1,5 @@
+---
+  #Pause ist notwendig da cloudinit ein paar
+  - name: Pause for 3 minutes to refresh vms with cloudinit setup
+    pause:
+      minutes: 3
