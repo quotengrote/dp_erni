@@ -7,6 +7,7 @@
     - ldnsutils
   dnsmasq_max_leases: "200" # wieviel leases darf dnsmasq gleichzeitig vergeben
   dnsmasq_external_nameserver:  # Welche nameserver soll dnsmasq befragen
+    - address: "127.0.0.1" # sonst kann dnsmasq selber nichts auflösen
     - address: "9.9.9.9"
   dnsmasq_listen_port: "53" # auf welchem Port soll dnsmasq hören
   dnsmasq_domain: ausbildung.md # wie heißt die lokale domain
