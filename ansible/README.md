@@ -21,9 +21,9 @@ Vorbereitend ist noch eine Datei namens "__vault_password_file__" anzulegen welc
     * Gruppe `sudo` + `ssh`
     * diesen Nutzer benötigt ansible um sich beim ersten mal auf diesen PC zu verbinden
 3. Playbook bootstrap auf DIESEM Rechner ausführen
-    * ansible-playbook playbooks/0_bootstrap.yml -i inventory.yml --limit=FQDN
+    * `ansible-playbook playbooks/0_bootstrap.yml -i inventory.yml --limit=FQDN`
 4. danach alle weiteren notwendigen Playbooks ausführen
-    * ansible-playbook playbooks/99_base.yml -i inventory.yml
+    * `ansible-playbook playbooks/99_base.yml -i inventory.yml`
 
 
 ## Rechte für ansible-user-private-key
@@ -33,7 +33,6 @@ Vorbereitend ist noch eine Datei namens "__vault_password_file__" anzulegen welc
 
 
 ### Einrichtung
-  * Das Plugin wird bei einer Installation mit dem Playbook "ansible" mit eingerichtet.
   * Die "Secrets" liegen in der KeepassDB die mit dem Kennwort aus `--ask-vault-pass` verschlüsselt ist.
   * Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
 
