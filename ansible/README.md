@@ -33,7 +33,6 @@ Vorbereitend ist noch eine Datei namens "__vault_password_file__" anzulegen welc
 
 
 ### Einrichtung
-  * Das Plugin wird bei einer Installation mit dem Playbook "ansible" mit eingerichtet.
   * Die "Secrets" liegen in der KeepassDB die mit dem Kennwort aus `--ask-vault-pass` verschlüsselt ist.
   * Das vault-secret für die GroupVars wird mit `ansible-vault encrypt_string <password>` erstellt.
 
