@@ -205,6 +205,7 @@
   ### SSH
   ansible_ssh_common_args: "'-o StrictHostKeyChecking=no'"
   host_key_checking: False
+  ansible_python_interpreter: "/usr/bin/python3"
 
   # Ansible Plugin Variablen
   ### Keepass
