@@ -25,6 +25,7 @@
       url: "{{ manage_sources_apt_repo_key_url }}"
       state: present
     register: copy_src
+    # noqa 601
     when: pve_no_subscription_repo_keys.stat.exists == false
 
   - name: add pve-no-subscription repo
