@@ -7,7 +7,7 @@
           RMPHLPVE2:
       g_ubuntu:
         hosts:
-          plnext001:
+          PLNEXT001:
           BLANSI001:
           BLJENK001:
           BLDNSM001:
@@ -25,6 +25,6 @@
         hosts:
       g_nextcloud:
         hosts:
-          plnext001:
+          PLNEXT001:
       g_testserver:
         hosts:
