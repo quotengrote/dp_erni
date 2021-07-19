@@ -21,7 +21,7 @@
   args:
     chdir: /usr/local/bin/gitea
   environment:
-    http_proxy: http://{{ proxy_ip }}:{{ proxy_port }}
+    https_proxy: https://{{ proxy_ip }}:{{ proxy_port }}
   notify: "Restart gitea"
   when: (not gitea_version_check|bool) or (not ansible_check_mode and (gitea_active_version.stdout != gitea_version))
 
