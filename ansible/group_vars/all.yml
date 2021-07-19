@@ -1,4 +1,9 @@
 ---
+  ### mgrote.set_http_proxy
+  http_proxy_ip: "11.8.108.254"  # ip des proxys
+  http_proxy_port: "8080" # port des proxys
+  http_proxy_local_subnet: "11.10.31.0./24" # lokales subnetz das nicht über den proxy geht
+
   ### mgrote.apt_install_packages
   programs_common:
     - locales
@@ -196,6 +201,10 @@
     - sshpass # für ansible
     - tmux
     - sudo
+
+  ### set_apt_sources
+  apt_proxy_server: blacng001.ausbildung.md:9999
+
 
   # Ansible Variablen
   ### User
