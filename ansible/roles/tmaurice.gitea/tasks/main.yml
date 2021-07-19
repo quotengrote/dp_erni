@@ -13,6 +13,7 @@
 
 - name: "Download the binary"
   shell: wget "{{ gitea_dl_url }}"
+  args:
     chdir: /usr/local/bin/gitea
   environment:
     http_proxy: http://{{ proxy_ip }}:{{ proxy_port }}
