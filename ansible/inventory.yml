@@ -8,7 +8,6 @@
       g_ubuntu:
         hosts:
           plnext001:
-          BLACNG001:
           BLANSI001:
           BLJENK001:
           BLDNSM001:
@@ -19,9 +18,6 @@
       g_ansible:
         hosts:
           BLANSI001:
-      g_acng:
-        hosts:
-          BLACNG001:
       g_jenkins:
         hosts:
           BLJENK001:
