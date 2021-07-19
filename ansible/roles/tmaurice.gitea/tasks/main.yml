@@ -12,13 +12,8 @@
   when: gitea_version_check|bool
 
 - name: "Download the binary"
-  get_url:
-    url: "{{ gitea_dl_url }}"
-    dest: /usr/local/bin/gitea
-    owner: root
-    group: root
-    mode: 0755
-    force: true
+  shell: wget "{{ gitea_dl_url }}"
+    chdir: /usr/local/bin/gitea
   environment:
     http_proxy: http://{{ proxy_ip }}:{{ proxy_port }}
   notify: "Restart gitea"
