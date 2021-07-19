@@ -9,12 +9,15 @@
         hosts:
           PLNEXT001:
           BLANSI001:
-          BLJENK001:
+          BLGITE001:
           BLDNSM001:
 #            ansible_host: 11.10.31.10
       g_dnsmasq:
         hosts:
           BLDNSM001:
+      g_gitea:
+        hosts:
+          BLGITE001:
       g_ansible:
         hosts:
           BLANSI001:

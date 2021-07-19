@@ -1,7 +1,7 @@
 ---
   ### mgrote.set_http_proxy
-  http_proxy_ip: "11.8.108.254"  # ip des proxys
-  http_proxy_port: "8080" # port des proxys
+  http_proxy_ip: "{{ proxy_ip }}"  # ip des proxys
+  http_proxy_port: "{{ proxy_port }}" # port des proxys
   http_proxy_local_subnet: "11.10.31.0./24" # lokales subnetz das nicht über den proxy geht
 
   ### mgrote.manage_apt_sources

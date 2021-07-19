@@ -1,0 +1,5 @@
+---
+- hosts: g_gitea
+  roles:
+    - { role: geerlingguy.mysql, tags: "mysql", become: true }
+    - { role: tmaurice.gitea, tags: "gitea", become: true }

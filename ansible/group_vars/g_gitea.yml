@@ -1,0 +1,82 @@
+---
+  ### oefenweb.ufw
+  ufw_rules:
+    - rule: allow
+      to_port: 22
+      protocol: tcp
+      comment: 'ssh'
+      from_ip: 11.10.31.0/24
+    - rule: allow
+      to_port: 3000
+      protocol: tcp
+      comment: 'gitea'
+      from_ip: 11.10.31.0/24
+    - rule: allow
+      to_port: 2222
+      protocol: tcp
+      comment: 'gitea'
+      from_ip: 11.10.31.0/24
+  ### geerlingguy.mysql
+  mysql_root_password_update: true
+  mysql_root_password: "{{ lookup('keepass', 'gitea_db_passwort_root_user', 'password') }}"
+  mysql_port: "3306"
+  mysql_databases:
+    - name: gitea_db
+      encoding: utf8
+      collation: utf8_general_ci
+  mysql_users:
+    - name: gitea_user
+      host: "%"
+      password: "{{ lookup('keepass', 'gitea_db_passwort_gitea_user', 'password') }}"
+      priv: "gitea_db.*:ALL"
+  ### tmaurice.gitea
+  gitea_version: "1.13.7"
+  gitea_app_name: "Gitea"
+  gitea_user: "gitea"
+  gitea_home: "/var/lib/gitea"
+  gitea_repository_root: "{{ gitea_home }}"
+  gitea_user_repo_limit: 300
+  gitea_root_url: http://BLGITE001.ausbildung.md
+  gitea_offline_mode: true
+  gitea_lfs_server_enabled: false
+  gitea_secret_key: "{{ lookup('keepass', 'gitea_secret_key', 'password') }}"
+  gitea_internal_token: "{{ lookup('keepass', 'gitea_internal_token', 'password') }}"
+  gitea_disable_git_hooks: false
+  gitea_show_user_email: false
+  gitea_disable_gravatar: true
+  gitea_enable_captcha: false
+  gitea_only_allow_external_registration: false
+  gitea_enable_notify_mail: false
+  gitea_force_private: false
+  gitea_oauth2_enabled: false
+  gitea_repo_indexer_enabled: true
+  gitea_extra_config: ""
+  gitea_backup_on_upgrade: true
+
+  gitea_mailer_enabled: false
+
+  gitea_db_type: mysql
+  gitea_db_host: localhost:3306
+  gitea_db_name: gitea_db
+  gitea_db_user: gitea_user
+  gitea_db_password: "{{ lookup('keepass', 'gitea_db_passwort_gitea_user', 'password') }}"
+
+  gitea_ssh_listen: 0.0.0.0
+  gitea_ssh_domain: BLGITE001.ausbildung.md
+  gitea_ssh_port: 2222
+  gitea_start_ssh: true
+
+  gitea_http_domain: BLGITE001.ausbildung.md
+  gitea_http_listen: 0.0.0.0
+  gitea_http_port: 3000
+  gitea_disable_http_git: false
+  gitea_protocol: http
+
+  gitea_show_registration_button: true
+  gitea_require_signin: false
+  gitea_disable_registration: false
+
+  gitea_fail2ban_enabled: false
+  gitea_fail2ban_jail_maxretry: 10
+  gitea_fail2ban_jail_findtime: 300
+  gitea_fail2ban_jail_bantime: 300
