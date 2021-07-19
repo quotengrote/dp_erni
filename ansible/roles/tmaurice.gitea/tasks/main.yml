@@ -11,6 +11,11 @@
   failed_when: false
   when: gitea_version_check|bool
 
+- name: create dirs
+  file:
+    path: /usr/local/bin/gitea
+    state: directory
+
 - name: "Download the binary"
   shell: wget "{{ gitea_dl_url }}"
   args:
