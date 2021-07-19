@@ -1,4 +1,4 @@
 ---
   - hosts: all
     roles:
-      - mgrote.set_apt_sources
+      - set_apt_proxy
