@@ -1,4 +1,9 @@
 #!/bin/bash
+# shellcheck disable=SC1054
+# shellcheck disable=SC1009
+# shellcheck disable=SC1073
+# shellcheck disable=SC1064
+# shellcheck disable=SC1072
 {{ file_header | default () }}
 LOCKDIR=${HOME}/.cache
 function exlock() {
