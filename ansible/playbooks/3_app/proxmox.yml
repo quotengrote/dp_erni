@@ -1,0 +1,4 @@
+---
+  - hosts: g_proxmox
+    roles:
+      - { role: mgrote.cv4pve-autosnap, tags: "cv4pve", when: "'RMPHLPVE1' in inventory_hostname" }

@@ -1,0 +1,60 @@
+---
+  - name: create directories
+    become: yes
+    ansible.builtin.file:
+      path: "{{ item }}"
+      state: directory
+    loop:
+      - '/tmp/cv4pve'
+      - '/usr/local/bin/cv4pve'
+
+  - name: download archives
+    become: yes
+    ansible.builtin.get_url: ## hier variable für version
+      url: "{{ cv4pve_dl_link }}"
+      dest: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
+      mode: '0775'
+
+  - name: Extract archives
+    become: yes
+    ansible.builtin.unarchive:
+      src: /tmp/cv4pve/cv4pve-autosnap-linux-x64.zip
+      dest: /usr/local/bin/cv4pve
+      remote_src: yes
+      mode: a+x
+
+  - name: copy bash-script
+    become: yes
+    ansible.builtin.template:
+      src: "cv4pve-script.sh"
+      dest: "/usr/local/bin/cv4pve/cv4pve-script.sh"
+      mode: a+x
+
+  - name: create cronjob
+    become: yes
+    ansible.builtin.cron:
+      name: cv4pve-autosnap
+      state: present
+      job: "/usr/local/bin/cv4pve/cv4pve-script.sh"
+      minute: "{{ cv4pve_cron_minute }}"
+      hour: "{{ cv4pve_cron_hour }}"
+
+  - name: Create log
+    become: true
+    ansible.builtin.file:
+      path: /var/log/cv4pve-autosnap.log
+      state: touch
+      owner: root
+      group: root
+      mode: 0640
+      access_time: preserve
+      modification_time: preserve
+
+  - name: copy logrotate config
+    become: yes
+    ansible.builtin.template:
+      src: logrotate_cv4pve
+      dest: /etc/logrotate.d/cv4pve-autosnap
+      owner: root
+      group: root
+      mode: 0644
