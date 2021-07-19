@@ -76,7 +76,7 @@
   gitea_require_signin: false
   gitea_disable_registration: false
 
-  gitea_fail2ban_enabled: true
+  gitea_fail2ban_enabled: false
   gitea_fail2ban_jail_maxretry: 10
   gitea_fail2ban_jail_findtime: 300
   gitea_fail2ban_jail_bantime: 300
