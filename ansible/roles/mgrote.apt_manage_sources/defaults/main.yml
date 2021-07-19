@@ -5,3 +5,4 @@
   manage_sources_apt_repo_no_subscription: deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription # url zum für no-subscription-repo, manage_sources_apt_proxy_url wird aus der variable entnommen
   manage_sources_apt_proxy_server: acng.grote.lan
   manage_sources_apt_proxy_port: 9999
+  manage_sources_use_proxy: false #damit der Proxy gesetzt wird muss diese Variable true sein

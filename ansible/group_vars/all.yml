@@ -5,9 +5,7 @@
   http_proxy_local_subnet: "11.10.31.0./24" # lokales subnetz das nicht über den proxy geht
 
   ### mgrote.manage_apt_sources
-  manage_sources_apt_proxy_server: ""
-  manage_sources_apt_proxy_port: ""
-
+  manage_sources_use_proxy: false
   ### mgrote.apt_install_packages
   programs_common:
     - locales
