@@ -202,9 +202,6 @@
     - tmux
     - sudo
 
-  ### set_apt_sources
-  apt_proxy_server: blacng001.ausbildung.md:9999
-
 
   # Ansible Variablen
   ### User
