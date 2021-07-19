@@ -1,0 +1,18 @@
+---
+  - name: include ubuntu tasks (determined by "ansible_distribution")
+    include_tasks: ubuntu.yml
+    when: ansible_distribution == 'Ubuntu'
+
+  - name: include Linux Mint tasks (determined by "ansible_distribution")
+    include_tasks: mint.yml
+    when: ansible_distribution == 'Linux Mint'
+
+  - name: include proxmox tasks (determined by group)
+    include_tasks: proxmox.yml
+    when: "'proxmox' in group_names"
+
+  - name: update package lists # noqa 503 503
+    become: yes
+    ansible.builtin.apt:
+      update_cache: yes
+    when: copy_src.changed

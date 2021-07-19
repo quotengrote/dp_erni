@@ -1,0 +1,9 @@
+---
+  - name: ensure apt.conf exists
+    become: true
+    ansible.builtin.template:
+      src: apt.conf
+      dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
+      backup: yes
+    register: copy_src
+    when: manage_sources_apt_proxy_server is defined
