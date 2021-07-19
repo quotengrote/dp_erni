@@ -1,4 +1,4 @@
 ---
-  - hosts: all:!g_acng
+  - hosts: all
     roles:
-      - { role: mgrote.set_apt_sources, tags: "sources", become: yes }
+      - { role: mgrote.apt_manage_sources, tags: "sources", become: yes }

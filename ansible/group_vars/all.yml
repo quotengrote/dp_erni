@@ -1,4 +1,11 @@
 ---
+  ### mgrote.set_http_proxy
+  http_proxy_ip: "11.8.108.254"  # ip des proxys
+  http_proxy_port: "8080" # port des proxys
+  http_proxy_local_subnet: "11.10.31.0./24" # lokales subnetz das nicht über den proxy geht
+
+  ### mgrote.manage_apt_sources
+  manage_sources_use_proxy: false
   ### mgrote.apt_install_packages
   programs_common:
     - locales
@@ -64,7 +71,7 @@
   ntp_client_daemon_user: ntp # Nutzer + Gruppe für den Dienst
   ntp_client_daemon_group: ntp # Nutzer + Gruppe für den Dienst
   ### mgrote.set_apt_sources
-  acng_server_and_port: ""  # ip/fqdn:port/
+  acng_server_and_port: "" # "blacng001.ausbildung.md/"  # ip/fqdn:port/
   ### ryandaniels.create_users
   users:
     - username: root
@@ -196,6 +203,7 @@
     - sshpass # für ansible
     - tmux
     - sudo
+
 
   # Ansible Variablen
   ### User

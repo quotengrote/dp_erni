@@ -1,0 +1,38 @@
+---
+  - name: ensure apt.conf exists
+    become: true
+    ansible.builtin.template:
+      src: apt.conf
+      dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
+      backup: yes
+    register: copy_src
+    when: manage_sources_apt_proxy_server is defined
+
+  - name: remove enterprise-Repository
+    become: yes
+    ansible.builtin.file:
+      path: "{{ manage_sources_enterprise_repo_path }}"
+      state: absent
+
+  - name: check if pve-no-subscription repo keys exists
+    stat:
+      path: "{{ manage_sources_apt_repo_key_path }}"
+    register: pve_no_subscription_repo_keys
+
+  - name: add pve-no-subscription repo keys
+    become: yes
+    ansible.builtin.apt_key:
+      url: "{{ manage_sources_apt_repo_key_url }}"
+      state: present
+    register: copy_src
+    # noqa 601
+    when: pve_no_subscription_repo_keys.stat.exists == false # noqa 601
+
+  - name: add pve-no-subscription repo
+    become: yes
+    ansible.builtin.apt_repository:
+      repo: "{{ manage_sources_apt_repo_no_subscription }}"
+      state: present
+      filename: pve-no-subscription
+      update_cache: no
+    register: copy_src

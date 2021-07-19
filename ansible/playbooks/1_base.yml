@@ -1,0 +1,11 @@
+---
+  - hosts: all
+    gather_facts: false
+  - import_playbook: ./base/1_create_users.yml
+  - import_playbook: ./base/configure_http_proxy.yml
+  - import_playbook: ./base/2_sources.yml
+  - import_playbook: ./base/2_packages.yml
+  - import_playbook: ./base/3_qemu_guest_agent.yml
+  - import_playbook: ./base/configure_ntp_client.yml
+  - import_playbook: ./base/tmux.yml
+  - import_playbook: ./base/3_haertung.yml
