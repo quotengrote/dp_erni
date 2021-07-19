@@ -10,4 +10,4 @@ jobs:
       - name: Run Shellcheck
         uses: ludeeus/action-shellcheck@master
         with:
-          ignore: .shellcheckignore
+          ignore: cv4pve-script.sh
