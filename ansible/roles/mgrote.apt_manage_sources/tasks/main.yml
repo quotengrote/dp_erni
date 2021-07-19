@@ -15,4 +15,6 @@
     become: yes
     ansible.builtin.apt:
       update_cache: yes
-    when: copy_src.changed
+    when:
+      - copy_src.changed
+      - manage_sources_use_proxy == true
