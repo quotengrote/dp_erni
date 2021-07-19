@@ -1,7 +1,0 @@
----
-  - name: ensure apt.conf exists
-    become: true
-    ansible.builtin.template:
-      src: apt.conf
-      dest: "{{ apt_proxy_apt_conf_path | default ('/etc/apt/apt.conf') }}"
-    when: apt_proxy_server is defined

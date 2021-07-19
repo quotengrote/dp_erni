@@ -1,1 +1,0 @@
-deb http://{{ acng_server_and_port }}download.proxmox.com/debian/pve buster pve-no-subscription
