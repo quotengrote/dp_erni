@@ -59,7 +59,7 @@
   gitea_db_host: localhost:3306
   gitea_db_name: gitea_db
   gitea_db_user: gitea_user
-  gitea_db_password: "{{ gitea_db_passwort_gitea_user }}"
+  gitea_db_password: "{{ lookup('keepass', 'gitea_db_passwort_gitea_user', 'password') }}"
 
   gitea_ssh_listen: 0.0.0.0
   gitea_ssh_domain: BLGITE001.ausbildung.md
